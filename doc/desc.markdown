@@ -1,41 +1,49 @@
-# Gestione gruppi giovanili
+# Gestione gruppo giovani
 
-## Gestione eventi
+## Struttura home
 
-E' possibile aggiungere, rimuovere, visualizzare degli eventi
+logo e nome in alto;
+barra di navigazione sulla sx contenente le varie tematiche + invia messaggio (forse meglio nel riquadro della login)+ home + chi siamo;
+casella di search + login in alto a dx;
+breve descrizione del gruppo + news ed eventi appena inseriti(3 o 4) al centro,
+prosegue sotto la login;
+footer con icone di validazione e statistiche;
 
-### Calendario
+##Struttura pagine tematiche
 
-Il calendario riassume gli eventi ordinati per data. Clickando su un evento ne
-vengono visualizzati i dettagli.
+come la home tranne il contenuto centrale che prevede:
+-proposta problema
+-possibili soluzioni
+-serie di form da compilare completamente prima di essere spediti
+-link alla pagina dei risultati (coincide con submit)
+-link ai commenti (inserimento e visione)
 
-## News
+##Struttura pagine risultati
 
-Notizie ordinate per data. Ogni membro di un gruppo puo' aggiungerle. 
-Sono commentabili.
+come sopra ma con i risultati a fianco dei rispettivi form;
+
+##Struttura pagine commenti
+
+layout delle altre pagine e contenuto occupato completamente dai commenti degli utenti;
+area di inserimento presente solo se loggati
+
+##Struttura pagine commenti
+solito layout,
+contenuto standard con titolo foto e testo;
+
+##Pagina di amministrazione
+visibile solo con login di amministrazione, consente di creare nuove tematiche con relativi form, e di leggere i suggerimenti;
 
 ## Proposte
 
-Chiunque puo' aggiungerne. Sono visualizzate ordinate in base
-alla data (piu' recenti prima) e al voto.
+Chiunque puo' aggiungerne. Sono visualizzate solo agli amministratori.
 
 ### Votazione
 
-E' possibile votarle, commentarle o segnalarle come spam (visto che chiunque puo' aggiungerle). 
-
-## Informazioni sull'associazione
-
-Pagina statica editabile dall'amministratore del gruppo, presumibilmente il 
-presidente dell'associazione.
-
-## Gestione di piu' gruppi
-
-E' possibile gestire piu' di un gruppo.
+E' possibile votare i commenti con 4 stelline;
 
 ### Login
 
 Esistono 2 livelli di login: 
-
-1. Amministrazione di un gruppo. Permette la creazione e cancellazione di un 
-   gruppo.
-2. Partecipazione ad un gruppo.
+Amministratore del gruppo;
+Utenti registrati;
