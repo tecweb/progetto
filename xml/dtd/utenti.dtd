@@ -1,0 +1,5 @@
+<!ELEMENT utenti (utente*)>
+<!ELEMENT utente (nome, email, pass)>
+<!ELEMENT nome  (#PCDATA)>
+<!ELEMENT email   (#PCDATA)>
+<!ELEMENT pass    (#PCDATA)>
