@@ -1,0 +1,49 @@
+body {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.menu {
+  float: left;
+  background-color: #275cf6;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  width: 20%;
+}
+
+.header {
+  height: 20%;
+}
+
+.content {
+  margin-left: 20%;
+}
+
+.menu_title {
+  font-style: italic;
+  font-size: 1.1em;
+  margin-left: 0.5em;
+}
+
+.nav {
+  list-style: none;
+  padding-left: 3em;
+  font-size: 1em;
+  padding-bottom: 1em;
+  border-style: dashed;
+  border-color: black;
+  border-width: 0px 0px 1px 0px;
+}
+
+.nav li {
+  margin-top: 0.1em;
+}
+
+.polls_menu {
+  list-style: none;
+  padding-left: 3em;
+  font-size: 1em;
+}
