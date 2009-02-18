@@ -1,0 +1,5 @@
+<!ELEMENT sondaggi (coppia*)>
+<!ELEMENT coppia >
+<!ATTLIST coppia
+  nome  CDATA   #REQUIRED
+  link      CDATA   #REQUIRED>

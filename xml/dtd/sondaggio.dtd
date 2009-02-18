@@ -1,0 +1,13 @@
+<!ELEMENT sondaggio (nome, domanda+, commento*)>
+<!ELEMENT nome (#PCDATA)>
+
+<!ELEMENT domanda (problema, opzione+, ncommenti)>
+<!ELEMENT problema (#PCDATA)>
+<!ELEMENT opzione (#PCDATA)>
+<!ELEMENT ncommenti (#PCDATA)>
+
+<!ELEMENT commento (#PCDATA)>
+<!ATTLIST commento
+  voto           CDATA  #REQUIRED
+  data          CDATA   #REQUIRED
+  username  CDATA   #REQUIRED>

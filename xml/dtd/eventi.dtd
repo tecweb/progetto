@@ -1,0 +1,8 @@
+<!ELEMENT eventi (evento*)>
+<!ELEMENT evento (data, titolo, descr, link)>
+<!ATTLIST evento
+  id  CDATA   #REQUIRED>
+<!ELEMENT data     (#PCDATA)>
+<!ELEMENT titolo    (#PCDATA)>
+<!ELEMENT descr   (#PCDATA)>
+<!ELEMENT link      (#PCDATA)>
