@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link href="main_style.css" rel="stylesheet" media="screen" />
+</head>
+<body>
+
+<div class="header"> Aloha! </div>
+
+<div class="menu">
+  <div class="menu_title"> Naviga </div>
+  <ul class="nav">
+   <li> Home </li>
+   <li> blah blah </li>
+  </ul>
+  <div class="menu_title"> Sondaggi </div>
+  <ul class="polls_menu">
+    <li> Poll 1 </li>
+    <li> Poll 2 </li>
+    <li> Veeeeeeeeeeeeeeeeeeeeery long poll name </li>
+  </ul> 
+</div>
+
+<div class="content">
+  <h1 class="poll_title"> Titolo del poll </h1>
+  <form class="poll_questions" method="POST" action="/cgi-bin/save_vote.pl">
+    <fieldset>
+      <div class="domanda"> Domanda 1 </div>
+      <div> 
+        <label for="cid00"> Possibilit&acute; 1 </label> 
+        <input type="radio" name="cid00" id="cid00" value="t" />
+      </div>
+      <div>
+        <label for="cid01"> Possibilit&acute; 2 </label> 
+        <input type="radio" name="cid01" id="cid01" value="t" />
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="domanda"> Domanda 2 </div>
+      <div> 
+        <label for="cid10"> Possibilit&acute; 1 </label> 
+        <input type="radio" name="cid10" id="cid10" value="t" />
+      </div>
+      <div>
+        <label for="cid11"> Possibilit&acute; 2 </label> 
+        <input type="radio" name="cid11" id="cid11" value="t" />
+      </div>
+    </fieldset>
+    <input type="submit" value="Conferma" />
+  </form>
+</div>
+
+</body>
+</html>
