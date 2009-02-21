@@ -27,30 +27,31 @@
 
 <div class="content">
   <h1 class="poll_title"> Titolo del poll </h1>
+  <p class="poll_desc"> Descrizione del poll </p>
   <form class="poll_questions" method="POST" action="/cgi-bin/save_vote.pl">
     <fieldset>
       <div class="domanda"> Domanda 1 </div>
-      <div> 
-        <label for="cid00"> Possibilit&acute; 1 </label> 
-        <input type="radio" name="cid00" id="cid00" value="t" />
+      <div class="choice"> 
+        <label for="cid00"> Possibilit&agrave; 1 </label> 
+        <input type="radio" name="cid0" id="cid00" value="t" />
       </div>
-      <div>
-        <label for="cid01"> Possibilit&acute; 2 </label> 
-        <input type="radio" name="cid01" id="cid01" value="t" />
+      <div class="choice">
+        <label for="cid01"> Possibilit&agrave; 2 </label> 
+        <input type="radio" name="cid0" id="cid01" value="t" />
       </div>
     </fieldset>
     <fieldset>
       <div class="domanda"> Domanda 2 </div>
-      <div> 
-        <label for="cid10"> Possibilit&acute; 1 </label> 
-        <input type="radio" name="cid10" id="cid10" value="t" />
+      <div class="choice"> 
+        <label for="cid10"> Possibilit&agrave; 1 </label> 
+        <input type="radio" name="cid1" id="cid10" value="t" />
       </div>
-      <div>
-        <label for="cid11"> Possibilit&acute; 2 </label> 
-        <input type="radio" name="cid11" id="cid11" value="t" />
+      <div class="choice">
+        <label for="cid11"> Possibilit&agrave; 2 </label> 
+        <input type="radio" name="cid1" id="cid11" value="t" />
       </div>
     </fieldset>
-    <input type="submit" value="Conferma" />
+    <input type="submit" value="Conferma" class="submit" />
   </form>
 </div>
 

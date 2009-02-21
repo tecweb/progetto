@@ -7,7 +7,7 @@ body {
 
 .menu {
   float: left;
-  background-color: #275cf6;
+  background-color: #FF9933;
   border-width: 1px;
   border-style: solid;
   border-color: black;
@@ -30,7 +30,7 @@ body {
 
 .nav {
   list-style: none;
-  padding-left: 3em;
+  padding-left: 1.5em;
   font-size: 1em;
   padding-bottom: 1em;
   border-style: dashed;
@@ -44,6 +44,30 @@ body {
 
 .polls_menu {
   list-style: none;
-  padding-left: 3em;
+  padding-left: 1.5em;
   font-size: 1em;
+}
+
+.poll_title {
+font-size: 1.5em;
+font-variant: small-caps;
+}
+
+.poll_desc {
+  padding-left: 1em;
+}
+
+/* form */
+
+.domanda {
+  font-size: 1.2em;
+}
+
+.choice {
+  font-size: 1em;
+  margin-top: 0.5em;
+  padding-left: 2em;
+}
+
+.submit {
 }
