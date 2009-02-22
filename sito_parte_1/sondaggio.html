@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="it">
+  <head>
+    <title> Sondaggio Argomento - Piazza Marconi Zero </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="title" content="Gruppo giovanile 'Piazza Marconi Zero' - Sondaggio"/>
+    <meta name="description" content="Pagina di sondaggi del gruppo giovanile di 
+      Valdobbiadene 'Piazza Marconi Zero'"/>
+    <meta name="keywords" content="Valdobbiadene, gruppo, giovani, sondaggio"/>
+    <meta name="language" content="italian it"/>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <div id="header">
+      <span id="logo"></span>
+      <h1 id="intestazione"> Piazza Marconi Zero </h1>
+    </div>
+    <div id="login">
+      <h4> Login </h4>
+      <p> Inserisci username e password </p>
+      <p><label for="username"> Username </label>
+        <input type="text" size="10" id="username"/></p>
+      <p><label for="password"> Password </label>
+        <input type="password" size="10" maxlength="8" id="password"/></p>
+      <input type="submit" value="Ok"/>
+    </div>
+    <div id="nav_bar">
+      <!--SEZIONE DA RISISTEMARE-->
+      <dl>
+        <dt class="menu_title"> Naviga </dt>
+          <dd><a href="home.html"> Home </a></dd>
+          <dd><a href="info.html"> Chi Siamo </a></dd>
+        <dt class="menu_title"> Sondaggi </dt> 
+          <!--CARICARE DINAMICAMENTE ELENCO TEMATICHE SONDAGGI-->
+          <dd><a href="sondaggio.html"> Esempio 1 </a></dd>
+          <dd><a href=""> Esempio 2 </a></dd>
+      </dl> 
+    </div>
+    <div id="body">
+      <h2> Gruppo giovani Valdobbiadene </h2>
+      <h3> Titolo del sondaggio </h3>
+      <!--NELLA HOME DIREI NIENTE CONTENUTO STATICO. PER QUELLO C'è IL CHI SIAMO-->
+      <p> Qui andr&agrave; la descrizione del problema da cui nasce il sondaggio </p>
+      <p> In fondo alla pagina &egrave; disponibile un link alla sezione commenti 
+          in cui, eseguendo il login, potrai esprimere la tua opinione su questo 
+          problema. In caso contrario potrai comunque visualizzare i commenti e 
+          votarli </p>
+      <form class="poll_questions" method="post" action="/cgi-bin/save_vote.pl">
+        <fieldset>
+          <h4 class="domanda"> Domanda 1 </h4>
+          <p> 
+            <label for="cid00"> Possibilit&agrave; 1 </label> 
+              <input type="radio" name="question1" id="cid00" value="t" />
+          </p>
+          <p>
+            <label for="cid01"> Possibilit&agrave; 2 </label> 
+              <input type="radio" name="question1" id="cid01" value="t" />
+          </p>
+        </fieldset>
+        <fieldset>
+          <h4 class="domanda"> Domanda 2 </h4>
+          <p> 
+            <label for="cid10"> Possibilit&agrave; 1 </label> 
+              <input type="radio" name="question2" id="cid10" value="t" />
+          </p>
+          <p>
+            <label for="cid11"> Possibilit&agrave; 2 </label> 
+              <input type="radio" name="question2" id="cid11" value="t" />
+          </p>
+        </fieldset>
+        <p><input type="submit" value="Conferma" /></p>
+      </form>
+      <a href="commenti.html"> Vai alla pagina dei commenti </a>
+    </div>
+    <div id="footer">
+      <p>
+        <a href="http://validator.w3.org/check?uri=referer"><img
+          src="http://www.w3.org/Icons/valid-xhtml10-blue"
+          alt="Valid XHTML 1.0 Strict" class="valid"/></a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img style="border:0;width:88px;height:31px"
+           src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+           alt="CSS Valido!" class="valid"/>
+        </a>
+      </p>
+    </div>
+  </body>
+</html>
