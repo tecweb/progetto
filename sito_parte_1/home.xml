@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tematiche SYSTEM "../xml/dtd/home.dtd">
+<?xml-stylesheet type="text/xsl" href="home.xsl"?>
+
+<tematiche>
+  <tematica>
+    <nome>biomasse</nome>
+    <link>tematica.html</link>
+  </tematica>
+</tematiche>
