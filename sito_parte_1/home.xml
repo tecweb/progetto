@@ -8,7 +8,23 @@
     <link>tematica.html</link>
   </tematica>
   <tematica>
-  	<nome>foo</nome>
-  	<link>bar.xml</link>
+  	<nome>capannoni sfitti</nome>
+  	<link>#</link>
+  </tematica>
+	<tematica>
+  	<nome>case vuote</nome>
+  	<link>#</link>
+  </tematica>
+	<tematica>
+  	<nome>doc -> docg</nome>
+  	<link>#</link>
+  </tematica>
+	<tematica>
+  	<nome>lampioni LED</nome>
+  	<link>#</link>
+  </tematica>
+	<tematica>
+  	<nome>energie rinnovabili</nome>
+  	<link>#</link>
   </tematica>
 </tematiche>
