@@ -1,68 +1,90 @@
 /* CSS Document */
 
-html,body {
-					margin: 0;
-					padding: 0;
-         	border:0;
-           /*margin-top: 2%;
-           margin-right: 2%;
-           margin-left: 2%;*/
-					font-family: Verdana, Helvetica, sans-serif;
-					font-size: 0.95em;
-          background-color: rgb(255,201,147);
-}
+html, body	{
+							font-family: Verdana, Helvetica, sans-serif;
+							font-size: 0.9em;
+							background-image: url(sfondo.jpg);
+						}
 
-h1,h2,h3 {font-variant: small-caps;}
+body	{
+				padding: 3% 5% 0%;
+				margin: 0;
+			}
 
-h1 {
-		font-size: 2em;
-	}
+h1, h2, h3, h4	{
+									font-variant: small-caps;
+								}
+
+h1	{
+			font-size: 2em;
+		}
 
 /*  Stile sezione header  */
 
-#header {width:100%;
-         padding: 0.5em;
-         background-color: rgb(255,217,179);}
+#header	{
+					margin: 0;
+					border-bottom: 0.1px solid black;
+	        padding: 4.95% 5%;
+					background-color: white;
+					text-align: center;
+					width: 69%;
+					float: left;
+				}
 
-#logo {background-image: url(Valdobbiadene.gif);
-       background-repeat: no-repeat;
-       padding: 0.5em;
-       margin-top: 1em;
-       margin-left: 2em;
-       display: block;
-       width: 9%;
-       height: 6em;
-       float: left;}
+#logo	{
+				background-image: url(Valdobbiadene.gif);
+				background-repeat: no-repeat;
+       	display: block;
+				width: 20%;
+       	height: 7em;
+       	float: left;
+			}
        
-#intestazione {padding: 0.5em 1em 1em 1em;}
+#intestazione	{
+								/*padding: 0.5em 1em 0.5em 1em;*/
+							}
                 
 /*  Stile sezione login */
 
-#login {padding: 0.4em 1em; 
-        float: right;}
+#login	{
+					padding: 1%;
+					width: 19%;
+					background-color: yellow;
+					float: right;
+				}
 
 /*  Stile barra di navigazione  */        
 
-#nav_bar {float:left;
-          padding: 0.5em 0.5em;}
+#nav_bar	{
+						border-right: 0.1px solid black;
+						padding: 1%;
+						background-color: white;
+						width: 20%;
+						float:left;
+					}
           
 dd {padding: 0.3em;}
           
 /*  Stile sezione principale  */
 
-#body {padding-top: 1em;
-       padding-bottom: 1em;
-       margin-right: 20%;
-       margin-left: 20%;
-       background-color: rgb(255,255,255);}
+#corpo	{
+					padding: 4%;
+					width: 92%;
+       		background-color: rgb(255,255,255);
+					text-align: center;
+				}
        
-#body h2, #body h3 {text-align: center;}
+#corpo h2, #corpo h3 {text-align: center;}
          
-#body p {padding: 0.4em;}
+#corpo p {padding: 0.4em;}
 
 /*  Stile sezione footer  */
 
-#footer {clear: both;}            
+#footer {
+				padding: 0.1px;
+				background-color: black;
+				clear: both;
+				}            
 
 /*  Stile pagina dei sondaggi  */
 
