@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sondaggio SYSTEM "../xml/dtd/sondaggio.dtd">
+<?xml-stylesheet type="text/xsl" href="sondaggio.xsl"?>
+
+<sondaggio>
+  <nome>Biomasse</nome>
+  <domanda>
+    <problema>Domanda1</problema>
+    <opzione>Opzione 1</opzione>
+    <opzione>Opzione 2</opzione>
+    <ncommenti>2</ncommenti>
+  </domanda>
+    <domanda>
+    <problema>Domanda2</problema>
+    <opzione>Opzione 1</opzione>
+    <opzione>Opzione 2</opzione>
+    <ncommenti>2</ncommenti>
+  </domanda>
+  <commento voto="2" data="01/01/09" username="cicerone">
+    commento 1
+  </commento>
+  <commento voto="4" data="02/01/09" username="ovidio">
+    commento 2
+  </commento>
+</sondaggio>
