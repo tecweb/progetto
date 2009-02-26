@@ -1,33 +1,35 @@
 /* CSS Document */
 
-html, body	{
-							font-family: Verdana, Helvetica, sans-serif;
-							font-size: 0.9em;
-							background-image: url(sfondo.jpg);
-						}
+html	{
+				margin: 0;
+				padding: 3% 5% 0%;
+			}
 
 body	{
-				padding: 3% 5% 0%;
-				margin: 0;
+				font: 75%, Verdana, Helvetica, sans-serif;
+				background-image: url(sfondo.jpg); 
+				text-align: center;
 			}
 
 h1, h2, h3, h4	{
 									font-variant: small-caps;
+									margin:0;
+									padding:0;
 								}
 
-h1	{
-			font-size: 2em;
-		}
+img {border:0;}
+
+#container	{
+							background: white;
+						}
 
 /*  Stile sezione header  */
 
 #header	{
-					margin: 0;
 					border-bottom: 0.1px solid black;
-	        padding: 4.95% 5%;
-					background-color: white;
-					text-align: center;
-					width: 69%;
+					border-right: 0.1px solid black;
+	        padding: 3.65% 5%;
+					width: 69.9%;
 					float: left;
 				}
 
@@ -41,16 +43,17 @@ h1	{
 			}
        
 #intestazione	{
-								/*padding: 0.5em 1em 0.5em 1em;*/
 							}
                 
 /*  Stile sezione login */
 
 #login	{
-					padding: 1%;
+					padding: 0.5%;
+					margin:0;
 					width: 19%;
-					background-color: yellow;
 					float: right;
+					text-align: left;
+					border-bottom: 0.1px solid black;
 				}
 
 /*  Stile barra di navigazione  */        
@@ -58,32 +61,27 @@ h1	{
 #nav_bar	{
 						border-right: 0.1px solid black;
 						padding: 1%;
-						background-color: white;
 						width: 20%;
 						float:left;
+						text-align: left;
 					}
           
 dd {padding: 0.3em;}
-          
-/*  Stile sezione principale  */
 
-#corpo	{
-					padding: 4%;
-					width: 92%;
-       		background-color: rgb(255,255,255);
-					text-align: center;
-				}
-       
-#corpo h2, #corpo h3 {text-align: center;}
-         
-#corpo p {padding: 0.4em;}
+#corpo p	{
+						padding: 0.4em;
+						font-size: 1.2em;
+						line-height: 2em;
+					}
 
 /*  Stile sezione footer  */
 
 #footer {
-				padding: 0.1px;
+				padding: 0.1em;
+				padding-left: 2em;
 				background-color: black;
 				clear: both;
+				text-align: left;
 				}            
 
 /*  Stile pagina dei sondaggi  */
