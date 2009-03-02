@@ -12,10 +12,11 @@ body	{
 			}
 
 h1, h2, h3, h4	{
-									font-variant: small-caps;
-									margin:0;
-									padding:0;
-								}
+			font-variant: small-caps;
+			margin:0;
+			padding:0;
+			text-align: center;
+		}
 
 img {border:0;}
 
@@ -72,6 +73,7 @@ dd {padding: 0.3em;}
 						padding: 0.4em;
 						font-size: 1.2em;
 						line-height: 2em;
+						margin-left: 25%;
 					}
 
 /*  Stile sezione footer  */

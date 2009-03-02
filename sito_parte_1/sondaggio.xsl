@@ -1,23 +1,24 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:output method="html" indent="yes" encoding="utf-8" doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN" version="1.0" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
-  <xsl:template match="/sondaggio">
-<html xml:lang="en" lang="it">
+<xsl:template match="/sondaggio">
+	<html xml:lang="en" lang="it">
   <head>
-    <title>chi siamo - piazza Marconi zero</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-    <meta name="title" content="gruppo 'piazza Marconi zero' - chi siamo"/>
-    <meta name="description" content="pagina di informazioni sul gruppo di 
-      Valdobbiadene 'piazza Marconi zero'"/>
-    <meta name="keywords" content="Valdobbiadene, gruppo, giovani, chi siamo, informazioni"/>
-    <meta name="language" content="italian it"/>
-    <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+   	<title>chi siamo - piazza Marconi zero</title>
+   	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+ 	 	<meta name="title" content="gruppo 'piazza Marconi zero' - chi siamo"/>
+ 	 	<meta name="description" content="pagina di informazioni sul gruppo di Valdobbiadene 'piazza Marconi zero'"/>
+	   <meta name="keywords" content="Valdobbiadene, gruppo, giovani, chi siamo, informazioni"/>
+   	<meta name="language" content="italian it"/>
+   	<link href="style.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
   <body>
+		<div id="container">
     <div id="header">
       <span id="logo"></span>
       <h1 id="intestazione"> piazza Marconi zero </h1>
     </div>
+
     <div id="login">
       <h4> login </h4>
       <p> inserisci username e password </p>
@@ -27,6 +28,7 @@
         <input type="password" size="10" maxlength="8" id="password"/></p>
       <input type="submit" value="Ok"/>
     </div>
+
     <div id="nav_bar">
       <!--SEZIONE DA RISISTEMARE-->
       <dl>
@@ -78,6 +80,7 @@
         </a>
       </p>
     </div>
+		</div>
   </body>
 </html>
   </xsl:template>
