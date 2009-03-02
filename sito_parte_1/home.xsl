@@ -14,6 +14,7 @@
 		</head>
     <body>
 
+			<div id="container">
     	<div id="header">
       	<div id="logo"></div>
       	<h1 id="intestazione"> piazza Marconi zero </h1>
@@ -70,8 +71,9 @@
            	<img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valido!" class="valid"/>
           </a>
         </p>
-     </div>
- 
+			</div>
+			</div>
+		
 		</body>
 	</html>
 </xsl:template>
