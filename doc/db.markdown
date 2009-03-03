@@ -7,6 +7,7 @@ Directory tematiche/ contenente tutti i file xml delle varie tematiche. Per gene
 
 ## sondaggio_soluzione.xml
 Il nome di un sondaggio e' il nome del file che lo contiene.
+
 - domanda: testo
 - pro: lista di vantaggi (testo)
 - contro: lista di svantaggi (testo)
@@ -15,6 +16,7 @@ Il nome di un sondaggio e' il nome del file che lo contiene.
 
 # utenti.xml
 File singolo con informazioni sugli utenti registrati
+
 - username
 - email
 - md5 (password)
