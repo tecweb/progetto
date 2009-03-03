@@ -32,7 +32,7 @@ solito layout,
 contenuto standard con titolo foto e testo;
 
 ##Pagina di amministrazione
-visibile solo con login di amministrazione, consente di creare nuove tematiche con relativi form, e di leggere i suggerimenti;
+visibile solo con login di amministrazione, consente di creare nuove tematiche con relativi form, e di leggere i suggerimenti; consente di creare un nuovo evento; consente di cancellare un evento, un commento o una tematica. 
 
 ## Proposte
 
@@ -47,3 +47,16 @@ E' possibile votare i commenti con 4 stelline;
 Esistono 2 livelli di login: 
 Amministratore del gruppo;
 Utenti registrati;
+
+# Divisione lavoro
+
+- Header + Navigazione + Login comuni. Nel file perl che lo implementa, gestione login: funzione che ritorna il nome utente. *Stefano
+- Pagina news (home) *Ale
+- Pagina statica "chi siamo" *Ale*-
+- Pagina amministrazione *Mirco
+- Pagina tematica *Pippo
+- Pagina soluzione/poll *Ale
+- Pagina commenti tematiche *Pippo
+- Pagina per fare una proposta *Stefano
+- CSS globale *Stefano
+- DTD *Mirco
