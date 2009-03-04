@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE tematiche SYSTEM "../xml/dtd/eventi.dtd">
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href=""?>
-<eventi>
+
+<eventi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xml/schema/eventi.xsd">
 	<evento>
-		<dataEvento> 16/03/2009 </dataEvento>
-		<dataInserimento> 04/03/20009 </dataInserimento>
+		<dataEvento> 2009-03-16 </dataEvento>
+		<dataInserimento> 20009-03-14</dataInserimento>
 		<titolo> sito </titolo>
 		<descrizione> messa online del sito del gruppo "piazza Marconi zero" </descrizione>
 		<link> home.xml </link>
 	</evento>
 	<evento>
-		<dataEvento> 17/03/2009	</dataEvento>
-		<dataInserimento> 04/03/2009 </dataInserimento>
+		<dataEvento> 2009-03-17</dataEvento>
+		<dataInserimento> 2009-03-04</dataInserimento>
 		<titolo> biomasse	</titolo>
 		<descrizione>	aggiunta tematica biomasse </descrizione>
 		<link> biomasse.xml </link>
 	</evento>
 	<evento>
-		<dataEvento> 24/03/2009	</dataEvento>
-		<dataInserimento> 18/03/2009 </dataInserimento>
+		<dataEvento> 2009-03-24</dataEvento>
+		<dataInserimento> 2009-03-18</dataInserimento>
 		<titolo> primavera prosecco 2009 </titolo>
 		<descrizione>	mostra del vino a San Pietro di Barbozza </descrizione>
 		<link> mostra.xml </link>

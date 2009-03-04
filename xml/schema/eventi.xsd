@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  
+  <xs:element name="eventi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="evento" type="Tevn" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="Tevn">
+    <xs:sequence>
+      <xs:element name="dataEvento" type="xs:date"/>
+      <xs:element name="dataInserimento" type="xs:date"/>
+      <xs:element name="titolo" type="xs:string"/>
+      <xs:element name="descrizione" type="xs:string"/>
+      <xs:element name="link" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
