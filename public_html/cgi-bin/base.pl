@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use lib 'mymodules/share/perl5.8/';
+use lib 'mymodules/share/perl/5.8/';
 use CGI::Session;
 
 my $session = new CGI::Session();
@@ -34,7 +34,7 @@ sub print_head {
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="it">
   <head>
-    EOF
+EOF
 	 print "<title> $page_name - Piazza Marconi Zero </title>";
 	 print <<'EOF';
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
@@ -43,9 +43,9 @@ sub print_head {
       gruppo di Valdobbiadene 'piazza Marconi zero'"/>
     <meta name="keywords" content="Valdobbiadene, gruppo, giovani, commenti"/>
     <meta name="language" content="italian it"/>
-    <link href="style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../style.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
-	 EOF
+EOF
 }
 
 sub print_header {
@@ -56,21 +56,22 @@ sub print_header {
     </div>
     <div id="login">
       <h4> Login </h4>
-		<form method="POST" action="/cgi-bin/login.pl">
-      <fieldset> <label> Inserisci username e password </label> </fieldset>
-      <p>
-		  <label for="username"> Username: </label>
-        <input type="text" size="20" id="username" />
-		</p>
-      <p>
-        <label for="password"> Password: </label>
-        <input type="password" size="20" maxlength="256" id="password" />
-      </p>
+    <form method="POST" action="/cgi-bin/login.pl">
+      <fieldset>
+        <p>
+	  <label for="username"> Username: </label>
+          <input type="text" size="20" id="username" />
+	</p>
+        <p>
+          <label for="password"> Password: </label>
+          <input type="password" size="20" maxlength="256" id="password" />
+        </p>
       <input type="submit" value="Login" />
+      </fieldset>
       <!-- TODO: aggiungere creazione account -->
-		</form>
+    </form>
     </div>	 
-	 EOF
+EOF
 }
 
 sub load_tem {
@@ -81,7 +82,7 @@ sub load_tem {
 	 }
 }
 
-sub print_menu {
+sub print_nav {
 	 print <<'EOF';
 	 <div id="nav_bar">
 		  <!--SEZIONE DA RISISTEMARE-->
@@ -90,12 +91,12 @@ sub print_menu {
 		    <dd><a href="home.html"> Home </a></dd>
 		    <dd><a href="info.html"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
-	 EOF
+EOF
 	 load_tem();
 	 print <<'EOF';
 		    <dt class="menu_title"> Suggerimenti </dt>
 		    <dd><a href="#"> Scrivici </a></dd>
 		  </dl> 
 	 </div>
-	 EOF
+EOF
 }
