@@ -1,91 +1,97 @@
 /* CSS Document */
 
-html	{
-				margin: 0;
-				padding: 3% 5% 0%;
-			}
+html {
+	margin: 0em;
+	padding: 0em;
+	border: 0em;
+}
 
-body	{
-				font: 75%, Verdana, Helvetica, sans-serif;
-				background-image: url(sfondo.jpg); 
-				text-align: center;
-			}
+body {
+	font: 1em, Verdana, Helvetica, sans-serif;
+	background-image: url(sfondo.jpg); 
+}
 
 h1, h2, h3, h4	{
-			font-variant: small-caps;
-			margin:0;
-			padding:0;
-			text-align: center;
-		}
+	font-variant: small-caps;
+	margin: 0em;
+	padding: 0em;
+	text-align: center;
+}
 
-img {border:0;}
+img {
+	border: 0em;
+}
 
-#container	{
-							background: white;
-						}
+#container {
+	background: white;
+}
 
 /*  Stile sezione header  */
 
-#header	{
-					border-bottom: 0.1px solid black;
-					border-right: 0.1px solid black;
-	        padding: 3.65% 5%;
-					width: 69.9%;
-					float: left;
-				}
+#header {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	padding: 3.65% 5%;
+	width: 69.9%;
+	float: left;
+}
 
 #logo	{
-				background-image: url(Valdobbiadene.gif);
-				background-repeat: no-repeat;
-       	display: block;
-				width: 20%;
-       	height: 7em;
-       	float: left;
-			}
+	background-image: url(Valdobbiadene.gif);
+	background-repeat: no-repeat;
+   display: block;
+	width: 20%;
+   height: 7em;
+   float: left;
+}
        
 #intestazione	{
-							}
+}
                 
 /*  Stile sezione login */
 
-#login	{
-					padding: 0.5%;
-					margin:0;
-					width: 19%;
-					float: right;
-					text-align: left;
-					border-bottom: 0.1px solid black;
-				}
+#login {
+	padding: 0.5%;
+	margin:0em;
+	width: 19%;
+	float: right;
+	text-align: left;
+	border-bottom: 0.1px solid black;
+}
 
 /*  Stile barra di navigazione  */        
 
 #nav_bar	{
-						border-right: 0.1px solid black;
-						padding: 1%;
-						width: 20%;
-						float:left;
-						text-align: left;
-					}
+	border-right: 0.1px solid black;
+	padding: 1%;
+	width: 20%;
+	float:left;
+	text-align: left;
+}
           
-dd {padding: 0.3em;}
+dd {
+	padding: 0.3em;
+}
 
 #corpo p	{
-						padding: 0.4em;
-						font-size: 1.2em;
-						line-height: 2em;
-						margin-left: 25%;
-					}
+	padding: 0.4em;
+	font-size: 1.2em;
+	line-height: 2em;
+	margin-left: 25%;
+}
 
 /*  Stile sezione footer  */
 
 #footer {
-				padding: 0.1em;
-				padding-left: 2em;
-				background-color: black;
-				clear: both;
-				text-align: left;
-				}            
+	padding: 0.1em;
+	padding-left: 2em;
+	background-color: black;
+	clear: both;
+	text-align: left;
+}            
 
 /*  Stile pagina dei sondaggi  */
 
-fieldset p {display: inline;}     
+fieldset p {
+	display: inline;
+}

@@ -5,6 +5,7 @@ use warnings;
 
 use lib 'mymodules/share/perl/5.8/';
 use CGI::Session;
+use File::Basename;
 
 my $session = new CGI::Session();
 
@@ -14,16 +15,20 @@ $session->expire('+2h'); # two hours of inacticity
 
 print $session->header();
 
+sub user_name {
+    return $session->param('~username');
+}
+
 ## get user priviledge level
 sub user_priv {
-	 my $name = $session->param('~username');
-	 if ($name eq 'admin') {
-		  return 2;
-	 } elsif (!$name) {
-		  return 0;
-	 } else {
-		  return 1;
-	 }
+    my $name = user_name();
+    if ($name eq 'admin') {
+        return 2;
+    } elsif (!$name) {
+        return 0;
+    } else {
+        return 1;
+    }
 }
 
 sub print_head {
@@ -74,12 +79,15 @@ sub print_header {
 EOF
 }
 
+my $doc_root = '../';
+my $tem_dir = "$doc_root/tematiche/";
+
 sub load_tem {
-	 my $dir = '/tematiche/';
-	 my @files = glob "$dir/*";
-	 foreach (@files) {
-		  print "<dd> <a href=\"/tematiche/$_.xml\"> $_ </a> </dd>";
-	 }
+    my @files = glob "$tem_dir/*";
+    foreach (@files) {
+        $_ = basename($_);
+        print "<dd> <a href=\"/cgi-bin/tematica.pl?ref=$_\"> $_ </a> </dd>";
+    }
 }
 
 sub print_nav {
