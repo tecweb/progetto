@@ -54,22 +54,30 @@ EOF
 }
 
 sub print_header {
-	 print <<'EOF';
+    print <<'EOF';
     <div id="header">
       <span id="logo"></span>
       <h1 id="intestazione"> Piazza Marconi Zero </h1>
     </div>
+EOF
+
+    my $user = user_name();
+    if ($user) {
+        print "<div> Benvenuto, $user </div>\n";
+        print '<a href="/cgi-bin/logout.pl"> Logout </a>';
+    } else {
+        print <<'EOF';
     <div id="login">
       <h4> Login </h4>
-    <form method="POST" action="/cgi-bin/login.pl">
+    <form action="/cgi-bin/login.pl" method="POST">
       <fieldset>
         <p>
 	  <label for="username"> Username: </label>
-          <input type="text" size="20" id="username" />
+          <input type="text" size="20" name="username" />
 	</p>
         <p>
           <label for="password"> Password: </label>
-          <input type="password" size="20" maxlength="256" id="password" />
+          <input type="password" size="20" maxlength="256" name="password" />
         </p>
       <input type="submit" value="Login" />
       </fieldset>
@@ -77,6 +85,7 @@ sub print_header {
     </form>
     </div>	 
 EOF
+    }
 }
 
 my $doc_root = '../';

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<utenti>
+<utente>
+<username>Utente</username>
+<md5pass>1234</md5pass>
+<email>utente@utenti.ut</email>
+</utente>
+</utenti>
