@@ -1,21 +1,15 @@
 /* CSS Document */
 
-html {
+body {
 	margin: 0em;
 	padding: 0em;
 	border: 0em;
-}
-
-body {
 	font: 1em, Verdana, Helvetica, sans-serif;
-	background-image: url(sfondo.jpg); 
+	/*background-image: url(sfondo.jpg);*/ 
 }
 
 h1, h2, h3, h4	{
 	font-variant: small-caps;
-	margin: 0em;
-	padding: 0em;
-	text-align: center;
 }
 
 img {
@@ -30,54 +24,67 @@ img {
 
 #header {
 	border-bottom: 1px solid black;
-	border-right: 1px solid black;
-	padding: 3.65% 5%;
-	width: 69.9%;
-	float: left;
+        height: 6em;
+	/*padding: 3.65% 5%;*/
+	/*width: 100%;*//*69.9%;*/
+	/*float: left;*/
 }
 
-#logo	{
+#logo {
 	background-image: url(Valdobbiadene.gif);
 	background-repeat: no-repeat;
-   display: block;
+        display: block;
 	width: 20%;
-   height: 7em;
-   float: left;
+        height: 6em;
+        float: left;
 }
        
-#intestazione	{
+#intestazione {
+        text-align: left;
+        padding-left: 30%;
 }
                 
 /*  Stile sezione login */
 
 #login {
-	padding: 0.5%;
-	margin:0em;
-	width: 19%;
 	float: right;
-	text-align: left;
-	border-bottom: 0.1px solid black;
+        margin-top: -6em;
+        padding: 0.5em;
+        border-left: 1px black solid;
+        border-bottom: 1px black solid;
+        background-color: rgb(246, 176, 40);
 }
 
-/*  Stile barra di navigazione  */        
+#login:hover {
+        background-color: rgb(255, 190, 118);
+}
 
-#nav_bar	{
-	border-right: 0.1px solid black;
-	padding: 1%;
+/* Stile barra di navigazione */
+
+#nav_bar {
+	border-right: 1px solid black;
 	width: 20%;
-	float:left;
+	float: left;
 	text-align: left;
 }
-          
-dd {
-	padding: 0.3em;
+
+dt {
+        padding-left: 1em;
+        padding-top: 0.5em;
 }
 
-#corpo p	{
-	padding: 0.4em;
-	font-size: 1.2em;
-	line-height: 2em;
-	margin-left: 25%;
+dd {
+        padding-top: 0.5em;
+}
+
+#corpo {
+        margin-left: 25%;
+        padding-top: 1.5em;
+        margin-right: 10%;
+}
+
+.errore {
+        color: red;
 }
 
 /*  Stile sezione footer  */
@@ -91,7 +98,3 @@ dd {
 }            
 
 /*  Stile pagina dei sondaggi  */
-
-fieldset p {
-	display: inline;
-}

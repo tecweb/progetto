@@ -7,13 +7,29 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI::Session;
 use File::Basename;
 
-my $session = new CGI::Session();
+## globals
+my $session = '';
+my $doc_root = '../';
+my $tem_dir = "$doc_root/tematiche/";
 
-my $id = $session->id();
+sub get_session {
+    return $session;
+}
 
-$session->expire('+2h'); # two hours of inacticity
+sub get_root {
+    return $doc_root;
+}
 
-print $session->header();
+sub get_tem_dir {
+    return $tem_dir;
+}
+
+sub my_header {
+    $session = new CGI::Session();
+    #my $id = $session->id();
+    $session->expire('+2h'); # two hours of inacticity
+    print $session->header();
+}
 
 sub user_name {
     return $session->param('~username');
@@ -58,38 +74,17 @@ sub print_header {
     <div id="header">
       <span id="logo"></span>
       <h1 id="intestazione"> Piazza Marconi Zero </h1>
-    </div>
 EOF
 
     my $user = user_name();
     if ($user) {
-        print "<div> Benvenuto, $user </div>\n";
-        print '<a href="/cgi-bin/logout.pl"> Logout </a>';
+        print "<div id=\"login\"> Benvenuto, $user.";
+        print '<a href="/cgi-bin/logout.pl"> Logout </a> </div>';
     } else {
-        print <<'EOF';
-    <div id="login">
-      <h4> Login </h4>
-    <form action="/cgi-bin/login.pl" method="POST">
-      <fieldset>
-        <p>
-	  <label for="username"> Username: </label>
-          <input type="text" size="20" name="username" />
-	</p>
-        <p>
-          <label for="password"> Password: </label>
-          <input type="password" size="20" maxlength="256" name="password" />
-        </p>
-      <input type="submit" value="Login" />
-      </fieldset>
-      <!-- TODO: aggiungere creazione account -->
-    </form>
-    </div>	 
-EOF
+        print '<div id="login"> Esegui il <a href="/cgi-bin/login.pl"> login </a> </div>';
     }
+    print "</div>"; # header
 }
-
-my $doc_root = '../';
-my $tem_dir = "$doc_root/tematiche/";
 
 sub load_tem {
     my @files = glob "$tem_dir/*";
@@ -105,8 +100,8 @@ sub print_nav {
 		  <!--SEZIONE DA RISISTEMARE-->
 		  <dl>
           <dt class="menu_title"> Naviga </dt>
-		    <dd><a href="home.html"> Home </a></dd>
-		    <dd><a href="info.html"> Chi siamo </a></dd>
+		    <dd><a href="home.pl"> Home </a></dd>
+		    <dd><a href="/info.html"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 load_tem();
@@ -116,4 +111,17 @@ EOF
 		  </dl> 
 	 </div>
 EOF
+}
+
+sub print_doc_start {
+    my_header();
+    print_head($_[0]);
+    print "<body>";
+    print_header();
+    print_nav();
+    print '<div id="corpo">', "\n";
+}
+
+sub print_doc_end {
+    print "</div>\n</body>\n";
 }
