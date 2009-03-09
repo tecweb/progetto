@@ -52,7 +52,7 @@ if (defined $user && !$bad_login) {
 	<label for="password"> Password: </label>
         <input type="password" size="20" maxlength="256" name="password" />
       </p>
-      <p> <input type="submit" value="Login" /> </p>
+      <p> <input class="ok" type="submit" value="Login" /> </p>
       </fieldset>
     </form>
 EOF
@@ -81,7 +81,7 @@ EOF
 	  <label for="email"> E-mail: </label>
           <input type="text" size="20" maxlength="256" name="email" />
         </p>
-        <p> <input type="submit" value="Crea" /> </p>
+        <p> <input class="ok" type="submit" value="Crea" /> </p>
      </fieldset>
    </form>
 EOF
