@@ -48,13 +48,15 @@ EOF
 
 sub del_n{
   foreach my $ttl (@title){
-	 my $node;
 	 for (my $i = 0; $i < $titles->getLength(); $i++){
+		print $ttl;
+		print $titles->item($i)->getFirstChild()->getData();
 		if ($titles->item($i)->getFirstChild()->getData() eq $ttl){
-		  $node = $titles->item($i);
+		  print "foo";
+		  my $node = $titles->item($i);
+		  $evn->removeChild($node);
 		}
 	 }
-	 $evn->removeChild($node);
 #	 $dom->printToFile("$root/eventi/index.xml");
   }
 }
