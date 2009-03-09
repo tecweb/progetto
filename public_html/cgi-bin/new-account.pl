@@ -9,6 +9,7 @@ use CGI::Session;
 use XML::DOM;
 use XML::XPath;
 use Digest::MD5 qw( md5_hex );
+use Email::Valid;
 
 do "base.pl";
 
@@ -23,7 +24,11 @@ sub check {
     return 'Nome utente gi&agrave; esistente'; 
   }
   
+  unless (Email::Valid->address($email)) {
+    return "L'indirizzo email non &egrave; valido";
+  }
   return 'Le password non coincidono' unless $pass1 eq $pass2;
+
   return 0;
 }
 
@@ -36,7 +41,6 @@ my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
 if ($err) {
   $session->param('create-failed', $err);
   print header(-cookie=>$cookie, -Location => "/cgi-bin/login.pl");
-  ## TODO: controlla email
 } else {
   $session->param('~username', $user); # login
   ## aggiungi al db
