@@ -107,7 +107,7 @@ EOF
 	 load_tem();
 	 print <<'EOF';
 		    <dt class="menu_title"> Suggerimenti </dt>
-		    <dd><a href="#"> Scrivici </a></dd>
+		    <dd><a href="/cgi-bin/suggerimenti.pl"> Scrivici </a></dd>
 		  </dl> 
 	 </div>
 EOF
