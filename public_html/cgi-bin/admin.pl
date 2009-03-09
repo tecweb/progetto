@@ -6,7 +6,6 @@ use warnings;
 use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
-use XML::XPath;
 
 do "base.pl";
 
@@ -17,7 +16,7 @@ sub not_admin {
 EOF
 }
 
-sub admin_func{
+my sub admin_func{
 	 print <<'EOF';
 	 <div id="admin_func">
 		  <a href="read_pro.pl">Leggi proposte</a><br/>
@@ -30,7 +29,7 @@ EOF
 }
 
 print_doc_start("Amministrazione");
-if (user_name() eq 'Utente'){
+if (get_user_name() eq 'Utente'){
 	 admin_func();
 }
 else {
