@@ -41,7 +41,7 @@ if (defined $user && !$bad_login) {
     print '<p class="errore"> Username o password sbagliati </p>';
   }
   print <<'EOF';    
-    <form action="/cgi-bin/login.pl" method="POST">
+    <form action="/cgi-bin/login.pl" method="post">
       <fieldset>
       <legend> Esegui login </legend>
       <p>
@@ -62,24 +62,24 @@ EOF
     get_session()->clear('create-failed');
   }
   print <<'EOF';
-    <form action="/cgi-bin/new-account.pl" method="POST">
+    <form action="/cgi-bin/new-account.pl" method="post">
       <fieldset>
         <legend> Crea un nuovo account </legend>
         <p>
           <label for="username"> Username: </label>
-          <input type="text" size="20" name="username" />
+          <input type="text" size="20" id="username" name="username" />
         </p>
         <p>
 	  <label for="password"> Password: </label>
-          <input type="password" size="20" maxlength="256" name="password" />
+          <input type="password" size="20" maxlength="256" id="password" name="password" />
         </p>
         <p>
 	  <label for="password2"> Password (conferma): </label>
-          <input type="password" size="20" maxlength="256" name="password2" />
+          <input type="password" size="20" maxlength="256" id="password2" name="password2" />
         </p>
         <p>
 	  <label for="email"> E-mail: </label>
-          <input type="text" size="20" maxlength="256" name="email" />
+          <input type="text" size="20" maxlength="256" id="email" name="email" />
         </p>
         <p> <input class="ok" type="submit" value="Crea" /> </p>
      </fieldset>
