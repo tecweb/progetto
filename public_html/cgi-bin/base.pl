@@ -123,5 +123,5 @@ sub print_doc_start {
 }
 
 sub print_doc_end {
-    print "</div>\n</body>\n";
+    print "</div>\n</body>\n</html>\n";
 }

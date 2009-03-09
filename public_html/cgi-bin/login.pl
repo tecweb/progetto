@@ -19,28 +19,28 @@ my $xp = XML::XPath->new(filename => "$root/utenti.xml");
 my $md5;
 my $bad_login = 0;
 if (defined $user && defined $pass) {
-    $md5 = $xp->findvalue("//utenti/utente[./username/text()=\"$user\"]/md5pass/text()")->value();
+  $md5 = $xp->findvalue("//utenti/utente[./username/text()=\"$user\"]/md5pass/text()")->value();
 
-    unless (md5_hex($pass) eq $md5) {
-        $bad_login = 1;
-    }
+  unless (md5_hex($pass) eq $md5) {
+    $bad_login = 1;
+  }
 }
 
 if (defined $user && !$bad_login) {
-    ## login ok: vai alla homepage
-    my $session = new CGI::Session();
-    $session->expire('+2h');
-    $session->param('~username', $user);
-    $session->flush();
-    my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
-    print header(-cookie=>$cookie, -Location => "/cgi-bin/home.pl");
+  ## login ok: vai alla homepage
+  my $session = new CGI::Session();
+  $session->expire('+2h');
+  $session->param('~username', $user);
+  $session->flush();
+  my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
+  print header(-cookie=>$cookie, -Location => "/cgi-bin/home.pl");
 } else {
-    ## non ancora loggato
-    print_doc_start("Login");
-    if ($bad_login) {
-        print '<p class="errore"> Username o password sbagliati </p>';
-    }
-    print <<'EOF';    
+  ## non ancora loggato
+  print_doc_start("Login");
+  if ($bad_login) {
+    print '<p class="errore"> Username o password sbagliati </p>';
+  }
+  print <<'EOF';    
     <form action="/cgi-bin/login.pl" method="POST">
       <fieldset>
       <legend> Esegui login </legend>
@@ -56,12 +56,12 @@ if (defined $user && !$bad_login) {
       </fieldset>
     </form>
 EOF
-    my $err = get_session()->param('create-failed');
-    if ($err) {
-        print "<p class=\"errore\"> $err </p>";
-        get_session()->clear('create-failed');
-    }
-    print << 'EOF';
+  my $err = get_session()->param('create-failed');
+  if ($err) {
+    print "<p class=\"errore\"> $err </p>";
+    get_session()->clear('create-failed');
+  }
+  print <<'EOF';
     <form action="/cgi-bin/new-account.pl" method="POST">
       <fieldset>
         <legend> Crea un nuovo account </legend>
