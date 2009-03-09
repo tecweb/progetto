@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+  <proposta> Si raccolgono in appositi centri dove verranno trasformati in compost che si utlizzerà come concime per le viti stesse
+  </proposta>
+  <pro> Ciò che si toglie alle piante, ritorna alle piante e in agricoltura biologica (senza sostanze di sintesi chimica - impossibile da realizzare?) 
+  sarebbe la soluzione ideale. </pro>
+  <contro> Le sostanze inquinanti con cui le viti sono attualmente trattate ritornerebbero nel terreno inquinandolo per sempre </contro>
+  <domanda>
+    <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+</soluzione>

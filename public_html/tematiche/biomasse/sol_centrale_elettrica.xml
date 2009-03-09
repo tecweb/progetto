@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+  <proposta> Si vendono alla centrale a biomasse di Ospitale di Cadore (BL) che le trasforma in energia elettrica </proposta>
+  <pro> Il Comune o direttamente gli agricoltori avrebbero delle entrate economiche. </pro>
+  <pro> Le sostanze inquinanti con cui si effettuano i trattamenti delle viti non verrebbero diffuse nell'aria a causa di eventuali roghi 
+  accesi per eliminare i tralci. </pro>
+  <contro> E' necessario trasportare i tralci e sminuzzarli </contro>
+  <contro> La scienza non è certa che la centrale a biomassa sia pulita e non produca nanoparticelle che inquineranno per sempre le zone 
+  vicine alla centrale di Ospitale di Cadore </contro>
+  <domanda>
+    <testo>Ti piace questa soluzione?</testo>
+    <opzione>
+      <descrizione> Sì </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> No </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+</soluzione>
