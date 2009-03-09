@@ -4,7 +4,8 @@ body {
 	margin: 0em;
 	padding: 0em;
 	border: 0em;
-	font: 1em, Verdana, Helvetica, sans-serif;
+	font-size: 1em;
+        font-family: Verdana, Helvetica, sans-serif;
 	/*background-image: url(sfondo.jpg);*/ 
 }
 
@@ -48,7 +49,8 @@ img {
 
 #login {
 	float: right;
-        margin-top: -6em;
+        width: 15%;
+        margin-top: -5em;
         padding: 0.5em;
         border-left: 1px black solid;
         border-bottom: 1px black solid;
