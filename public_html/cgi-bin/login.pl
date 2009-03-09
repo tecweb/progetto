@@ -7,6 +7,7 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
 use XML::XPath;
+use Digest::MD5 qw( md5_hex );
 
 do "base.pl";
 
@@ -20,8 +21,7 @@ my $bad_login = 0;
 if (defined $user && defined $pass) {
     $md5 = $xp->findvalue("//utenti/utente[./username/text()=\"$user\"]/md5pass/text()")->value();
 
-    ## TODO: calcola md5 di pass
-    unless ($pass eq $md5) {
+    unless (md5_hex($pass) eq $md5) {
         $bad_login = 1;
     }
 }

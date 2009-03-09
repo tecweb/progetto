@@ -8,6 +8,7 @@ use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
 use XML::XPath;
+use Digest::MD5 qw( md5_hex );
 
 do "base.pl";
 
@@ -35,11 +36,10 @@ my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
 if ($err) {
     $session->param('create-failed', $err);
     print header(-cookie=>$cookie, -Location => "/cgi-bin/login.pl");
-    print STDERR $err;
-    ## TODO: check email
+    ## TODO: controlla email
 } else {
     $session->param('~username', $user); # login
-    ## add to db
+    ## aggiungi al db
     my $parser = new XML::DOM::Parser;
     my $doc = $parser->parsefile(get_root() . "/utenti.xml");
     my $utenti = $doc->getElementsByTagName('utenti')->item(0);
@@ -48,7 +48,7 @@ if ($err) {
     my $u = $doc->createElement('username');
     $u->addText($user);
     my $pass = $doc->createElement('md5pass');
-    $pass->addText($pass1);
+    $pass->addText(md5_hex($pass1));
     my $em = $doc->createElement('email');
     $em->addText($email);
 
