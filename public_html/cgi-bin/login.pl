@@ -38,7 +38,7 @@ if ($user) {
     print_doc_start("Login");
     print STDERR script_name();
     if (basename(referer()) eq basename(script_name())) {
-        ## already tried
+        ## gia' provato
         print '<p class="errore"> Username o password sbagliati </p>';
     }
     print <<'EOF';    
