@@ -1,9 +1,3 @@
 <?xml version="1.0"?>
-
 <utenti>
-<utente>
-<username>Utente</username>
-<md5pass>1234</md5pass>
-<email>utente@utenti.ut</email>
-</utente>
-</utenti>
+<utente><username>uu</username><md5pass>6277e2a7446059985dc9bcf0a4ac1a8f</md5pass><email>uu</email></utente></utenti>

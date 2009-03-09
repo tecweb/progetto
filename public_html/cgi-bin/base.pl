@@ -31,13 +31,13 @@ sub my_header {
     print $session->header();
 }
 
-sub user_name {
+sub get_user_name {
     return $session->param('~username');
 }
 
 ## get user priviledge level
 sub user_priv {
-    my $name = user_name();
+    my $name = get_user_name();
     if ($name eq 'admin') {
         return 2;
     } elsif (!$name) {
@@ -76,7 +76,7 @@ sub print_header {
       <h1 id="intestazione"> Piazza Marconi Zero </h1>
 EOF
 
-    my $user = user_name();
+    my $user = get_user_name();
     if ($user) {
         print "<div id=\"login\"> Benvenuto, $user.";
         print '<a href="/cgi-bin/logout.pl"> Logout </a> </div>';
