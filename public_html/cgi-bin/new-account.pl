@@ -6,6 +6,7 @@ use warnings;
 use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
+use XML::DOM;
 use XML::XPath;
 
 do "base.pl";
@@ -17,11 +18,12 @@ my $email = param('email');
 
 sub check {
     my $doc = XML::XPath->new(filename => get_root() . '/utenti.xml');
-    if ($doc->find('//utenti/utente[./username/text()=$user]/')) {
+    if ($doc->find("//utenti/utente[./username/text()=\"$user\"]")) {
         return 'Nome utente gi&agrave; esistente'; 
     }
     
     return 'Le password non coincidono' unless $pass1 eq $pass2;
+    return 0;
 }
 
 my $err = check();
@@ -33,13 +35,14 @@ my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
 if ($err) {
     $session->param('create-failed', $err);
     print header(-cookie=>$cookie, -Location => "/cgi-bin/login.pl");
+    print STDERR $err;
     ## TODO: check email
 } else {
     $session->param('~username', $user); # login
     ## add to db
     my $parser = new XML::DOM::Parser;
     my $doc = $parser->parsefile(get_root() . "/utenti.xml");
-    my $utenti = $doc->getElementsByTagName('utenti')->getNodes()->[0];
+    my $utenti = $doc->getElementsByTagName('utenti')->item(0);
     my $new_user = $doc->createElement('utente');
 
     my $u = $doc->createElement('username');

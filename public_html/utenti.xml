@@ -1,9 +1,8 @@
 <?xml version="1.0"?>
-
 <utenti>
 <utente>
 <username>Utente</username>
 <md5pass>1234</md5pass>
 <email>utente@utenti.ut</email>
 </utente>
-</utenti>
+<utente><username>stefano</username><md5pass>aa</md5pass><email>ss</email></utente><utente><username>Stefano</username><md5pass>ss</md5pass><email>ss</email></utente><utente><username>Stefano2</username><md5pass>ss</md5pass><email>ss</email></utente></utenti>
