@@ -54,9 +54,30 @@ if ($user) {
         <input type="password" size="20" maxlength="256" name="password" />
       </p>
       <p> <input type="submit" value="Login" /> </p>
-      <!-- TODO: aggiungere creazione account -->
       </fieldset>
     </form>
+    <form action="/cgi-bin/new-account.pl" method="POST">
+      <fieldset>
+        <legend> Crea un nuovo account </legend>
+        <p>
+          <label for="username"> Username: </label>
+          <input type="text" size="20" name="username" />
+        </p>
+        <p>
+	  <label for="password"> Password: </label>
+          <input type="password" size="20" maxlength="256" name="password" />
+        </p>
+        <p>
+	  <label for="password2"> Password (conferma): </label>
+          <input type="password" size="20" maxlength="256" name="password2" />
+        </p>
+        <p>
+	  <label for="email"> E-mail: </label>
+          <input type="text" size="20" maxlength="256" name="email" />
+        </p>
+        <p> <input type="submit" value="Crea" /> </p>
+     </fieldset>
+   </form>
 EOF
     print_doc_end();
 }
