@@ -127,6 +127,18 @@ dd {
         color: green;
 }
 
+.ok {
+        padding: 0.3em;
+        background-color: white;
+        border-style: solid;
+        border-color: #ed850a; 
+        font-style: italic;
+}
+
+.ok:hover {
+        background-color: rgb(255, 190, 118);
+}
+
 /*  Stile sezione footer  */
 
 #footer {
