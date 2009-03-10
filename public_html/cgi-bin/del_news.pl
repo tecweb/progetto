@@ -7,7 +7,6 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
-use XML::XPath;
 
 do "base.pl";
 my $root = get_root();
@@ -28,7 +27,6 @@ EOF
 
 
 sub form(){
-  print @title;
   print<<'EOF';
     <form action="/cgi-bin/del_news.pl" method="POST">
 	 <fieldset>
