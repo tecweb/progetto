@@ -119,7 +119,7 @@ sub print_nav {
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 load_tem();
-         print '<dd> <a href="/cgi-bin/mostra_tematiche.pl?from=0"> Mostra tutte </a> </dd>';
+         print '<dd id="all_tem"> <a href="/cgi-bin/mostra_tematiche.pl?from=0"> Mostra tutte </a> </dd>';
          my $user = get_user_name() || '';
          if ($user eq 'admin') {
            print <<'EOF';
