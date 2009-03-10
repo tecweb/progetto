@@ -159,7 +159,8 @@ dd {
 }
 
 #tem_list {
-        list-style-type: decimal;
+        padding-top: 0.5em;
+        list-style-type: none;
         border: 1px #eeab0d dotted;
 }
 
