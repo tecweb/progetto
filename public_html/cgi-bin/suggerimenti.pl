@@ -8,9 +8,9 @@ print_doc_start("Suggerimenti");
 
 print <<'EOF';
   <h1> Mandaci un suggerimento </h1>
-  <form method="POST" action="/cgi-bin/invia-sugg.pl">
+  <form method="post" action="/cgi-bin/invia-sugg.pl">
     <p> <label for="sugg"> Suggerimento: </label> </p>
-    <p> <textarea name="sugg" cols="80" rows="10"></textarea> </p>
+    <p> <textarea id="sugg" name="sugg" cols="80" rows="10"></textarea> </p>
     <input class="ok" type="submit" value="Invia" />
   </form>
 EOF

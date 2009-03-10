@@ -150,3 +150,30 @@ dd {
 }            
 
 /*  Stile pagina dei sondaggi  */
+
+/* Stile elenco tematiche */
+
+#tem_list_title {
+        font-size: 1.5em;
+        font-variant: normal;
+}
+
+#tem_list {
+        list-style-type: decimal;
+        border: 1px #eeab0d dotted;
+}
+
+#tem_list li {
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px #eeab0d dotted;
+}
+
+#a_prec {
+        float: left;
+}
+
+#a_succ {
+        float: right;
+        text-align: right;
+}

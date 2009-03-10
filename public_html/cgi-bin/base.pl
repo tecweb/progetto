@@ -86,12 +86,25 @@ EOF
     print "</div>"; # header
 }
 
+sub get_ordered_tem {
+  my @files = glob "$tem_dir/*";
+  ## ordina per data
+  my @files_dates = map { my @date = stat($_); [$_, $date[9]]; } @files;
+  @files = map { $_->[0] } sort { $b->[1] cmp $a->[1] } @files_dates;  
+  return @files;
+}
+
 sub load_tem {
-    my @files = glob "$tem_dir/*";
-    foreach (@files) {
-        $_ = basename($_);
-        print "<dd> <a href=\"/cgi-bin/tematica.pl?ref=$_\"> $_ </a> </dd>";
-    }
+  ## num. massimo di temetiche nel menu della navigazione
+  my $max_tem = 5;
+  my @files = get_ordered_tem();
+  my $i = 0;
+  foreach (@files) {
+    last if $i >= $max_tem;
+    $_ = basename($_);
+    print "<dd> <a href=\"/cgi-bin/tematica.pl?ref=$_\"> $_ </a> </dd>";
+    $i++;
+  }
 }
 
 sub print_nav {
@@ -107,10 +120,21 @@ sub print_nav {
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 load_tem();
-	 print <<'EOF';
+         print '<dd> <a href="/cgi-bin/mostra_tematiche.pl?from=0"> Mostra tutte </a> </dd>';
+         my $user = get_user_name() || '';
+         if ($user eq 'admin') {
+           print <<'EOF';
+           <dt class="menu_title"> Amministrazione </dt>
+           <dd> <a href="/cgi-bin/admin.pl"> Amministra </a> </dd>
+EOF
+         } else {
+           print <<'EOF';
 		    <dt class="menu_title"> Suggerimenti </dt>
 		    <dd><a href="/cgi-bin/suggerimenti.pl"> Scrivici </a></dd>
-		  </dl> 
+EOF
+         }
+         print <<'EOF';
+		  </dl>
          </div>
 	 </div>
 EOF
