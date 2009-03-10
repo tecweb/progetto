@@ -172,9 +172,11 @@ dd {
 
 #a_prec {
         float: left;
+        width: 15%;
 }
 
 #a_succ {
         float: right;
+        width: 15%;
         text-align: right;
 }
