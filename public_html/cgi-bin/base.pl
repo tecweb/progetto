@@ -115,7 +115,7 @@ sub print_nav {
 	  <dl id="nav_menu">
           <dt class="menu_title"> Naviga </dt>
 		    <dd><a href="home.pl"> Home </a></dd>
-		    <dd><a href="/info.html"> Chi siamo </a></dd>
+		    <dd><a href="/chisiamo.pl"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 load_tem();
