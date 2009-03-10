@@ -7,7 +7,6 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
-use XML::XPath;
 
 do "base.pl";
 my $root = get_root();
@@ -28,7 +27,6 @@ EOF
 
 
 sub form(){
-  print @title;
   print<<'EOF';
     <form action="/cgi-bin/del_news.pl" method="POST">
 	 <fieldset>
@@ -41,7 +39,7 @@ EOF
   }
 
 		print<<'EOF';
-	 <p> <input type="submit" value="Cancella" /> </p>
+	 <p> <input class="ok" type="submit" value="Cancella" /> </p>
 	 </fieldset>
     </form>
 EOF
@@ -61,7 +59,7 @@ sub del_n{
 }
 
 print_doc_start("Cancella news");
-if (get_user_name() eq 'admin30'){
+if (get_user_name() eq 'admin'){
   if (@title){
 	 del_n();
 	 print "<h2>L'operazione &egrave; stata eseguita con successo.</h2>";

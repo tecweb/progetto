@@ -18,6 +18,7 @@ EOF
 
 sub admin_func{
   print <<'EOF';
+    <h2>Pagina di amministrazione</h2>
 	 <div id="admin_func">
 		  <a href="read_pro.pl">Leggi proposte</a><br/>
 		  <a href="add_tem.pl">Aggiungi tematica</a><br/>
@@ -29,7 +30,7 @@ EOF
 }
 
 print_doc_start("Amministrazione");
-if (get_user_name() eq 'admin30'){
+if (get_user_name() eq 'admin'){
   admin_func();
 }
 else {
