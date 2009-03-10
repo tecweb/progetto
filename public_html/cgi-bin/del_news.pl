@@ -39,7 +39,7 @@ EOF
   }
 
 		print<<'EOF';
-	 <p> <input type="submit" value="Cancella" /> </p>
+	 <p> <input class="ok" type="submit" value="Cancella" /> </p>
 	 </fieldset>
     </form>
 EOF
@@ -59,7 +59,7 @@ sub del_n{
 }
 
 print_doc_start("Cancella news");
-if (get_user_name() eq 'admin30'){
+if (get_user_name() eq 'admin'){
   if (@title){
 	 del_n();
 	 print "<h2>L'operazione &egrave; stata eseguita con successo.</h2>";

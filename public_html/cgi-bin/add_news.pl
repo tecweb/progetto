@@ -49,7 +49,7 @@ sub form(){
 	   <label for="Link"> Link: </label><br/>
 	   <input type="text" size="50" name="link"/>
 	 </p>
-	 <p> <input type="submit" value="Aggiungi" /> </p>
+	 <p> <input class="ok" type="submit" value="Aggiungi" /> </p>
 	 </fieldset>
     </form>
 EOF
@@ -80,7 +80,7 @@ sub add{
 }
 
 print_doc_start("Aggiungi news");
-if (get_user_name() eq 'admin30'){
+if (get_user_name() eq 'admin'){
   if (!added()){
 	 form();
   }
