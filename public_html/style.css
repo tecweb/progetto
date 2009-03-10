@@ -128,7 +128,7 @@ img {
 #footer {
 	padding: 0.1em;
 	padding-left: 2em;
-	background-color: black;
+	/*background-color: black;*/
 	clear: both;
 	text-align: left;
 }            

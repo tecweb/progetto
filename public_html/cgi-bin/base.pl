@@ -138,6 +138,19 @@ EOF
 EOF
 }
 
+sub print_foot {
+  print <<'EOF';
+  <div id="footer">
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer">
+      <img src="http://www.w3.org/Icons/valid-xhtml10"
+           alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+    </a>
+  </p>
+  </div>
+EOF
+}
+
 sub print_doc_start {
     my_header();
     print_head(@_); # passa argomenti
@@ -148,5 +161,7 @@ sub print_doc_start {
 }
 
 sub print_doc_end {
-    print "</div>\n</body>\n</html>\n";
+    print "</div>\n";
+    print_foot();
+    print "</body>\n</html>\n";
 }
