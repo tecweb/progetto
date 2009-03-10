@@ -14,7 +14,7 @@ my $root = get_root();
 
 my $parser = new XML::DOM::Parser;
 my $dom = $parser->parsefile ("$root/eventi/index.xml");
-my $evn = $dom->getDocumentElement;
+my $evn = $dom->getDocumentElement();
 my $titles = $dom->getElementsByTagName("titolo");
 my @title = param('title');
 
@@ -28,6 +28,7 @@ EOF
 
 
 sub form(){
+  print @title;
   print<<'EOF';
     <form action="/cgi-bin/del_news.pl" method="POST">
 	 <fieldset>
@@ -49,22 +50,25 @@ EOF
 sub del_n{
   foreach my $ttl (@title){
 	 for (my $i = 0; $i < $titles->getLength(); $i++){
-		print $ttl;
-		print $titles->item($i)->getFirstChild()->getData();
 		if ($titles->item($i)->getFirstChild()->getData() eq $ttl){
-		  print "foo";
-		  my $node = $titles->item($i);
+		  my $node = $evn->getElementsByTagName("evento")->item($i);
 		  $evn->removeChild($node);
 		}
 	 }
-#	 $dom->printToFile("$root/eventi/index.xml");
   }
+  $dom->printToFile("$root/eventi/index.xml");
+  @title = {};
 }
 
 print_doc_start("Cancella news");
 if (get_user_name() eq 'admin30'){
-  del_n();
-  form();
+  if (@title){
+	 del_n();
+	 print "<h2>L'operazione &egrave; stata eseguita con successo.</h2>";
+  }
+  else{
+	 form();
+  }
 }
 else {
   not_admin();
