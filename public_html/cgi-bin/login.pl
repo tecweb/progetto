@@ -36,7 +36,8 @@ if (defined $user && !$bad_login) {
   print header(-cookie=>$cookie, -Location => "/cgi-bin/home.pl");
 } else {
   ## non ancora loggato
-  print_doc_start("Login");
+  print_doc_start('Login', 'Pagina per effettuare il login o la registrazione',
+                  'login', 'registrazione');
   if ($bad_login) {
     print '<p class="errore"> Username o password sbagliati </p>';
   }

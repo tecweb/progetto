@@ -21,7 +21,7 @@ sub tem_descr {
   return $xp->findvalue('/tematica/descrizione/text()')->value() || "";
 }
 
-print_doc_start("Tematiche");
+print_doc_start("Tematiche", "visualizzazione di tutte le tematiche, ordinate per data", "tematiche");
 
 my @tem = map { basename($_) } get_ordered_tem();
 my $n = $#tem;
