@@ -109,11 +109,9 @@ sub load_tem {
 
 sub print_nav {
 	 print <<'EOF';
+         <div id="nav_top"></div>
 	 <div id="nav_bar">
-           <div id="nav_top">
-           <div id="nav_border_right"></div>
-		  <!--SEZIONE DA RISISTEMARE-->
-		  <dl>
+	  <dl id="nav_menu">
           <dt class="menu_title"> Naviga </dt>
 		    <dd><a href="home.pl"> Home </a></dd>
 		    <dd><a href="/info.html"> Chi siamo </a></dd>
@@ -135,7 +133,6 @@ EOF
          }
          print <<'EOF';
 		  </dl>
-         </div>
 	 </div>
 EOF
 }
