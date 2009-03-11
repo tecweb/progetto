@@ -54,7 +54,7 @@ sub print_proposte {
 		if($filename ne "index.xml")
 		{	print_proposta($file); 
 			print "<span> [<a href=\"/cgi-bin/sondaggio.pl?ref=$file\"> Vai all'approfondimento </a>] </span>";
-			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir&tem=$tem\"> Vai ai commenti </a>] </span>";
+			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir\"> Vai ai commenti </a>] </span>";
 		}
 	}
 }
