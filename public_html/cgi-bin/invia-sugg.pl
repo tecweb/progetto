@@ -9,7 +9,7 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use XML::DOM;
 
-print_doc_start("Invio suggerimento");
+print_doc_start("Invio suggerimento", "pagina che permette di inviare suggerimenti all'amministratore del sito", "suggerimenti");
 
 my $sugg = param('sugg');
 my $user = get_user_name() || "anonymous";

@@ -48,21 +48,22 @@ sub user_priv {
 }
 
 sub print_head {
-	 my $page_name = shift @_;
+  my $page_name = shift @_;
+  my $desc = shift @_;
+  my $keywords = join ', ', @_;
 
-	 print <<'EOF';
+  print <<'EOF';
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="it">
   <head>
 EOF
-	 print "<title> $page_name - Piazza Marconi Zero </title>";
-	 print <<'EOF';
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-    <meta name="title" content="commenti - gruppo 'Piazza Marconi Zero'"/>
-    <meta name="description" content="pagina dedicata ai commenti degli iscritti al 
-      gruppo di Valdobbiadene 'piazza Marconi zero'"/>
-    <meta name="keywords" content="Valdobbiadene, gruppo, giovani, commenti"/>
+  print "<title> $page_name - Piazza Marconi Zero </title>";
+  print '<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>';
+  print "<meta name=\"title\" content=\"$page_name - gruppo 'Piazza Marconi Zero'\"/>";
+  print "<meta name=\"description\" content=\"$desc\"/>";
+  print "<meta name=\"keywords\" content=\"Valdobbiadene, gruppo, giovani, $keywords\"/>";
+  print <<'EOF';
     <meta name="language" content="italian it"/>
     <link href="../style.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
@@ -70,20 +71,20 @@ EOF
 }
 
 sub print_header {
-    print <<'EOF';
+  print <<'EOF';
     <div id="header">
       <span id="logo"></span>
       <h1 id="intestazione"> Piazza Marconi Zero </h1>
 EOF
 
-    my $user = get_user_name();
-    if ($user) {
-        print "<div id=\"login\"> Benvenuto, $user.";
-        print '<a href="/cgi-bin/logout.pl"> Logout </a> </div>';
-    } else {
-        print '<div id="login"> Esegui il <a href="/cgi-bin/login.pl"> login </a> </div>';
-    }
-    print "</div>"; # header
+  my $user = get_user_name();
+  if ($user) {
+    print "<div id=\"login\"> Benvenuto, $user.";
+    print '<a href="/cgi-bin/logout.pl"> Logout </a> </div>';
+  } else {
+    print '<div id="login"> Esegui il <a href="/cgi-bin/login.pl"> login </a> </div>';
+  }
+  print "</div>"; # header
 }
 
 sub get_ordered_tem {
@@ -109,18 +110,16 @@ sub load_tem {
 
 sub print_nav {
 	 print <<'EOF';
+         <div id="nav_top"></div>
 	 <div id="nav_bar">
-           <div id="nav_top">
-           <div id="nav_border_right"></div>
-		  <!--SEZIONE DA RISISTEMARE-->
-		  <dl>
+	  <dl id="nav_menu">
           <dt class="menu_title"> Naviga </dt>
 		    <dd><a href="home.pl"> Home </a></dd>
-		    <dd><a href="/info.html"> Chi siamo </a></dd>
+		    <dd><a href="/cgi-bin/chisiamo.pl"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 load_tem();
-         print '<dd> <a href="/cgi-bin/mostra_tematiche.pl?from=0"> Mostra tutte </a> </dd>';
+         print '<dd id="all_tem"> <a href="/cgi-bin/mostra_tematiche.pl?from=0"> Mostra tutte </a> </dd>';
          my $user = get_user_name() || '';
          if ($user eq 'admin') {
            print <<'EOF';
@@ -135,14 +134,31 @@ EOF
          }
          print <<'EOF';
 		  </dl>
-         </div>
 	 </div>
+EOF
+}
+
+sub print_foot {
+  print <<'EOF';
+  <div id="footer">
+  <p>
+    <a href="http://validator.w3.org/check?uri=referer">
+      <img src="http://www.w3.org/Icons/valid-xhtml10"
+           alt="XHTML 1.0 Strict Valido" height="31" width="88" />
+    </a>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+      <img width="88" height="31"
+           src="http://jigsaw.w3.org/css-validator/images/vcss"
+           alt="CSS Valido" />
+    </a>
+  </p>
+  </div>
 EOF
 }
 
 sub print_doc_start {
     my_header();
-    print_head($_[0]);
+    print_head(@_); # passa argomenti
     print "<body>";
     print_header();
     print_nav();
@@ -150,5 +166,7 @@ sub print_doc_start {
 }
 
 sub print_doc_end {
-    print "</div>\n</body>\n</html>\n";
+    print "</div>\n";
+    print_foot();
+    print "</body>\n</html>\n";
 }
