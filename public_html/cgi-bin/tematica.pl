@@ -54,14 +54,14 @@ sub print_proposte {
 		if($filename ne "index.xml")
 		{	print_proposta($file); 
 			print "<span> [<a href=\"/cgi-bin/sondaggio.pl?ref=$file\"> Vai all'approfondimento </a>] </span>";
-			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir\"> Vai ai commenti </a>] </span>";
+			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir&tem=$tem\"> Vai ai commenti </a>] </span>";
 		}
 	}
 }
 
 print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
 
-print "<h2 id=\"tematica\"> $tem </h2>\n";
+print "<h2 id=\"tem_title\"> $tem </h2>\n";
 print	"<p> $desc </p>\n";
 
 print_proposte();
