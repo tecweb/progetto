@@ -22,4 +22,4 @@
 		<descrizione>	mostra del vino a San Pietro di Barbozza </descrizione>
 		<link> mostra.xml </link>
 	</evento>
-</eventi>
+<evento><data>12/34/56</data><titolo>Aloha!</titolo><descrizione>Saluti dalle Hawaii!</descrizione><link>www.hawaii.com</link></evento></eventi>

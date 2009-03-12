@@ -76,6 +76,17 @@ img {
         background-repeat: no-repeat;
 }
 
+#nav_bottom {
+        padding-right: 9px;
+        clear: left;
+        float: left;
+        height: 70px;
+        width: 20%;
+        background-position: 100% 0%;
+        background-image: url(/images/border_bottom.png);
+        background-repeat: no-repeat;
+}
+
 #nav_bar {
 	border-right: 9px #eeab0d solid;
 	width: 20%;
@@ -85,7 +96,7 @@ img {
 }
 
 #nav_menu {
-        margin-top: -40px;
+/*        margin-top: -40px;*/
 }
 
 #all_tem {
