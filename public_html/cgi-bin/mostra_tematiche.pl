@@ -18,7 +18,9 @@ sub tem_descr {
   eval {
     $xp = XML::XPath->new(filename => get_tem_dir() . $_ . '/index.xml');
   } or return "";
-  return $xp->findvalue('/tematica/descrizione/text()')->value() || "";
+  eval {
+    return $xp->findvalue('/tematica/descrizione/text()')->value();
+  } or return "";
 }
 
 print_doc_start("Tematiche", "visualizzazione di tutte le tematiche, ordinate per data", "tematiche");

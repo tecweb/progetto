@@ -67,9 +67,9 @@ img {
 
 #nav_top {
         margin-top: 1em;
-        padding-right: 10px;
+        padding-right: 9px;
         float: left;
-        height: 50px;
+        height: 70px;
         width: 20%;
         background-position: 100% 0%;
         background-image: url(/images/border_top.png);
@@ -96,7 +96,8 @@ img {
 }
 
 #nav_menu {
-/*        margin-top: -40px;*/
+        margin-bottom: -50px;
+        margin-top: -50px;
 }
 
 #all_tem {
