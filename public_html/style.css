@@ -179,3 +179,12 @@ img {
         width: 20%;
         text-align: right;
 }
+
+/* Stile admin */
+#pro {
+	 margin-bottom: 1em;
+	 padding: 0em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+}
+

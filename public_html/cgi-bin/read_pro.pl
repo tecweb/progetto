@@ -13,7 +13,6 @@ my $root = get_root();
 
 my $parser = new XML::DOM::Parser;
 my $dom = $parser->parsefile ("$root/suggerimenti.xml");
-#my $sgg = $dom->getDocumentElement();
 my $sgg = $dom->getElementsByTagName("suggerimento");
 
 
@@ -27,14 +26,16 @@ EOF
 
 
 sub pro(){
-  print "<div id=\"pro\">";
+  print "<div>";
   for (my $s = 0; $s < $sgg->getLength(); $s++){
 	 my $u = $dom->getElementsByTagName("utente")->item($s)->getFirstChild()->getData();
 	 my $t = $dom->getElementsByTagName("testo")->item($s)->getFirstChild()->getData();
-	 print "<p><strong>Utente: </strong> $u<br/>";
-	 print "<strong>Testo: </strong> $t</p>";
-}
-  print </div>;
+	 print "<fieldset id=\"pro\">";
+	 print "<legend><strong>$u</strong></legend>";
+	 print "<p>$t</p>";
+	 print "</fieldset>";
+  }
+  print "</div>";
 }
 
 
