@@ -202,7 +202,7 @@ legend {
 
 /* Stile admin */
 #admin_func {
-	 list_style: circle;
+	 list-style: circle;
 	 color: #eeab0d;
 }
 
