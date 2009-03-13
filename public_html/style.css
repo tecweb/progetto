@@ -17,6 +17,14 @@ img {
 	border: 0em;
 }
 
+a {
+	 color: black;
+}
+
+a:hover {
+	 font-variant: small-caps;
+}
+
 #container {
 	background: white;
 }
@@ -182,6 +190,15 @@ img {
 }
 
 /* Stile admin */
+#admin_func {
+	 list_style: circle;
+	 color: #eeab0d;
+}
+
+#admin_func li {
+	 margin-bottom: 1em;
+}
+
 .pro_u {
 	 font-weight: bold;
 	 margin: 0em;
