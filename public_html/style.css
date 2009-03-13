@@ -181,13 +181,22 @@ img {
 }
 
 /* Stile admin */
-#pro {
-	 margin-bottom: 1em;
+.pro_u {
+	 font-weight: bold;
+	 margin: 0em;
 	 padding: 0em;
  	 padding-left: 1em;
 	 border: 1px #eeab0d solid;
 }
 
-#lg_title {
-	 font-weight: bold;
+.pro_t {
+	 margin: 0em;
+	 margin-bottom: 1em;
+	 padding: 0.5em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+	 border-top: 0px;
 }
+
+
+
