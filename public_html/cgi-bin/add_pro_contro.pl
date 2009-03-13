@@ -55,15 +55,15 @@ sub form {
     <form action="/cgi-bin/add_dom.pl" method="POST">
 	 <fieldset>
 	 <legend>Aggiungi pro e contro</legend>
-	 <p> <label for="Pro">Pro: </label></p>
-	 <p><input type="text" size="50" name="pro1"/></p>
-	 <p><input type="text" size="50" name="pro2"/></p>
-	 <p><input type="text" size="50" name="pro3"/></p>
-	 <p> <label for="Contro">Contro: </label></p>
-	 <p><input type="text" size="50" name="con1"/></p>
-	 <p><input type="text" size="50" name="con2"/></p>
-	 <p><input type="text" size="50" name="con3"/></p>
-    <p> <input class="ok" type="submit" value="Continua"/></p>
+       <div><label for="Pro">Pro: </label></div>
+	    <div><input type="text" size="50" name="pro1"/></div>
+	    <div><input type="text" size="50" name="pro2"/></div>
+	    <div><input type="text" size="50" name="pro3"/></div>
+       <div><label for="Contro">Contro: </label></div>
+	    <div><input type="text" size="50" name="con1"/></div>
+	    <div><input type="text" size="50" name="con2"/></div>
+	    <div><input type="text" size="50" name="con3"/></div>
+       <div><input class="ok" type="submit" value="Continua"/></div>
 	 </fieldset>
     </form>
 EOF

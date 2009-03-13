@@ -137,20 +137,23 @@ sub form {
     <form action="/cgi-bin/add_dom.pl" method="POST">
 	 <fieldset>
 	 <legend>Aggiungi domanda</legend>
-	 <p> <label for="Domanda">Domanda: </label></p>
-	 <p><input type="text" size="50" name="dom"/></p>
-	 <p> <label for="Opzioni">Opzioni: </label></p>
-	 <p><input type="text" size="50" name="opz1"/></p>
-	 <p><input type="text" size="50" name="opz2"/></p>
-	 <p><input type="text" size="50" name="opz3"/></p>
-	 <p><input type="text" size="50" name="opz4"/></p>
-	 <p><input type="text" size="50" name="opz5"/></p>
-    <p><input class="ok" type="submit" value="Aggiungi"/></p>
+	 <p>
+       <div><label for="Domanda">Domanda: </label></div>
+	    <div><input type="text" size="50" name="dom"/></div>
+    </p>
+	 <p>
+       <div><label for="Opzioni">Opzioni: </label></div>
+	    <div><input type="text" size="50" name="opz1"/></div>
+	    <div><input type="text" size="50" name="opz2"/></div>
+	    <div><input type="text" size="50" name="opz3"/></div>
+	    <div><input type="text" size="50" name="opz4"/></div>
+	    <div><input type="text" size="50" name="opz5"/></div>
+       <div><input class="ok" type="submit" value="Aggiungi"/></div>
+    </p>
 	 </fieldset>
     </form>
     <form action="/cgi-bin/add_sol.pl" method="POST">
     <p><input class="ok" type="submit" value="Aggiungi un'altra soluzione"/></p>
-	 </fieldset>
     </form>
 EOF
     print "<form action=\"/cgi-bin/tematica.pl?ref=$nome\" method=\"POST\">";

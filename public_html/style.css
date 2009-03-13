@@ -28,7 +28,7 @@ a:hover {
 fieldset {
 	 border: 1px #eeab0d solid;
 	 padding-top: 0em;
-	 padding-bottom: 0em;
+	 padding-bottom: 1em;
 }
 
 legend {
@@ -207,6 +207,10 @@ legend {
 
 #admin_func li {
 	 margin-bottom: 1em;
+}
+
+.lbl {
+	 margin-bottom: -1em;
 }
 
 .pro_u {

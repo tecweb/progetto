@@ -57,12 +57,12 @@ sub form(){
 	 <fieldset>
 	 <legend>Aggiungi soluzione</legend>
 	 <p>
-	   <label for="Titolo">Titolo: </label><br/>
-	   <input type="text" size="50" name="title"></input>
+	   <div><label for="Titolo">Titolo: </label></div>
+	   <div><input type="text" size="50" name="title"></input></div>
 	 </p>
 	 <p>
-	   <label for="Soluzione">Soluzione: </label><br/>
-	   <textarea cols="50" rows="5" name="sol"></textarea>
+	   <div><label for="Soluzione">Soluzione: </label></div>
+	   <div><textarea cols="50" rows="5" name="sol"></textarea></div>
 	 </p>
     <p> <input class="ok" type="submit" value="Continua"/></p>
 	 </fieldset>
