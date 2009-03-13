@@ -52,18 +52,26 @@ sub create {
 
 sub form {
 	 print<<'EOF';
-    <form action="/cgi-bin/add_dom.pl" method="POST">
+    <form action="/cgi-bin/add_dom.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi pro e contro</legend>
-       <div><label for="Pro">Pro: </label></div>
-	    <div><input type="text" size="50" name="pro1"/></div>
-	    <div><input type="text" size="50" name="pro2"/></div>
-	    <div><input type="text" size="50" name="pro3"/></div>
-       <div><label for="Contro">Contro: </label></div>
-	    <div><input type="text" size="50" name="con1"/></div>
-	    <div><input type="text" size="50" name="con2"/></div>
-	    <div><input type="text" size="50" name="con3"/></div>
-       <div><input class="ok" type="submit" value="Continua"/></div>
+    <div>
+       <p class="lbl"><label>Pro: </label></p>
+       <ul>
+	    <li><input type="text" size="50" name="pro1"/></li>
+	    <li><input type="text" size="50" name="pro2"/></li>
+	    <li><input type="text" size="50" name="pro3"/></li>
+       </ul>
+    </div>
+    <div>
+       <p class="lbl"><label>Contro: </label></p>
+       <ul>
+	    <li><input type="text" size="50" name="con1"/></li>
+	    <li><input type="text" size="50" name="con2"/></li>
+	    <li><input type="text" size="50" name="con3"/></li>
+       </ul>
+    </div>
+    <div><input class="ok" type="submit" value="Continua"/></div>
 	 </fieldset>
     </form>
 EOF
