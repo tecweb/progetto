@@ -103,7 +103,7 @@ sub load_tem {
   foreach (@files) {
     last if $i >= $max_tem;
     $_ = basename($_);
-    print "<dd> <a href=\"/cgi-bin/tematica.pl?ref=$_\"> $_ </a> </dd>";
+    print "<dd class=\"menu_item\"> <a href=\"/cgi-bin/tematica.pl?ref=$_\"> $_ </a> </dd>";
     $i++;
   }
 }
@@ -114,8 +114,8 @@ sub print_nav {
 	 <div id="nav_bar">
 	  <dl id="nav_menu">
           <dt class="menu_title"> Naviga </dt>
-		    <dd><a href="home.pl"> Home </a></dd>
-		    <dd><a href="/cgi-bin/chisiamo.pl"> Chi siamo </a></dd>
+		    <dd class="menu_item"><a href="home.pl"> Home </a></dd>
+		    <dd class="menu_item"><a href="/cgi-bin/chisiamo.pl"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 load_tem();
@@ -124,7 +124,7 @@ EOF
          if ($user eq 'admin') {
            print <<'EOF';
            <dt class="menu_title"> Amministrazione </dt>
-           <dd> <a href="/cgi-bin/admin.pl"> Amministra </a> </dd>
+           <dd class="menu_item"> <a href="/cgi-bin/admin.pl"> Amministra </a> </dd>
 EOF
          } else {
            print <<'EOF';
