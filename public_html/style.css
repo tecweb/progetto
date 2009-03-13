@@ -25,6 +25,16 @@ a:hover {
 	 font-variant: small-caps;
 }
 
+fieldset {
+	 border: 1px #eeab0d solid;
+	 padding-top: 0em;
+	 padding-bottom: 0em;
+}
+
+legend {
+	 font-weight: bold;
+}
+
 #container {
 	background: white;
 }
