@@ -31,7 +31,7 @@ sub pro(){
 	 my $u = $dom->getElementsByTagName("utente")->item($s)->getFirstChild()->getData();
 	 my $t = $dom->getElementsByTagName("testo")->item($s)->getFirstChild()->getData();
 	 print "<fieldset id=\"pro\">";
-	 print "<legend><strong>$u</strong></legend>";
+	 print "<legend id=\"lg_title\">$u</legend>";
 	 print "<p>$t</p>";
 	 print "</fieldset>";
   }
