@@ -10,44 +10,29 @@ use XML::XPath;
 use XML::XPath::XMLParser;
 
 my $root = get_root();
-my $i=1;
-
-sub get_news {
-	my $xp;
-	eval {
-   	$xp = XML::XPath->new(filename => "$root/eventi/index.xml");
-   } or return "";
-   return $xp->findvalue("/eventi/evento[$i]/descrizione/text()")->value() || "";
-}
-
-sub get_data {
-	my $xp;
-	eval {
-   	$xp = XML::XPath->new(filename => "../eventi/index.xml");
-   } or return "";
-   return $xp->findvalue("/eventi/evento[$i]/dataEvento/text()")->value() || "";
-}
-
-sub get_link {
-	my $xp;
-	eval {
-   	$xp = XML::XPath->new(filename => "../eventi/index.xml");
-   } or return "";
-   return $xp->findvalue("/eventi/evento[$i]/link/text()")->value() || "";
-}
 
 print_doc_start('Home', 'Homepage');
 
-print <<'EOF';
-    <h3> News / Eventi</h3>
-EOF
+print "<h3> News / Eventi</h3>\n";
 
-for($i; $i<6; $i++)
+for(my $i=0; $i<5; $i++)
 {
-	my $news = get_news($i);
-	my $data = get_data($i);
-	my $link = get_link($i);
-	print "<p> $data - <a href='$link'> $news </a></p>\n";
+	my $xp;	
+	eval
+	{
+		$xp = XML::XPath->new(filename => "$root/eventi/index.xml");
+  }
+	or print "";
+
+	print "<p>";
+	print $xp->findvalue("/eventi/evento[last()-$i]/dataEvento/text()")->value();
+	print ": <a href='";
+	print $xp->findvalue("/eventi/evento[last()-$i]/link/text()")->value() || "";
+	print "'>"; 
+	print $xp->findvalue("/eventi/evento[last()-$i]/descrizione/text()")->value(); 
+	print "</a></p>\n";
 }
+
+#print_proposta();
 
 print_doc_end();
