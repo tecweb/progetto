@@ -43,44 +43,52 @@ sub not_admin {
 EOF
 }
 
+sub err {
+  print "<h2>Attenzione</h2>";
+  print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
+  die();
+}
+
 sub add {
-  my $parser = new XML::DOM::Parser;
-  my $dom = $parser->parsefile ("$root/tematiche/$nome/$title.xml");
-  my $sl = $dom->getDocumentElement();
+  eval {
+	 my $parser = new XML::DOM::Parser;
+	 my $dom = $parser->parsefile ("$root/tematiche/$nome/$title.xml");
+	 my $sl = $dom->getDocumentElement();
 
-  if ($pro1){
-	 my $pr1 = $dom->createElement("pro");
-	 $pr1->addText($pro1);
-	 $sl->appendChild($pr1);
-  }
-  if ($pro2){
-	 my $pr2 = $dom->createElement("pro");
-	 $pr2->addText($pro2);
-	 $sl->appendChild($pr2);
-  }
-  if ($pro3){
-	 my $pr3 = $dom->createElement("pro");
-	 $pr3->addText($pro3);
-	 $sl->appendChild($pr3);
-  }
+	 if ($pro1){
+		my $pr1 = $dom->createElement("pro");
+		$pr1->addText($pro1);
+		$sl->appendChild($pr1);
+	 }
+	 if ($pro2){
+		my $pr2 = $dom->createElement("pro");
+		$pr2->addText($pro2);
+		$sl->appendChild($pr2);
+	 }
+	 if ($pro3){
+		my $pr3 = $dom->createElement("pro");
+		$pr3->addText($pro3);
+		$sl->appendChild($pr3);
+	 }
 
-  if ($con1){
-	 my $cn1 = $dom->createElement("contro");
-	 $cn1->addText($con1);
-	 $sl->appendChild($cn1);
-  }
-  if ($con2){
-	 my $cn2 = $dom->createElement("contro");
-	 $cn2->addText($con2);
-	 $sl->appendChild($cn2);
-  }
-  if ($con3){
-	 my $cn3 = $dom->createElement("contro");
-	 $cn3->addText($con3);
-	 $sl->appendChild($cn3);
-  }
+	 if ($con1){
+		my $cn1 = $dom->createElement("contro");
+		$cn1->addText($con1);
+		$sl->appendChild($cn1);
+	 }
+	 if ($con2){
+		my $cn2 = $dom->createElement("contro");
+		$cn2->addText($con2);
+		$sl->appendChild($cn2);
+	 }
+	 if ($con3){
+		my $cn3 = $dom->createElement("contro");
+		$cn3->addText($con3);
+		$sl->appendChild($cn3);
+	 }
 
-  $dom->printToFile("$root/tematiche/$nome/$title.xml");
+	 $dom->printToFile("$root/tematiche/$nome/$title.xml");
+  } or err();
 }
 
 sub add_opz {
@@ -98,38 +106,40 @@ sub add_opz {
 }
 
 sub add_domn {
-  my $parser = new XML::DOM::Parser;
-  my $dom = $parser->parsefile ("$root/tematiche/$nome/$title.xml");
-  my $sl = $dom->getDocumentElement();
+  eval {
+	 my $parser = new XML::DOM::Parser;
+	 my $dom = $parser->parsefile ("$root/tematiche/$nome/$title.xml");
+	 my $sl = $dom->getDocumentElement();
 
-  my $dmn = $dom->createElement("domanda");
-  my $txt = $dom->createElement("testo");
-  $txt->addText($domn);
-  $dmn->appendChild($txt);
+	 my $dmn = $dom->createElement("domanda");
+	 my $txt = $dom->createElement("testo");
+	 $txt->addText($domn);
+	 $dmn->appendChild($txt);
 
-  if ($opz1){
-	 add_opz($opz1, $dmn, $dom);
-  }
+	 if ($opz1){
+		add_opz($opz1, $dmn, $dom);
+	 }
 
-  if ($opz2){
-	 add_opz($opz2, $dmn, $dom);
-  }
+	 if ($opz2){
+		add_opz($opz2, $dmn, $dom);
+	 }
 
-  if ($opz3){
-	 add_opz($opz3, $dmn, $dom);
-  }
+	 if ($opz3){
+		add_opz($opz3, $dmn, $dom);
+	 }
 
-  if ($opz4){
-	 add_opz($opz4, $dmn, $dom);
-  }
+	 if ($opz4){
+		add_opz($opz4, $dmn, $dom);
+	 }
 
-  if ($opz5){
-	 add_opz($opz5, $dmn, $dom);
-  }
+	 if ($opz5){
+		add_opz($opz5, $dmn, $dom);
+	 }
 
-  $sl->appendChild($dmn);
+	 $sl->appendChild($dmn);
 
-  $dom->printToFile("$root/tematiche/$nome/$title.xml");
+	 $dom->printToFile("$root/tematiche/$nome/$title.xml");
+  } or err();
 }
 
 sub form {
@@ -154,15 +164,11 @@ sub form {
        <div><input class="ok" type="submit" value="Aggiungi"/></div>
 	 </fieldset>
     </form>
-    <form action="/cgi-bin/add_sol.pl" method="post">
-    <div class="btn"><input class="ok" type="submit" value="Aggiungi un'altra soluzione"/></div>
-    </form>
 EOF
-    print "<form action=\"/cgi-bin/tematica.pl?ref=$nome\" method=\"post\">";
-	 print<<'EOF';
-    <div class="btn"><input class="ok" type="submit" value="Termina"/></div>
-    </form>
-EOF
+    print "<div class=\"btn\"><a href=\"/cgi-bin/add_sol.pl\">";
+	 print "<input class=\"ok\" type=\"button\" value=\"Aggiungi un'altra soluzione\"/></a></div>";
+    print "<div class=\"btn\"><a href=\"/cgi-bin/tematica.pl?ref=$nome\">";
+	 print "<input class=\"ok\" type=\"button\" value=\"Termina\"/></a></div>";
 }
 
 print_doc_start("Aggiungi domanda");
