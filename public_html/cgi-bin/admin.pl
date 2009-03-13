@@ -19,13 +19,13 @@ EOF
 sub admin_func{
   print <<'EOF';
     <h2>Pagina di amministrazione</h2>
-	 <div id="admin_func">
-		  <p><a href="read_pro.pl">Leggi proposte</a></p>
-		  <p><a href="add_tem.pl">Aggiungi tematica</a></p>
-		  <p><a href="del_tem.pl">Cancella tematica</a></p>
-		  <p><a href="add_news.pl">Aggiungi news</a></p>
-		  <p><a href="del_news.pl">Cancella news</a></p>
-	 </div>
+	 <ul id="admin_func">
+		  <li><a href="read_pro.pl">Leggi proposte</a></li>
+		  <li><a href="add_tem.pl">Aggiungi tematica</a></li>
+		  <li><a href="del_tem.pl">Cancella tematica</a></li>
+		  <li><a href="add_news.pl">Aggiungi news</a></li>
+		  <li><a href="del_news.pl">Cancella news</a></li>
+	 </ul>
 EOF
 }
 

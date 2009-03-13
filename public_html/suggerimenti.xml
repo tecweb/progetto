@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <suggerimenti>
 <suggerimento><testo>Aloha! (due volte)
 a capo
@@ -6,4 +6,6 @@ a capo
 a capo
 </testo><utente>admin</utente></suggerimento><suggerimento><testo>??? anonimo ???</testo><utente>anonymous</utente></suggerimento><suggerimento><testo>Da IE8!
 </testo><utente>uu</utente></suggerimento><suggerimento><testo>&lt;a&gt;&lt;/b&gt;
-</testo><utente>anonymous</utente></suggerimento></suggerimenti>
+</testo><utente>anonymous</utente></suggerimento><suggerimento><testo>Mille e non piu' mille!
+</testo><utente>anonymous</utente></suggerimento><suggerimento><testo>aa</testo><utente>anonymous</utente></suggerimento><suggerimento><testo>&amp;agrave;&amp;agrave;&amp;agrave; &amp;lt;&amp;agrave;&amp;gt;
+</testo><utente>anonymous</utente></suggerimento><suggerimento><testo>foo2</testo><utente>admin</utente></suggerimento></suggerimenti>

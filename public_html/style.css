@@ -17,6 +17,24 @@ img {
 	border: 0em;
 }
 
+a {
+	 color: black;
+}
+
+a:hover {
+	 font-variant: small-caps;
+}
+
+fieldset {
+	 border: 1px #eeab0d solid;
+	 padding-top: 0em;
+	 padding-bottom: 0em;
+}
+
+legend {
+	 font-weight: bold;
+}
+
 #container {
 	background: white;
 }
@@ -67,9 +85,9 @@ img {
 
 #nav_top {
         margin-top: 1em;
-        padding-right: 10px;
+        padding-right: 9px;
         float: left;
-        height: 50px;
+        height: 70px;
         width: 20%;
         background-position: 100% 0%;
         background-image: url(/images/border_top.png);
@@ -96,7 +114,8 @@ img {
 }
 
 #nav_menu {
-/*        margin-top: -40px;*/
+        margin-bottom: -50px;
+        margin-top: -50px;
 }
 
 #all_tem {
@@ -108,8 +127,8 @@ img {
         margin-top: 0em;
 }
 
-.menu_title dd {
-        padding-top: 0.5em;
+.menu_item {
+        padding-bottom: 0.5em;
 }
 
 #corpo {
@@ -179,3 +198,33 @@ img {
         width: 20%;
         text-align: right;
 }
+
+/* Stile admin */
+#admin_func {
+	 list_style: circle;
+	 color: #eeab0d;
+}
+
+#admin_func li {
+	 margin-bottom: 1em;
+}
+
+.pro_u {
+	 font-weight: bold;
+	 margin: 0em;
+	 padding: 0em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+}
+
+.pro_t {
+	 margin: 0em;
+	 margin-bottom: 1em;
+	 padding: 0.5em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+	 border-top: 0px;
+}
+
+
+

@@ -7,13 +7,13 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
+use HTML::Entities;
 
 do "base.pl";
 my $root = get_root();
 
 my $parser = new XML::DOM::Parser;
 my $dom = $parser->parsefile ("$root/suggerimenti.xml");
-#my $sgg = $dom->getDocumentElement();
 my $sgg = $dom->getElementsByTagName("suggerimento");
 
 
@@ -27,14 +27,14 @@ EOF
 
 
 sub pro(){
-  print "<div id=\"pro\">";
+  print "<div>";
   for (my $s = 0; $s < $sgg->getLength(); $s++){
-	 my $u = $dom->getElementsByTagName("utente")->item($s)->getFirstChild()->getData();
-	 my $t = $dom->getElementsByTagName("testo")->item($s)->getFirstChild()->getData();
-	 print "<p><strong>Utente: </strong> $u<br/>";
-	 print "<strong>Testo: </strong> $t</p>";
-}
-  print </div>;
+	 my $u = encode_entities($dom->getElementsByTagName("utente")->item($s)->getFirstChild()->getData());
+	 my $t = encode_entities($dom->getElementsByTagName("testo")->item($s)->getFirstChild()->getData());
+	 print "<p class=\"pro_u\">$u</p>";
+	 print "<p class=\"pro_t\">$t</p>";
+  }
+  print "</div>";
 }
 
 
