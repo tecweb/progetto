@@ -20,18 +20,18 @@ EOF
 
 sub form(){
 	 print<<'EOF';
-    <form action="/cgi-bin/add_sol.pl" method="POST">
+    <form action="/cgi-bin/add_sol.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi tematica</legend>
-    <p>
-      <label for="Nome">Nome: </label><br/>
-	   <input type="text" size="50" name="name"></textarea>
-	 </p>
-	 <p>
-	   <label for="Descrizione">Descrizione: </label><br/>
-	   <textarea cols="50" rows="5" name="desc"></textarea>
-	 </p>
-	 <p> <input class="ok" type="submit" value="Continua" /> </p>
+      <div>
+      <p class="lbl"><label for="name">Nome: </label></p>
+	   <p><input type="text" size="50" id="name" name="name"/></p>
+      </div>
+	   <div>
+      <p class="lbl"><label for="desc">Descrizione: </label></p>
+	   <p><textarea cols="50" rows="5" id="desc" name="desc"></textarea></p>
+      </div>
+	   <div><input class="ok" type="submit" value="Continua" /> </div>
 	 </fieldset>
     </form>
 EOF

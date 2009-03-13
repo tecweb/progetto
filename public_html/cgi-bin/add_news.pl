@@ -35,23 +35,23 @@ sub form(){
     <form action="/cgi-bin/add_news.pl" method="POST">
 	 <fieldset>
 	 <legend>Aggiungi news</legend>
-	 <p>
-	   <label for="Data"> Data (gg/mm/aaaa): </label> <br/>
-	   <input type="text" size="1" maxLength="2" name="ddate" />/ 
+    <p>
+	   <div> <label for="Data"> Data (gg/mm/aaaa): </label> </div>
+	   <div> <input type="text" size="1" maxLength="2" name="ddate">/ 
       <input type="text" size="1" maxLength="2" name="mdate" />/
-      <input type="text" size="3" maxLength="4" name="ydate" />
+      <input type="text" size="3" maxLength="4" name="ydate" /></div>
+    </p>
+	 <p>
+	   <div><label for="Titolo"> Titolo: </label></div>
+	   <div><input type="text" size="50" name="title"/></div>
 	 </p>
 	 <p>
-	   <label for="Titolo"> Titolo: </label><br/>
-	   <input type="text" size="50" name="title"/>
+	   <div><label for="Descrizione"> Descrizione: </label></div>
+	   <div><textarea cols="50" rows="5" name="desc"></textarea></div>
 	 </p>
 	 <p>
-	   <label for="Descrizione"> Descrizione: </label><br/>
-	   <textarea cols="50" rows="5" name="desc"></textarea>
-	 </p>
-	 <p>
-	   <label for="Link"> Link: </label><br/>
-	   <input type="text" size="50" name="link"/>
+	   <div><label for="Link"> Link: </label></div>
+	   <div><input type="text" size="50" name="link"/></div>
 	 </p>
 	 <p> <input class="ok" type="submit" value="Aggiungi" /> </p>
 	 </fieldset>
