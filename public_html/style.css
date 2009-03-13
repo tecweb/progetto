@@ -29,6 +29,7 @@ fieldset {
 	 border: 1px #eeab0d solid;
 	 padding-top: 0em;
 	 padding-bottom: 1em;
+	 margin-bottom: 0.5em;
 }
 
 legend {
@@ -230,5 +231,7 @@ legend {
 	 border-top: 0px;
 }
 
-
+.btn {
+	 margin: 0.1em;
+}
 
