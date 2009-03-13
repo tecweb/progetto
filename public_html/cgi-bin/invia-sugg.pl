@@ -8,6 +8,7 @@ do "base.pl";
 use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use XML::DOM;
+use HTML::Entities;
 
 print_doc_start("Invio suggerimento", "pagina che permette di inviare suggerimenti all'amministratore del sito", "suggerimenti");
 
@@ -21,7 +22,7 @@ if (defined $sugg) {
 
   my $new_sugg = $doc->createElement('suggerimento');
   my $txt = $doc->createElement('testo');
-  $txt->addText($sugg);
+  $txt->addText(encode_entities($sugg));
   my $u = $doc->createElement('utente');
   $u->addText($user);
   $new_sugg->appendChild($txt);
