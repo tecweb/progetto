@@ -11,12 +11,6 @@ use XML::DOM;
 do "base.pl";
 my $root = get_root();
 
-my $parser = new XML::DOM::Parser;
-my $dom = $parser->parsefile ("$root/suggerimenti.xml");
-my $sgg = $dom->getElementsByTagName("suggerimento");
-
-
-
 sub not_admin {
   print <<'EOF';
 	 <h1>Accesso negato!</h1>
@@ -24,25 +18,36 @@ sub not_admin {
 EOF
 }
 
+sub err {
+  print "<h2>Attenzione!</h2>";
+  print "<p>Si &egrave; verificato un errore nell'apertura del file.</p>";
+  die();
+}
 
 sub pro(){
-  print "<div>";
-  for (my $s = 0; $s < $sgg->getLength(); $s++){
-	 my $u = $dom->getElementsByTagName("utente")->item($s)->getFirstChild()->getData();
-	 my $t = $dom->getElementsByTagName("testo")->item($s)->getFirstChild()->getData();
-	 print "<p class=\"pro_u\">$u</p>";
-	 print "<p class=\"pro_t\">$t</p>";
+  eval {
+	 my $parser = new XML::DOM::Parser;
+	 my $dom = $parser->parsefile ("$root/suggerimenti.xml");
+	 my $sgg = $dom->getElementsByTagName("suggerimento");
+
+	 print "<h2>Proposte e suggerimenti</h2>";
+	 print "<div>";
+	 for (my $s = 0; $s < $sgg->getLength(); $s++){
+		my $u = $dom->getElementsByTagName("utente")->item($s)->getFirstChild()->getData();
+		my $t = $dom->getElementsByTagName("testo")->item($s)->getFirstChild()->getData();
+		print "<p class=\"pro_u\">$u</p>";
+		print "<p class=\"pro_t\">$t</p>";
   }
   print "</div>";
+  } or err();
 }
 
 
 
 print_doc_start("Leggi proposte");
 if (get_user_name() eq 'admin'){
-	 print "<h2>Proposte e suggerimenti</h2>";
 	 pro();
-}
+  }
 else {
   not_admin();
 }

@@ -32,56 +32,66 @@ sub added{
 
 sub form(){
 	 print<<'EOF';
-    <form action="/cgi-bin/add_news.pl" method="POST">
+    <form action="/cgi-bin/add_news.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi news</legend>
-    <p>
-	   <div> <label for="Data"> Data (gg/mm/aaaa): </label> </div>
-	   <div> <input type="text" size="1" maxLength="2" name="ddate">/ 
-      <input type="text" size="1" maxLength="2" name="mdate" />/
-      <input type="text" size="3" maxLength="4" name="ydate" /></div>
-    </p>
-	 <p>
-	   <div><label for="Titolo"> Titolo: </label></div>
-	   <div><input type="text" size="50" name="title"/></div>
-	 </p>
-	 <p>
-	   <div><label for="Descrizione"> Descrizione: </label></div>
-	   <div><textarea cols="50" rows="5" name="desc"></textarea></div>
-	 </p>
-	 <p>
-	   <div><label for="Link"> Link: </label></div>
-	   <div><input type="text" size="50" name="link"/></div>
-	 </p>
-	 <p> <input class="ok" type="submit" value="Aggiungi" /> </p>
+    <div>
+	   <p class="lbl"><label>Data (gg/mm/aaaa): </label> </p>
+	   <p><input type="text" size="1" maxlength="2" name="ddate"/>/
+      <input type="text" size="1" maxlength="2" name="mdate" />/
+      <input type="text" size="3" maxlength="4" name="ydate" />
+      </p>
+    </div>
+	 <div>
+	   <p class="lbl"><label for="title"> Titolo: </label></p>
+	   <p><input type="text" size="50" id="title" name="title"/></p>
+	 </div>
+	 <div>
+	   <p class="lbl"><label for="desc"> Descrizione: </label></p>
+	   <p><textarea cols="50" rows="5" id="desc" name="desc"></textarea></p>
+	 </div>
+	 <div>
+	   <p class="lbl"><label for="link"> Link: </label></p>
+	   <p><input type="text" size="50" id="link" name="link"/></p>
+	 </div>
+	 <div> <input class="ok" type="submit" value="Aggiungi" /> </div>
 	 </fieldset>
     </form>
 EOF
 }
 
-sub add{
-  my $parser = new XML::DOM::Parser;
-  my $dom = $parser->parsefile ("$root/eventi/index.xml");
-  my $evn = $dom->getDocumentElement;
+sub err {
+  print "<h2>Attenzione</h2>";
+  print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
+  die();
+}
 
-  my $new = $dom->createElement("evento");
-  my $dt = $dom->createElement("data");
-  my $dtmp = $ydate."-".$mdate."-".$ddate;
-  $dt->addText($dtmp);
-  my $ttl = $dom->createElement("titolo");
-  $ttl->addText($title);
-  my $dsc = $dom->createElement("descrizione");
-  $dsc->addText($desc);
-  my $lnk = $dom->createElement("link");
-  $lnk->addText($link);
+sub add {
+  eval {
+	 my $parser = new XML::DOM::Parser;
+	 my $dom = $parser->parsefile ("$root/eventi/index.xml");
+	 my $evn = $dom->getDocumentElement;
 
-  $new->appendChild($dt);
-  $new->appendChild($ttl);
-  $new->appendChild($dsc);
-  $new->appendChild($lnk);
-  $evn->appendChild($new);
+	 my $new = $dom->createElement("evento");
+	 my $dt = $dom->createElement("data");
+	 my $dtmp = $ydate."-".$mdate."-".$ddate;
+	 $dt->addText($dtmp);
+	 my $ttl = $dom->createElement("titolo");
+	 $ttl->addText($title);
+	 my $dsc = $dom->createElement("descrizione");
+	 $dsc->addText($desc);
+	 my $lnk = $dom->createElement("link");
+	 $lnk->addText($link);
 
-  $dom->printToFile("$root/eventi/index.xml");
+	 $new->appendChild($dt);
+	 $new->appendChild($ttl);
+	 $new->appendChild($dsc);
+	 $new->appendChild($lnk);
+	 $evn->appendChild($new);
+
+	 $dom->printToFile("$root/eventi/index.xml");
+	 print '<h2>La news &egrave; stata aggiunta con successo.</h2>';
+  } or err();
 }
 
 print_doc_start("Aggiungi news");
@@ -91,7 +101,6 @@ if (get_user_name() eq 'admin'){
   }
   else {
 	 add();
-	 print '<h2>La news &egrave; stata aggiunta con successo.</h2>';
   }
 }
 else {
