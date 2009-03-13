@@ -17,6 +17,14 @@ img {
 	border: 0em;
 }
 
+a {
+	 color: black;
+}
+
+a:hover {
+	 font-variant: small-caps;
+}
+
 #container {
 	background: white;
 }
@@ -182,13 +190,31 @@ img {
 }
 
 /* Stile admin */
-#pro {
+#admin_func {
+	 list_style: circle;
+	 color: #eeab0d;
+}
+
+#admin_func li {
 	 margin-bottom: 1em;
+}
+
+.pro_u {
+	 font-weight: bold;
+	 margin: 0em;
 	 padding: 0em;
  	 padding-left: 1em;
 	 border: 1px #eeab0d solid;
 }
 
-#lg_title {
-	 font-weight: bold;
+.pro_t {
+	 margin: 0em;
+	 margin-bottom: 1em;
+	 padding: 0.5em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+	 border-top: 0px;
 }
+
+
+

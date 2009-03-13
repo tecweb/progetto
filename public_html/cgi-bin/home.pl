@@ -3,8 +3,6 @@
 use strict;
 use warnings;
 
-use lib 'mymodules/share/perl/5.8/';
-
 do "base.pl";
 
 use CGI qw( :standard);
