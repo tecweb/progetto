@@ -16,7 +16,7 @@ my $desc = tem_descr();		#descrizione della tematica
 sub tem_descr {
 	my $xp;
 	eval {
-   	$xp = XML::XPath->new(filename => $tem_dir . '/index.xml');
+   	$xp = XML::XPath->new(filename => "$tem_dir/index.xml");
    } or return "";
    return $xp->findvalue('/tematica/descrizione/text()')->value() || "";
 }
@@ -67,4 +67,3 @@ print	"<p> $desc </p>\n";
 print_proposte();
 
 print_doc_end();
-
