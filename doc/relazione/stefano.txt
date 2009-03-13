@@ -1,0 +1,20 @@
+Le parti condivise da tutte le pagine sono implementate in cgi-bin/base.pl
+
+L'header della pagina contiene un'immagine che oltre al logo, contiene anche il
+nome del gruppo giovanile, e' quindi informativa e viene inserita con il tag 
+img. Viene fornito un testo alternativo se l'immagine non puo' essere vista.
+In alto a destra un box visualizza il nome dell'utente (se loggato) e permette
+di effettuare il logout oppure di accedere alla pagina per effettuare il login.
+
+La barra di navigazione si trova a sinistra. E' divisa in 3 sezioni: navigazione generale (home/chi siamo), tematiche e suggerimenti/amministrazione. La terza parte dipende dall'utente che visualizza la pagina: se e' l'amministratore c'e' la sezione di amministrazione, altrimenti e' presente un link alla pagina che permette di inviare dei suggerimenti all'amministratore.
+La sezione "Tematiche" mostra le ultime 5 tematiche inserite (caricate quindi dinamicamente), oltre ad un link "Mostra tutte" che permette di accedere ad una pagina per visualizzare tutte le tematiche. Quest'ultimo link e' ben distanziato rispetto ai link alle tematiche per evitare di confonderlo con una tematica.
+Il menu di naigazione viene implementato tramite una definition list.
+
+Pagina del login.
+
+La pagina del login contiene due diversi form, i cui elementi sono raggruppati tramite un fieldset. Il primo permette di effettuare il login, il secondo di creare un nuovo account. Per effettuare il login si controlla che l'MD5 della password sia uguale a quello memorizzato nel file utenti.xml e associato al nome utente inserito. Viene visualizzato un messaggio di errore (sempre nella pagina del login) se il nome utente non esiste o se la password non coincide.
+Durante la creazione di un nuovo account si controlla che: il nome utente non esista gia', le due password combacino, e l'email abbia un formato corretto. Se tutto e' ok, viene calcolato l'MD5 della password, l'utente viene aggiunto a utenti.xml, viene effettuato il login, e si rimanda l'utente alla home page. Se c'e' un errore, viene ripresentata la pagina di login con la descrizione dell'errore.
+Elenco delle tematiche.
+
+Questa pagina permette di visualizzare tutte le tematiche, mostrandone 10 per pagina, ordinate per data, in modo da non obbligare l'utente a visualizzare anche tematiche vecchie di mesi e probabilmente di scarso interesse. Un titolo dice quali tematiche sono correntemente visualizzate, e sono presenti due link, uno in fondo a destra, l'altro in fondo a sinistra, che permettono di avanzare/arretrare nella lista. I link vengono visualizzati solo se necessario (ad esempio, se siamo all'inizio della lista il link per visualizzare le tematiche piu' nuove non sara' presente).
+La lista delle tematiche e' contenuta in un box e sono divise da delle linee orizzontali. Per ogni tematica si visualizza: la sua posizione nella lista (da 0 ad N), il nome della tematica, e la sua descrizione. Sebbene sia una lista ordinata e si usi il tag ol per viusalizzarla, la numerazione viene fatta a mano, in modo che non riparta sempre da 0 per ogni pagina.
