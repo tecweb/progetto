@@ -6,7 +6,7 @@ body {
 	border: 0em;
 	font-size: 1em;
         font-family: Verdana, Helvetica, sans-serif;
-	/*background-image: url(sfondo.jpg);*/ 
+	background-color: white;
 }
 
 h1, h2, h3, h4	{
@@ -104,8 +104,8 @@ a:hover {
 }
 
 #nav_menu {
-        margin-bottom: -50px;
-        margin-top: -50px;
+        margin-bottom: 0px;
+        margin-top: -30px;
 }
 
 #all_tem {
