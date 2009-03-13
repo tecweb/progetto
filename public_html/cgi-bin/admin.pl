@@ -25,7 +25,7 @@ sub admin_func{
 		  <li><a href="del_tem.pl">Cancella tematica</a></li>
 		  <li><a href="add_news.pl">Aggiungi news</a></li>
 		  <li><a href="del_news.pl">Cancella news</a></li>
-	 </div>
+	 </ul>
 EOF
 }
 
