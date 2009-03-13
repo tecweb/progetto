@@ -16,7 +16,10 @@ my $tem = param('ref') || 0; 		#directory della soluzione selezionata
 my $tem_dir = get_tem_dir() . $tem;		#directory della tematica specifica
 my $parser = new XML::DOM::Parser;
 my $document = $parser->parsefile ("$tem");
-my $nodes = $document->getElementsByTagName ("pro");
+
+my $desc = $document->getElementsByTagName ("proposta");
+my $desc2 = $desc->item(0)->getLastChild()->getData();
+my $nodes = $document->getElementsByTagName ("testo");
 my $element = $document->getDocumentElement();
 my $tag = $element->getTagName();
 
@@ -70,7 +73,7 @@ print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
 
 #print "<h2 id=\"tematica\"> $tem </h2>\n";
 #print	"<p> $tem_dir </p>\n";
-#print	"<p> $nodes </p>\n";
+print	"<p> $desc2 </p>\n";
 #print	"<p> $document </p>\n";
 #print	"<p> $element </p>\n";
 #print	"<p> $tag </p>\n";
@@ -78,7 +81,7 @@ print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
 #print	$element->getNodeType();
 
 for (my $i = 0; $i < $nodes->getLength(); $i++){
-	 my $value = $nodes->item($i)->getFirstChild()->getData();
+	 my $value = $nodes->item($i)->getLastChild()->getData();
 	 print
       "<p>$value</p>"
   }
