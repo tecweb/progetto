@@ -154,15 +154,11 @@ sub form {
        <div><input class="ok" type="submit" value="Aggiungi"/></div>
 	 </fieldset>
     </form>
-    <form action="/cgi-bin/add_sol.pl" method="post">
-    <div class="btn"><input class="ok" type="submit" value="Aggiungi un'altra soluzione"/></div>
-    </form>
 EOF
-    print "<form action=\"/cgi-bin/tematica.pl?ref=$nome\" method=\"post\">";
-	 print<<'EOF';
-    <div class="btn"><input class="ok" type="submit" value="Termina"/></div>
-    </form>
-EOF
+    print "<div class=\"btn\"><a href=\"/cgi-bin/add_sol.pl\">";
+	 print "<input class=\"ok\" type=\"button\" value=\"Aggiungi un'altra soluzione\"/></a></div>";
+    print "<div class=\"btn\"><a href=\"/cgi-bin/tematica.pl?ref=$nome\">";
+	 print "<input class=\"ok\" type=\"button\" value=\"Termina\"/></a></div>";
 }
 
 print_doc_start("Aggiungi domanda");
