@@ -11,7 +11,7 @@ use CGI qw( :standard);
 use XML::XPath;
 use XML::XPath::XMLParser;
 
-my $tem = param('ref') || 0; 		#tematica selezionata
+my $tem = param('ref') || 'biomasse'; 		#tematica selezionata
 my $tem_dir = get_tem_dir() . $tem;		#directory della tematica specifica
 my $desc = tem_descr();		#descrizione della tematica
 

@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <tematica xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/tematica.xsd">
-  <descrizione> I tralci potati dalle viti devono essere smaltiti </descrizione>
+  <descrizione>I tralci potati dalle viti devono essere smaltiti</descrizione>
   <commento>
-    <username> Tizio </username>
+    <username>Tizio</username>
     <data>2009-01-27</data>
     <voto>2</voto>
-    <testo> Ci sono aziende che si occupano proprio dello smaltimento delle 
-                        biomasse e forse è meglio affidarsi a loro 
-         </testo>
+    <testo>Ci sono aziende che si occupano proprio dello smaltimento delle biomasse e forse sarebbe meglio affidarsi a loro</testo>
   </commento>
   <commento>
-    <username> Caio </username>
+    <username>Caio</username>
     <data>2009-02-08</data>
     <voto>3</voto>
-    <testo> Mi auguro più che altro che nessuno si dia al fai da te
-      						bruciando per conto suo i tralci 
-      	</testo>
+    <testo>Mi auguro piu che altro che nessuno si dia al fai da te bruciando per conto suo i tralci</testo>
   </commento>
 </tematica>
