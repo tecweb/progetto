@@ -11,7 +11,9 @@ use XML::DOM;
 do "base.pl";
 my $root = get_root();
 
-my $date = param('date');
+my $ydate = param('ydate');
+my $mdate = param('mdate');
+my $ddate = param('ddate');
 my $title = param('title');
 my $desc = param('desc');
 my $link = param('link');
@@ -25,7 +27,7 @@ EOF
 }
 
 sub added{
-	 return ($date && $title && $desc && $link);
+	 return ($ydate && $mdate && $ddate && $title && $desc && $link);
 }
 
 sub form(){
@@ -34,8 +36,10 @@ sub form(){
 	 <fieldset>
 	 <legend>Aggiungi news</legend>
 	 <p>
-	   <label for="Data"> Data: </label> <br/>
-	   <input type="text" size="10" name="date" />
+	   <label for="Data"> Data (gg/mm/aaaa): </label> <br/>
+	   <input type="text" size="1" maxLength="2" name="ddate" />/ 
+      <input type="text" size="1" maxLength="2" name="mdate" />/
+      <input type="text" size="3" maxLength="4" name="ydate" />
 	 </p>
 	 <p>
 	   <label for="Titolo"> Titolo: </label><br/>
@@ -62,7 +66,8 @@ sub add{
 
   my $new = $dom->createElement("evento");
   my $dt = $dom->createElement("data");
-  $dt->addText($date);
+  my $dtmp = $ydate."-".$mdate."-".$ddate;
+  $dt->addText($dtmp);
   my $ttl = $dom->createElement("titolo");
   $ttl->addText($title);
   my $dsc = $dom->createElement("descrizione");

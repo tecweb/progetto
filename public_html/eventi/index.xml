@@ -6,14 +6,14 @@
 		<dataInserimento> 20009-03-14</dataInserimento>
 		<titolo> sito </titolo>
 		<descrizione> messa online del sito del gruppo &quot;piazza Marconi zero&quot; </descrizione>
-		<link> home.xml </link>
+		<link> home.pl </link>
 	</evento>
 	<evento>
 		<dataEvento> 2009-03-17</dataEvento>
-		<dataInserimento> 2009-03-04</dataInserimento>
+		<dataInserimento> 2009-03-17</dataInserimento>
 		<titolo> biomasse	</titolo>
 		<descrizione>	aggiunta tematica biomasse </descrizione>
-		<link> biomasse.xml </link>
+		<link> tematica.pl?ref=biomasse </link>
 	</evento>
 	<evento>
 		<dataEvento> 2009-03-24</dataEvento>
@@ -21,5 +21,26 @@
 		<titolo> primavera prosecco 2009 </titolo>
 		<descrizione>	mostra del vino a San Pietro di Barbozza </descrizione>
 		<link> mostra.xml </link>
+	</evento>
+	<evento>
+		<dataEvento> 2009-03-18</dataEvento>
+		<dataInserimento> 2009-03-18</dataInserimento>
+		<titolo> LED	</titolo>
+		<descrizione>	aggiunta tematica lampioni LED </descrizione>
+		<link> lampioniLED.xml </link>
+	</evento>
+	<evento>
+		<dataEvento> 2009-03-20</dataEvento>
+		<dataInserimento> 2009-03-20</dataInserimento>
+		<titolo> WI-FI	</titolo>
+		<descrizione>	aggiunta tematica WI-FI gratuito </descrizione>
+		<link> WI-FI.xml </link>
+	</evento>
+	<evento>
+		<dataEvento> 2009-03-25</dataEvento>
+		<dataInserimento> 2009-03-25</dataInserimento>
+		<titolo> comitati	</titolo>
+		<descrizione>	aggiunta tematica comitati di frazione </descrizione>
+		<link> comitati.xml </link>
 	</evento>
 </eventi>

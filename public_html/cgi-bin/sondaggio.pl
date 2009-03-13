@@ -18,7 +18,7 @@ my $desc = tem_descr();		#descrizione della tematica
 sub tem_descr {
 	my $xp;
 	eval {
-   	$xp = XML::XPath->new(filename => "$tem_dir/index.xml");
+   	$xp = XML::XPath->new(filename => $tem_dir . '/index.xml');
    } or return "";
    return $xp->findvalue('/tematica/descrizione/text()')->value() || "";
 }
@@ -28,10 +28,10 @@ sub print_proposta {
 	eval {
      $xp = XML::XPath->new(filename => $_[0]);
    } or print "";
-	my $prop = $xp->findvalue('/soluzione/proposta/text()')->value() || "";
+	my $prop = $xp->findvalue('/soluzione/domanda/testo/text()')->value() || "";
 	print "<h4 class=\"proposta\"> $prop </h4>\n";
 	#lista dei pro	
-	my $pros = $xp->find('soluzione/pro/text()');
+	my $pros = $xp->find('soluzione/domanda/opzione/descrizione/text()');
 	#lista dei contro
 	my $cons = $xp->find('soluzione/contro/text()');
 	print <<'EOF';	
@@ -41,31 +41,32 @@ EOF
 	foreach my $pro ($pros->get_nodelist) {
 		print "<dd>",XML::XPath::XMLParser::as_string($pro),"</dd>\n";
 	}
-	print "<dt> Contro </dt>\n";
-	foreach my $con ($cons->get_nodelist) {
-		print "<dd>",XML::XPath::XMLParser::as_string($con),"</dd>\n";
-	}
+#	print "<dt> Contro </dt>\n";
+#	foreach my $con ($cons->get_nodelist) {
+#		print "<dd>",XML::XPath::XMLParser::as_string($con),"</dd>\n";
+#	}
 	print "</dl>\n";
 }
 
 sub print_proposte {
-	my @files = glob "$tem_dir/*";
+	my @files = glob "$tem_dir/";
 	foreach my $file (@files) {
 		my $filename = fileparse($file);		
 		#controllo quale file sto per andare ad aprire		
 		if($filename ne "index.xml")
 		{	print_proposta($file); 
-			print "<span> [<a href=\"/cgi-bin/sondaggio.pl?ref=$tem\"> Vai all'approfondimento </a>] </span>";
-			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir\"> Vai ai commenti </a>] </span>";
+#			print "<span> [<a href=\"/cgi-bin/sondaggio.pl?ref=$file\"> Vai all'approfondimento </a>] </span>";
+#			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir\"> Vai ai commenti </a>] </span>";
 		}
 	}
 }
 
 print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
 
-print "<h2 id=\"tem_title\"> $tem </h2>\n";
+print "<h2 id=\"tematica\"> $tem </h2>\n";
 print	"<p> $desc </p>\n";
 
 print_proposte();
 
 print_doc_end();
+

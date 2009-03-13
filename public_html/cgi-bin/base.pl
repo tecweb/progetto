@@ -135,6 +135,7 @@ EOF
          print <<'EOF';
 		  </dl>
 	 </div>
+         <div id="nav_bottom"></div>
 EOF
 }
 
