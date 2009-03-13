@@ -53,18 +53,18 @@ sub add(){
 
 sub form(){
 	 print<<'EOF';
-    <form action="/cgi-bin/add_pro_contro.pl" method="POST">
+    <form action="/cgi-bin/add_pro_contro.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi soluzione</legend>
-	 <p>
-	   <div><label for="Titolo">Titolo: </label></div>
-	   <div><input type="text" size="50" name="title"></input></div>
-	 </p>
-	 <p>
-	   <div><label for="Soluzione">Soluzione: </label></div>
-	   <div><textarea cols="50" rows="5" name="sol"></textarea></div>
-	 </p>
-    <p> <input class="ok" type="submit" value="Continua"/></p>
+	 <div>
+	   <p class="lbl"><label for="title">Titolo: </label></p>
+	   <p><input type="text" size="50" id="title" name="title"></input></p>
+	 </div>
+	 <div>
+	   <p class="lbl"><label for="sol">Soluzione: </label></p>
+	   <p><textarea cols="50" rows="5" id="sol" name="sol"></textarea></p>
+	 </div>
+    <div><input class="ok" type="submit" value="Continua"/></div>
 	 </fieldset>
     </form>
 EOF
@@ -72,7 +72,7 @@ EOF
 
 print_doc_start("Aggiungi soluzione");
 if (get_user_name() eq 'admin'){
-  if (!(-e "$root/tematiche/$nome/index.xml")){
+  if (!(-e "$root/tematiche/$nome/index.xml") && $nome){
 	 add();
   }
   form();
