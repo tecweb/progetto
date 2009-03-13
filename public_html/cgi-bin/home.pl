@@ -11,7 +11,14 @@ use CGI qw( :standard);
 use XML::XPath;
 use XML::XPath::XMLParser;
 
+use XML::DOM;
+
 my $root = get_root();
+my $dir = "$root/eventi/index.xml";
+my $parser = new XML::DOM::Parser;
+my $document = $parser->parsefile ("$dir");
+my $event = $document->getElementsByTagName ("evento");
+my $proposta = $event->item(1)->getFirstChild()->getData();
 
 print_doc_start('Home', 'Homepage');
 
@@ -35,6 +42,7 @@ for(my $i=0; $i<5; $i++)
 	print "</a></p>\n";
 }
 
-#print_proposta();
+print "$proposta";
 
+print_proposta();
 print_doc_end();
