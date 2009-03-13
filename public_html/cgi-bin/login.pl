@@ -15,14 +15,24 @@ my $user = param('username');
 my $pass = param('password');
 my $root = get_root();
 
-my $xp = XML::XPath->new(filename => "$root/utenti.xml");
+my $xp;
+eval {
+  $xp = XML::XPath->new(filename => "$root/utenti.xml");
+} or undef $xp;
+
 my $md5;
 my $bad_login = 0;
 if (defined $user && defined $pass) {
-  $md5 = $xp->findvalue("//utenti/utente[./username/text()=\"$user\"]/md5pass/text()")->value();
-
-  unless (md5_hex($pass) eq $md5) {
-    $bad_login = 1;
+  eval {
+    $md5 = $xp->findvalue("//utenti/utente[./username/text()=\"$user\"]/md5pass/text()")->value();
+    1;
+  } or undef $md5;
+  if (defined $md5) {
+    unless (md5_hex($pass) eq $md5) {
+      $bad_login = "Username o password sbagliati.";
+    }
+  } else {
+    $bad_login = "Errore interno. Impossibile effettuare il login.";
   }
 }
 
@@ -39,7 +49,7 @@ if (defined $user && !$bad_login) {
   print_doc_start('Login', 'Pagina per effettuare il login o la registrazione',
                   'login', 'registrazione');
   if ($bad_login) {
-    print '<p class="errore"> Username o password sbagliati </p>';
+    print "<p class=\"errore\"> $bad_login </p>";
   }
   print <<'EOF';    
     <form action="/cgi-bin/login.pl" method="post">

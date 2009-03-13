@@ -9,81 +9,39 @@ do 'base.pl';
 
 use CGI qw( :standard);
 use XML::DOM;
-use XML::XPath;
-use XML::XPath::XMLParser;
 
-my $tem = param('ref') || 0; 		#directory della soluzione selezionata
-my $tem_dir = get_tem_dir() . $tem;		#directory della tematica specifica
+my $tem = param('ref') || 0; 		#directory della soluzione
+my $tem_dir = get_tem_dir() . $tem;		#directory della tematica
 my $parser = new XML::DOM::Parser;
-my $document = $parser->parsefile ("$tem");
-my $nodes = $document->getElementsByTagName ("pro");
-my $element = $document->getDocumentElement();
-my $tag = $element->getTagName();
+my $document = $parser->parsefile ("$tem");	#file della soluzione
 
-#sub tem_descr {
-#	my $xp;
-#	eval {
-#   	$xp = XML::XPath->new(filename => $tem_dir . '/index.xml');
-#   } or return "";
-#   return $xp->findvalue('/tematica/descrizione/text()')->value() || "";
-#}
+my $prop = $document->getElementsByTagName ("proposta");
+my $proposta = $prop->item(0)->getFirstChild()->getData();
 
-sub print_proposta {
-	my $xp;	
-	eval {
-     $xp = XML::XPath->new(filename => $_[0]);
-   } or print "";
-	my $prop = $xp->findvalue('/soluzione/domanda/testo/text()')->value() || "";
-	print "<h4 class=\"proposta\"> $prop </h4>\n";
-	#lista dei pro	
-	my $pros = $xp->find('soluzione/domanda/opzione/descrizione/text()');
-	#lista dei contro
-	my $cons = $xp->find('soluzione/contro/text()');
-	print <<'EOF';	
-<dl>
-<dt> Pro </dt>				
-EOF
-	foreach my $pro ($pros->get_nodelist) {
-		print "<dd>",XML::XPath::XMLParser::as_string($pro),"</dd>\n";
-	}
-#	print "<dt> Contro </dt>\n";
-#	foreach my $con ($cons->get_nodelist) {
-#		print "<dd>",XML::XPath::XMLParser::as_string($con),"</dd>\n";
-#	}
-	print "</dl>\n";
-}
+my $text = $document->getElementsByTagName ("testo");
 
-sub print_proposte {
-	my @files = glob "$tem_dir/";
-	foreach my $file (@files) {
-		my $filename = fileparse($file);		
-		#controllo quale file sto per andare ad aprire		
-		if($filename ne "index.xml")
-		{	print_proposta($file); 
-#			print "<span> [<a href=\"/cgi-bin/sondaggio.pl?ref=$file\"> Vai all'approfondimento </a>] </span>";
-#			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir\"> Vai ai commenti </a>] </span>";
-		}
-	}
-}
+my $desc = $document->getElementsByTagName ("descrizione");
 
 print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
 
-#print "<h2 id=\"tematica\"> $tem </h2>\n";
-#print	"<p> $tem_dir </p>\n";
-#print	"<p> $nodes </p>\n";
-#print	"<p> $document </p>\n";
-#print	"<p> $element </p>\n";
-#print	"<p> $tag </p>\n";
-#print	"<p> $value </p>\n";
-#print	$element->getNodeType();
+print	"<h4> $proposta </h4>\n";
 
-for (my $i = 0; $i < $nodes->getLength(); $i++){
-	 my $value = $nodes->item($i)->getFirstChild()->getData();
-	 print
-      "<p>$value</p>"
+for (my $i = 0; $i < $text->getLength(); $i++)
+{
+	my $value = $text->item($i)->getFirstChild()->getData();
+print <<'EOF';	
+<form action="" method="">
+<fieldset>
+<legend>
+EOF
+print "$value </legend>\n";
+	for (my $j = $i*3; $j < $i*3+3; $j++)
+	{
+		my $value2 = $desc->item($j)->getLastChild()->getData();
+		print "<div><input type='checkbox' name='$value2' id='$value2' value='$value2'/><label for=$value2> $value2 </label></div>";
   }
+print "</fieldset>";
+}
 
 print_proposte();
-
 print_doc_end();
-

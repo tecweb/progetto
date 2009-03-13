@@ -49,7 +49,7 @@ sub user_priv {
 
 sub print_head {
   my $page_name = shift @_;
-  my $desc = shift @_;
+  my $desc = shift @_ || "";
   my $keywords = join ', ', @_;
 
   print <<'EOF';
@@ -73,12 +73,11 @@ EOF
 sub print_header {
   print <<'EOF';
     <div id="header">
-      <span id="logo"></span>
-      <h1 id="intestazione"> Piazza Marconi Zero </h1>
+      <img src="/images/Logo.jpg" id="logo" alt="Piazza Marconi Zero" title="Logo Piazza Marconi Zero"/>
 EOF
 
   my $user = get_user_name();
-  if ($user) {
+  if (defined $user) {
     print "<div id=\"login\"> Benvenuto, $user.";
     print '<a href="/cgi-bin/logout.pl"> Logout </a> </div>';
   } else {
