@@ -28,18 +28,20 @@ print	"<h4> $proposta </h4>\n";
 
 for (my $i = 0; $i < $text->getLength(); $i++)
 {
-	 my $value = $text->item($i)->getFirstChild()->getData();
-	 print
-      "<p>$value</p>";
+	my $value = $text->item($i)->getFirstChild()->getData();
+print <<'EOF';	
+<form action="" method="">
+<fieldset>
+<legend>
+EOF
+print "$value </legend>\n";
 	for (my $j = $i*3; $j < $i*3+3; $j++)
 	{
 		my $value2 = $desc->item($j)->getLastChild()->getData();
-		print
-    	"<p>$value2</p>";
+		print "<div><input type='checkbox' name='$value2' id='$value2' value='$value2'/><label for=$value2> $value2 </label></div>";
   }
+print "</fieldset>";
 }
 
 print_proposte();
-
 print_doc_end();
-
