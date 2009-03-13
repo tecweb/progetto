@@ -55,5 +55,4 @@ if ($to < $n) {
     '"> Seguenti &gt; </a>';
 }
 
-
 print_doc_end();
