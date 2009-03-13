@@ -13,4 +13,4 @@
     <voto>3</voto>
     <testo>Mi auguro piu che altro che nessuno si dia al fai da te bruciando per conto suo i tralci</testo>
   </commento>
-</tematica>
+<commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo>commento di prova</testo></commento><commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo/></commento><commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo>secondo commento di prova</testo></commento><commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo>prova</testo></commento><commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo/></commento><commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo>prova</testo></commento><commento><username>pippo</username><data>2009-03-13</data><voto>0</voto><testo>prova3</testo></commento></tematica>
