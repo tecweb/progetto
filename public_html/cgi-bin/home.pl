@@ -43,5 +43,4 @@ sub print_news
 
 print_doc_start('Home', 'Homepage');
 print_news();
-print_proposta();
 print_doc_end();
