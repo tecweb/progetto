@@ -1,0 +1,9 @@
+Home Page
+
+Il contenuto della home page viene caricato dinamicamente dal file eventi/index.xml, vengono stampate a video le prime cinque news e/o eventi ordinati in ordine cronologico dal più recente al più remoto. Le news rappresentano novità interne al sito mentre gli eventi sono quelli organizzati sul territorio. Le news riportano la data in cui sono state o saranno effettuate mentre gli eventi quella in cui si svolgeranno. Entrambi contengono una breve descrizione autoesplicativa e sono link alle rispettive sezioni nel sito. Tali link, per essere accessibili agli utenti che non possono utilizzare il mouse, sono dotati di attributi di tabindex (con il primo tab si arriva al primo link, e una volta terminati i link si passa al menu di navigazione) mentre non sono stati inseriti gli accesskey perché il testo dei link è variabile e l'utente potrebbe confondersi. La pagina ha superato il test di validazione del w3c.
+
+Chi siamo
+
+Il contenuto della sezione "chi siamo?" è una breve descrizione del gruppo di discussione, con le motivazione della nascita e gli obiettivi che si pone. La parte di contenuto è statica ed ha ha superato il test di validazione del w3c.
+
+

@@ -36,8 +36,10 @@ sub print_news
 	for(my $i=0; $i<5; $i++)
 	{
 		print "<p><a href=";
-		print $x{@proposta[$i]};
-		print "> @proposta[$i] </a></p>\n";
+		print "'$x{@proposta[$i]}'";
+		print " tabindex='";
+		print $i+1;
+		print "'> @proposta[$i] </a></p>\n";
 	}
 }
 
