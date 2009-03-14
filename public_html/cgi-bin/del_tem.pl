@@ -36,6 +36,7 @@ sub form {
     <form action="/cgi-bin/del_tem.pl" method="post">
 	 <fieldset>
 	 <legend>Cancella tematiche</legend>
+	 <div>
 EOF
   for (my $i = 0; $i < scalar(@tem); $i++){
 	 my $value = basename(@tem[$i]);
@@ -43,7 +44,8 @@ EOF
 		  "<p><input type=\"checkbox\" name=\"name\" value=\"$value\"/>$value</p>"
 		}
   print<<'EOF';
-	 <p> <input class="ok" type="submit" value="Cancella" /> </p>
+     </div>
+	 <div> <input class="ok" type="submit" value="Cancella" /> </div>
 	 </fieldset>
     </form>
 EOF
