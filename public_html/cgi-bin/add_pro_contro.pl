@@ -32,22 +32,30 @@ sub not_admin {
 EOF
 }
 
+sub err {
+  print "<h2>Attenzione</h2>";
+  print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
+  die();
+}
+
 sub create {
-  open (FILE, ">$root/tematiche/$nome/$title.xml");
-  print FILE "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-  print FILE "<soluzione xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:schemaLocation=\"../../../xml/schema/tematica.xsd\">\n";
-  print FILE "</soluzione>";
-  close FILE;
+  eval {
+	 open (FILE, ">$root/tematiche/$nome/$title.xml");
+	 print FILE "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	 print FILE "<soluzione xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:schemaLocation=\"../../../xml/schema/tematica.xsd\">\n";
+	 print FILE "</soluzione>";
+	 close FILE;
 
-  my $parser = new XML::DOM::Parser;
-  my $dom = $parser->parsefile ("$root/tematiche/$nome/$title.xml");
-  my $sl = $dom->getDocumentElement();
+	 my $parser = new XML::DOM::Parser;
+	 my $dom = $parser->parsefile ("$root/tematiche/$nome/$title.xml");
+	 my $sl = $dom->getDocumentElement();
 
-  my $prp = $dom->createElement("proposta");
-  $prp->addText($sol);
-  $sl->appendChild($prp);
+	 my $prp = $dom->createElement("proposta");
+	 $prp->addText($sol);
+	 $sl->appendChild($prp);
 
-  $dom->printToFile("$root/tematiche/$nome/$title.xml");
+	 $dom->printToFile("$root/tematiche/$nome/$title.xml");
+  } or err();
 }
 
 sub form {

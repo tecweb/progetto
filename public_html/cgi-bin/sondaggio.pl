@@ -8,40 +8,33 @@ use lib 'mymodules/share/perl/5.8/';
 do 'base.pl';
 
 use CGI qw( :standard);
-use XML::DOM;
+use XML::XPath;
+use XML::XPath::XMLParser;
 
-my $tem = param('ref') || 0; 		#directory della soluzione
-my $tem_dir = get_tem_dir() . $tem;		#directory della tematica
-my $parser = new XML::DOM::Parser;
-my $document = $parser->parsefile ("$tem");	#file della soluzione
+my $file = param('ref'); 		#file della soluzione
+my $xp = XML::XPath->new(filename => $file);
+#my $dom = $xp->findvalue('/soluzione/domanda')->value();
+my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
 
-my $prop = $document->getElementsByTagName ("proposta");
-my $proposta = $prop->item(0)->getFirstChild()->getData();
+my $pros = $xp->find('soluzione/domanda/testo/text()');
 
-my $text = $document->getElementsByTagName ("testo");
+print_doc_start("Tematica","Tematica ","discussione","tematiche");
 
-my $desc = $document->getElementsByTagName ("descrizione");
+print "<h3> $title </h3>\n";
 
-print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
-
-print	"<h4> $proposta </h4>\n";
-
-for (my $i = 0; $i < $text->getLength(); $i++)
+print "<form action=''>\n";
+for (my $i = 1; $i < 3; $i++)
 {
-	my $value = $text->item($i)->getFirstChild()->getData();
-print <<'EOF';	
-<form action="" method="">
-<fieldset>
-<legend>
-EOF
-print "$value </legend>\n";
-	for (my $j = $i*3; $j < $i*3+3; $j++)
+	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
+	print "<fieldset>\n<legend> $dom </legend>\n";
+	for (my $j = 1; $j < 4; $j++)
 	{
-		my $value2 = $desc->item($j)->getLastChild()->getData();
-		print "<div><input type='checkbox' name='$value2' id='$value2' value='$value2'/><label for=$value2> $value2 </label></div>";
-  }
-print "</fieldset>";
+		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
+		my $dom_risp = $dom.$risp;
+		print "<div><input type='checkbox' name='$dom_risp' id='$dom_risp' value='$dom_risp'/><label for='$dom_risp'> $risp </label></div>\n";
+	}
+	print "</fieldset>\n";
 }
+print "</form>\n";
 
-print_proposte();
 print_doc_end();

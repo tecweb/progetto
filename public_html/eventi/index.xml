@@ -2,45 +2,9 @@
 <?xml-stylesheet type="text/xsl" href=""?>
 <eventi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xml/schema/eventi.xsd">
 	<evento>
-		<dataEvento> 2009-03-16 </dataEvento>
-		<dataInserimento> 20009-03-14</dataInserimento>
+		<data> 2009-03-16 </data>
 		<titolo> sito </titolo>
 		<descrizione> messa online del sito del gruppo &quot;piazza Marconi zero&quot; </descrizione>
 		<link> home.pl </link>
-	</evento>
-	<evento>
-		<dataEvento> 2009-03-17</dataEvento>
-		<dataInserimento> 2009-03-17</dataInserimento>
-		<titolo> biomasse	</titolo>
-		<descrizione>	aggiunta tematica biomasse </descrizione>
-		<link> tematica.pl?ref=biomasse </link>
-	</evento>
-	<evento>
-		<dataEvento> 2009-03-24</dataEvento>
-		<dataInserimento> 2009-03-18</dataInserimento>
-		<titolo> primavera prosecco 2009 </titolo>
-		<descrizione>	mostra del vino a San Pietro di Barbozza </descrizione>
-		<link> mostra.xml </link>
-	</evento>
-	<evento>
-		<dataEvento> 2009-03-18</dataEvento>
-		<dataInserimento> 2009-03-18</dataInserimento>
-		<titolo> LED	</titolo>
-		<descrizione>	aggiunta tematica lampioni LED </descrizione>
-		<link> lampioniLED.xml </link>
-	</evento>
-	<evento>
-		<dataEvento> 2009-03-20</dataEvento>
-		<dataInserimento> 2009-03-20</dataInserimento>
-		<titolo> WI-FI	</titolo>
-		<descrizione>	aggiunta tematica WI-FI gratuito </descrizione>
-		<link> WI-FI.xml </link>
-	</evento>
-	<evento>
-		<dataEvento> 2009-03-25</dataEvento>
-		<dataInserimento> 2009-03-25</dataInserimento>
-		<titolo> comitati	</titolo>
-		<descrizione>	aggiunta tematica comitati di frazione </descrizione>
-		<link> comitati.xml </link>
 	</evento>
 </eventi>

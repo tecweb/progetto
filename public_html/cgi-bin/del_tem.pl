@@ -13,7 +13,6 @@ do "base.pl";
 my $root = get_root();
 
 my @name = param('name');
-my @tem  = (glob("$root/tematiche/".'*'));
 
 sub not_admin {
   print <<'EOF';
@@ -22,33 +21,50 @@ sub not_admin {
 EOF
 }
 
+sub err {
+  print "<h2>Attenzione</h2>";
+  print shift @_;
+  die();
+}
 
-sub form(){
+sub form {
+  my @tem  = (glob("$root/tematiche/".'*'));
+  if (!@tem) {
+	 err("<p>Errore nell'accesso alla directory tematiche/</p>");
+  }
   print<<'EOF';
-    <form action="/cgi-bin/del_tem.pl" method="POST">
+    <form action="/cgi-bin/del_tem.pl" method="post">
 	 <fieldset>
 	 <legend>Cancella tematiche</legend>
+	 <div>
 EOF
   for (my $i = 0; $i < scalar(@tem); $i++){
 	 my $value = basename(@tem[$i]);
-	 print
-      "<p><input type=\"checkbox\" name=\"name\" value=\"$value\"/>$value</p>"
-  }
-		print<<'EOF';
-	 <p> <input class="ok" type="submit" value="Cancella" /> </p>
+		print
+		  "<p><input type=\"checkbox\" name=\"name\" value=\"$value\"/>$value</p>"
+		}
+  print<<'EOF';
+     </div>
+	 <div> <input class="ok" type="submit" value="Cancella" /> </div>
 	 </fieldset>
     </form>
 EOF
 }
 
 sub del_t{
+  my @tem  = (glob("$root/tematiche/".'*'));
+  if (!@tem) {
+	 err("<p>Errore nell'accesso alla directory tematiche/</p>");
+  } 
   foreach my $nm (@name){
 	 for (my $i = 0; $i < scalar(@tem); $i++){
 		if (basename(@tem[$i]) eq $nm){
-		  rmtree ("$root/tematiche/$nm");
-		  }
+		  eval {
+			 rmtree ("$root/tematiche/$nm");
+		  } or err("<p>Errore nella cancellazione della tematica<p>");
 		}
 	 }
+  }
   @name = {};
 }
 

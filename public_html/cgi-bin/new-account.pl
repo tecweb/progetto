@@ -49,7 +49,7 @@ my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
 sub manage_error {
   my $msg = shift @_;
   $session->param('create-failed', $msg);
-  print header(-cookie=>$cookie, -Location => "/cgi-bin/login.pl");
+  print header(-cookie=>$cookie, -Location => "login.pl");
 }
 
 if ($err) {
@@ -78,7 +78,7 @@ if ($err) {
     ## flush
     $doc->printToFile(get_root() . '/utenti.xml');
     $session->param('~username', $user); # login
-    print header(-cookie=>$cookie, -Location => "/cgi-bin/home.pl");
+    print header(-cookie=>$cookie, -Location => "home.pl");
     1;
   } or manage_error($int_err);
 }

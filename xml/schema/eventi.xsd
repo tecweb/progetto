@@ -11,8 +11,7 @@
   
   <xs:complexType name="Tevn">
     <xs:sequence>
-      <xs:element name="dataEvento" type="xs:date"/>
-      <xs:element name="dataInserimento" type="xs:date"/>
+      <xs:element name="data" type="xs:date"/>
       <xs:element name="titolo" type="xs:string"/>
       <xs:element name="descrizione" type="xs:string"/>
       <xs:element name="link" type="xs:string"/>

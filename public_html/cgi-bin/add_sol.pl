@@ -32,23 +32,31 @@ sub not_admin {
 EOF
 }
 
-sub add(){
-  mkpath ("$root/tematiche/$nome");
-  open (FILE, ">$root/tematiche/$nome/index.xml");
-  print FILE "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-  print FILE "<tematica xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:schemaLocation=\"../../../xml/schema/tematica.xsd\">\n";
-  print FILE "</tematica>";
-  close FILE;
+sub err {
+  print "<h2>Attenzione</h2>";
+  print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
+  die();
+}
 
-  my $parser = new XML::DOM::Parser;
-  my $dom = $parser->parsefile ("$root/tematiche/$nome/index.xml");
-  my $tem = $dom->getDocumentElement();
+sub add {
+  eval {
+	 mkpath ("$root/tematiche/$nome");
+	 open (FILE, ">$root/tematiche/$nome/index.xml");
+	 print FILE "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+	 print FILE "<tematica xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:schemaLocation=\"../../../xml/schema/tematica.xsd\">\n";
+	 print FILE "</tematica>";
+	 close FILE;
 
-  my $dsc = $dom->createElement("descrizione");
-  $dsc->addText($desc);
-  $tem->appendChild($dsc);
+	 my $parser = new XML::DOM::Parser;
+	 my $dom = $parser->parsefile ("$root/tematiche/$nome/index.xml");
+	 my $tem = $dom->getDocumentElement();
 
-  $dom->printToFile("$root/tematiche/$nome/index.xml");
+	 my $dsc = $dom->createElement("descrizione");
+	 $dsc->addText($desc);
+	 $tem->appendChild($dsc);
+
+	 $dom->printToFile("$root/tematiche/$nome/index.xml");
+  } or err();
 }
 
 sub form(){
@@ -74,6 +82,9 @@ print_doc_start("Aggiungi soluzione");
 if (get_user_name() eq 'admin'){
   if (!(-e "$root/tematiche/$nome/index.xml") && $nome){
 	 add();
+  }
+  else {
+	 err();
   }
   form();
 }
