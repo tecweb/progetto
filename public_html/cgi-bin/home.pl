@@ -17,32 +17,31 @@ my $root = get_root();
 my $dir = "$root/eventi/index.xml";
 my $parser = new XML::DOM::Parser;
 my $document = $parser->parsefile ("$dir");
-my $event = $document->getElementsByTagName ("evento");
-my $proposta = $event->item(1)->getFirstChild()->getData();
-
-print_doc_start('Home', 'Homepage');
-
-print "<h3> News / Eventi</h3>\n";
-
-for(my $i=0; $i<5; $i++)
+my $event = $document->getElementsByTagName ("descrizione");
+my $date = $document->getElementsByTagName ("dataEvento");
+my $link = $document->getElementsByTagName ("link");
+my @proposta;
+my %x;
+sub print_news
 {
-	my $xp;	
-	eval
+	print "<h3> News / Eventi</h3>\n";
+	for(my $i=0; $i<$event->getLength(); $i++)
 	{
-		$xp = XML::XPath->new(filename => "$root/eventi/index.xml");
-  }
-	or print "";
+		@proposta[$i] = $date->item($i)->getFirstChild()->getData().": ".$event->item($i)->getFirstChild()->getData();
+		$x{@proposta[$i]} =	 $link->item($i)->getFirstChild()->getData()	;
+	}
 
-	print "<p>";
-	print $xp->findvalue("/eventi/evento[last()-$i]/dataEvento/text()")->value();
-	print ": <a href='";
-	print $xp->findvalue("/eventi/evento[last()-$i]/link/text()")->value() || "";
-	print "'>"; 
-	print $xp->findvalue("/eventi/evento[last()-$i]/descrizione/text()")->value(); 
-	print "</a></p>\n";
+	@proposta = sort {$b cmp $a} @proposta;
+
+	for(my $i=0; $i<5; $i++)
+	{
+		print "<p><a href=";
+		print $x{@proposta[$i]};
+		print "> @proposta[$i] </a></p>\n";
+	}
 }
 
-print "$proposta";
-
+print_doc_start('Home', 'Homepage');
+print_news();
 print_proposta();
 print_doc_end();
