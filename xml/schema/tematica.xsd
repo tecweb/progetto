@@ -14,7 +14,8 @@
     <xs:sequence>
       <xs:element name="username" type="xs:string"/>
       <xs:element name="data" type="xs:date"/>
-      <xs:element name="voto" type="xs:integer"/>
+      <xs:element name="voto" type="xs:decimal"/>
+		<xs:element name="nvoti" type="xs:integer"/>
       <xs:element name="testo" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>

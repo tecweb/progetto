@@ -55,8 +55,10 @@ sub print_proposte {
 		#controllo quale file sto per andare ad aprire		
 		if($filename ne "index.xml")
 		{	print_proposta($file); 
-			print "<span> [<a href=\"/cgi-bin/sondaggio.pl?ref=$file\"> Vai all'approfondimento </a>] </span>";
-			print "<span> [<a href=\"/cgi-bin/commenti.pl?ref=$tem_dir\"> Vai ai commenti </a>] </span>";
+			print <<"EOF";
+			<span> [<a href="/cgi-bin/sondaggio.pl?ref=$file"> Vai all'approfondimento </a>] </span>
+			<span> [<a href="/cgi-bin/commenti.pl?ref=$tem_dir"> Vai ai commenti </a>] </span>
+EOF
 		}
 	}
 }
