@@ -88,7 +88,7 @@ legend {
         height: 70px;
         width: 20%;
         background-position: 100% 0%;
-        background-image: url(/images/border_top.png);
+        background-image: url(images/border_top.png);
         background-repeat: no-repeat;
 }
 
@@ -99,7 +99,7 @@ legend {
         height: 70px;
         width: 20%;
         background-position: 100% 0%;
-        background-image: url(/images/border_bottom.png);
+        background-image: url(images/border_bottom.png);
         background-repeat: no-repeat;
 }
 

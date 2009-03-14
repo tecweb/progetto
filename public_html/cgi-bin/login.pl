@@ -43,7 +43,7 @@ if (defined $user && !$bad_login) {
   $session->param('~username', $user);
   $session->flush();
   my $cookie = CGI::Cookie->new(-name=>$session->name, -value=>$session->id);
-  print header(-cookie=>$cookie, -Location => "/cgi-bin/home.pl");
+  print header(-cookie=>$cookie, -Location => "home.pl");
 } else {
   ## non ancora loggato
   print_doc_start('Login', 'Pagina per effettuare il login o la registrazione',
@@ -52,7 +52,7 @@ if (defined $user && !$bad_login) {
     print "<p class=\"errore\"> $bad_login </p>";
   }
   print <<'EOF';    
-    <form action="/cgi-bin/login.pl" method="post">
+    <form action="login.pl" method="post">
       <fieldset>
       <legend> Esegui login </legend>
       <p>
@@ -73,7 +73,7 @@ EOF
     get_session()->clear('create-failed');
   }
   print <<'EOF';
-    <form action="/cgi-bin/new-account.pl" method="post">
+    <form action="new-account.pl" method="post">
       <fieldset>
         <legend> Crea un nuovo account </legend>
         <p>

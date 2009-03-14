@@ -74,15 +74,15 @@ EOF
 sub print_header {
   print <<'EOF';
     <div id="header">
-      <img src="/images/Logo.jpg" id="logo" alt="Piazza Marconi Zero" title="Logo Piazza Marconi Zero"/>
+      <img src="../images/Logo.jpg" id="logo" alt="Piazza Marconi Zero" title="Logo Piazza Marconi Zero"/>
 EOF
 
   my $user = get_user_name();
   if (defined $user) {
     print "<div id=\"login\"> Benvenuto, $user.";
-    print '<a href="/cgi-bin/logout.pl"> Logout </a> </div>';
+    print '<a href="logout.pl"> Logout </a> </div>';
   } else {
-    print '<div id="login"> Esegui il <a href="/cgi-bin/login.pl" accesskey="l"> login </a> </div>';
+    print '<div id="login"> Esegui il <a href="login.pl" accesskey="l"> login </a> </div>';
   }
   print "</div>"; # header
 }
@@ -104,7 +104,7 @@ sub load_tem {
     last if $i >= $max_tem;
     $_ = basename($_);
     my $idx = $i + 3; # tabindex
-    print "<dd class=\"menu_item\"> <a href=\"/cgi-bin/tematica.pl?ref=$_\" tabindex=\"$idx\"> $_ </a> </dd>";
+    print "<dd class=\"menu_item\"> <a href=\"tematica.pl?ref=$_\" tabindex=\"$idx\"> $_ </a> </dd>";
     $i++;
   }
   return $i;
@@ -118,19 +118,19 @@ sub print_nav {
 	  <dl id="nav_menu">
           <dt class="menu_title"> Naviga </dt>
             <dd class="menu_item"><a href="home.pl" tabindex="1" accesskey="h"> Home </a></dd>
-	    <dd class="menu_item"><a href="/cgi-bin/chisiamo.pl" tabindex="2"> Chi siamo </a></dd>
+	    <dd class="menu_item"><a href="chisiamo.pl" tabindex="2"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
 EOF
 	 my $next_index = load_tem() + 3;
-         print "<dd id=\"all_tem\"> <a href=\"/cgi-bin/mostra_tematiche.pl?from=0\" tabindex=\"$next_index\" accesskey=\"m\"> Mostra tutte </a> </dd>";
+         print "<dd id=\"all_tem\"> <a href=\"mostra_tematiche.pl?from=0\" tabindex=\"$next_index\" accesskey=\"m\"> Mostra tutte </a> </dd>";
          $next_index++;
          my $user = get_user_name() || '';
          if ($user eq 'admin') {
            print '<dt class="menu_title"> Amministrazione </dt>';
-           print "<dd class=\"menu_item\"> <a href=\"/cgi-bin/admin.pl\" tabindex=\"$next_index\" accesskey=\"a\"> Amministra </a> </dd>"
+           print "<dd class=\"menu_item\"> <a href=\"admin.pl\" tabindex=\"$next_index\" accesskey=\"a\"> Amministra </a> </dd>"
          } else {
            print '<dt class="menu_title"> Suggerimenti </dt>';
-           print "<dd><a href=\"/cgi-bin/suggerimenti.pl\" tabindex=\"$next_index\" accesskey=\"s\"> Scrivici </a></dd>";
+           print "<dd><a href=\"suggerimenti.pl\" tabindex=\"$next_index\" accesskey=\"s\"> Scrivici </a></dd>";
          }
          print <<'EOF';
 		  </dl>
