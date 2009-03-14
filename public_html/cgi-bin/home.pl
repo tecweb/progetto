@@ -22,6 +22,7 @@ my $date = $document->getElementsByTagName ("dataEvento");
 my $link = $document->getElementsByTagName ("link");
 my @proposta;
 my %x;
+
 sub print_news
 {
 	print "<h3> News / Eventi</h3>\n";
