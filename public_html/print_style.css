@@ -1,0 +1,162 @@
+/* CSS Document */
+
+body {
+	margin: 0em;
+	padding: 0em;
+	border: 0em;
+	font-size: 1em;
+        font-family: Verdana, Helvetica, sans-serif;
+	background-color: white;
+}
+
+h1, h2, h3, h4	{
+	font-variant: small-caps;
+}
+
+img {
+	border: 0em;
+}
+
+fieldset {
+	 border: 1px #eeab0d solid;
+	 padding-top: 0em;
+	 padding-bottom: 1em;
+	 margin-bottom: 0.5em;
+}
+
+legend {
+	 font-weight: bold;
+}
+
+#container {
+	background: white;
+}
+
+/*  Stile sezione header  */
+
+#header {
+}
+
+#login {
+        display: none;
+}
+
+/* Stile barra di navigazione */
+
+.hide {
+        display: none;
+}
+
+#nav_top {
+        display: none;
+}
+
+#nav_bottom {
+        display: none;
+}
+
+#nav_bar {
+        display: none;
+}
+
+.menu_title {
+}
+
+.menu_item {
+}
+
+#corpo {
+        margin-left: 5%;
+        padding-top: 1.5em;
+        margin-right: 5%;
+}
+
+.errore {
+        color: red;
+}
+
+.successo {
+        color: green;
+}
+
+.ok {
+        padding: 0.3em;
+        background-color: white;
+        border-style: solid;
+        border-color: #ed850a; 
+        font-style: italic;
+}
+
+/*  Stile sezione footer  */
+
+#footer {
+        display: none;
+}            
+
+/*  Stile pagina dei sondaggi  */
+
+/* Stile elenco tematiche */
+
+#tem_list_title {
+        font-size: 1.5em;
+        font-variant: normal;
+}
+
+#tem_list {
+        padding-top: 0.5em;
+        list-style-type: none;
+        border: 1px #eeab0d dotted;
+}
+
+#tem_list li {
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
+        border-bottom: 1px #eeab0d dotted;
+}
+
+#a_prec {
+        float: left;
+        width: 20%;
+}
+
+#a_succ {
+        float: right;
+        width: 20%;
+        text-align: right;
+}
+
+/* Stile admin */
+#admin_func {
+	 list-style: circle;
+	 color: #eeab0d;
+}
+
+#admin_func li {
+	 margin-bottom: 1em;
+}
+
+.lbl {
+	 margin-bottom: -1em;
+}
+
+.pro_u {
+	 font-weight: bold;
+	 margin: 0em;
+	 padding: 0em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+}
+
+.pro_t {
+	 margin: 0em;
+	 margin-bottom: 1em;
+	 padding: 0.5em;
+ 	 padding-left: 1em;
+	 border: 1px #eeab0d solid;
+	 border-top: 0px;
+}
+
+.btn {
+	 margin: 0.1em;
+}
+

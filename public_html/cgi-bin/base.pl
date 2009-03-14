@@ -65,7 +65,8 @@ EOF
   print "<meta name=\"keywords\" content=\"Valdobbiadene, gruppo, giovani, $keywords\"/>";
   print <<'EOF';
     <meta name="language" content="italian it"/>
-    <link href="../style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../style.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="../print_style.css" rel="stylesheet" type="text/css" media="print"/>
   </head>
 EOF
 }
