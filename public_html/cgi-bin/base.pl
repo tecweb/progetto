@@ -116,7 +116,7 @@ sub print_nav {
 	 <div id="nav_bar">
 	  <dl id="nav_menu">
           <dt class="menu_title"> Naviga </dt>
-            <dd class="menu_item"><a href="home.pl" tabindex="1"> Home </a></dd>
+            <dd class="menu_item"><a href="home.pl" tabindex="1" accesskey="h"> Home </a></dd>
 	    <dd class="menu_item"><a href="/cgi-bin/chisiamo.pl" tabindex="2"> Chi siamo </a></dd>
           <dt class="menu_title"> Tematiche </dt> 
 EOF
@@ -126,10 +126,10 @@ EOF
          my $user = get_user_name() || '';
          if ($user eq 'admin') {
            print '<dt class="menu_title"> Amministrazione </dt>';
-           print "<dd class=\"menu_item\"> <a href=\"/cgi-bin/admin.pl\" tabindex=\"$next_index\"> Amministra </a> </dd>"
+           print "<dd class=\"menu_item\"> <a href=\"/cgi-bin/admin.pl\" tabindex=\"$next_index\" accesskey=\"a\"> Amministra </a> </dd>"
          } else {
            print '<dt class="menu_title"> Suggerimenti </dt>';
-           print "<dd><a href=\"/cgi-bin/suggerimenti.pl\" tabindex=\"$next_index\"> Scrivici </a></dd>";
+           print "<dd><a href=\"/cgi-bin/suggerimenti.pl\" tabindex=\"$next_index\" accesskey=\"s\"> Scrivici </a></dd>";
          }
          print <<'EOF';
 		  </dl>
