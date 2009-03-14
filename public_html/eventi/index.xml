@@ -2,8 +2,7 @@
 <?xml-stylesheet type="text/xsl" href=""?>
 <eventi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../xml/schema/eventi.xsd">
 	<evento>
-		<dataEvento> 2009-03-16 </dataEvento>
-		<dataInserimento> 20009-03-14</dataInserimento>
+		<data> 2009-03-16 </data>
 		<titolo> sito </titolo>
 		<descrizione> messa online del sito del gruppo &quot;piazza Marconi zero&quot; </descrizione>
 		<link> home.pl </link>

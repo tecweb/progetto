@@ -18,7 +18,7 @@ my $dir = "$root/eventi/index.xml";
 my $parser = new XML::DOM::Parser;
 my $document = $parser->parsefile ("$dir");
 my $event = $document->getElementsByTagName ("descrizione");
-my $date = $document->getElementsByTagName ("dataEvento");
+my $date = $document->getElementsByTagName ("data");
 my $link = $document->getElementsByTagName ("link");
 my @proposta;
 my %x;
