@@ -47,12 +47,12 @@ print '</ol>';
 
 if ($from > 0) {
   print '<a id="a_prec" href="/cgi-bin/mostra_tematiche.pl?from=', $from-10, 
-    '"> &lt; Precedenti </a>';
+    '" accesskey="p"> &lt; Precedenti </a>';
 }
 
 if ($to < $n) {
   print '<a id="a_succ" href="/cgi-bin/mostra_tematiche.pl?from=', $from+10, 
-    '"> Seguenti &gt; </a>';
+    '" accesskey="s"> Seguenti &gt; </a>';
 }
 
 print_doc_end();

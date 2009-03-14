@@ -77,6 +77,10 @@ legend {
 
 /* Stile barra di navigazione */
 
+.hide {
+        display: none;
+}
+
 #nav_top {
         margin-top: 1em;
         padding-right: 9px;
