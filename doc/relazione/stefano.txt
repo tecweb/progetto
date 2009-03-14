@@ -21,3 +21,7 @@ Elenco delle tematiche.
 
 Questa pagina permette di visualizzare tutte le tematiche, mostrandone 10 per pagina, ordinate per data, in modo da non obbligare l'utente a visualizzare anche tematiche vecchie di mesi e probabilmente di scarso interesse. Un titolo dice quali tematiche sono correntemente visualizzate, e sono presenti due link, uno in fondo a destra, l'altro in fondo a sinistra, che permettono di avanzare/arretrare nella lista. I link vengono visualizzati solo se necessario (ad esempio, se siamo all'inizio della lista il link per visualizzare le tematiche piu' nuove non sara' presente). Sono definite due access key per questi link: "p" (precedenti) per arretrare ed "s" (seguenti) per avanzare.
 La lista delle tematiche e' contenuta in un box e sono divise da delle linee orizzontali. Per ogni tematica si visualizza: la sua posizione nella lista (da 0 ad N), il nome della tematica, e la sua descrizione. Sebbene sia una lista ordinata e si usi il tag ol per viusalizzarla, la numerazione viene fatta a mano, in modo che non riparta sempre da 0 per ogni pagina.
+
+Stile per la stampa
+
+Lo stile per la stampa nasconde il menu di navigazione e l'header, fatta eccezione per l'immagine del logo che funge da titolo. Il corpo viene posto al centro della pagina.
