@@ -22,7 +22,7 @@ print_doc_start("Tematica","Tematica ","discussione","tematiche");
 
 print "<h3> $title </h3>\n";
 
-print "<form action=''>\n";
+print "<form action='add_sondaggio.pl'>\n";
 for (my $i = 1; $i < 3; $i++)
 {
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
@@ -30,11 +30,16 @@ for (my $i = 1; $i < 3; $i++)
 	for (my $j = 1; $j < 4; $j++)
 	{
 		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
-		my $dom_risp = $dom.$risp;
-		print "<div><input type='checkbox' name='$dom_risp' id='$dom_risp' value='$dom_risp'/><label for='$dom_risp'> $risp </label></div>\n";
+		print "<div><input type='radio' name='ris";
+		print $j+3*($i-1);
+		print "' id='ris";
+		print $j+3*($i-1);
+		print "' value='$risp'/><label for='ris";
+		print $j+3*($i-1);
+		print "'> $risp </label></div>\n";
 	}
 	print "</fieldset>\n";
 }
-print "</form>\n";
+print "<input type = 'submit' value = 'vota'><input type='reset' value='resetta'></form>\n";
 
 print_doc_end();
