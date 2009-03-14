@@ -11,6 +11,7 @@ La sezione "Tematiche" mostra le ultime 5 tematiche inserite (caricate quindi di
 Il menu di navigazione viene implementato tramite una definition list.
 Subito prima del menu di navigazione e' presente un link che permette di saltare la navigazione e di passare al corpo del documento per facilitare la navigazione tramite screen reader. Il link viene nascosto tramite lo stile CSS per non disturbare la visualizzazione tramite browser.
 Per facilitare la navigazione sono state definite delle access key: "l" per accedere al login/logout, "t" per visualizzare la pagina con tutte le tematiche, "h" per andare alla home page, "s" per accedere alla pagina per inviare un suggerimento ed "a" per accedere alla pagina di amministrazione.
+E' stato inoltre definito un tabindex crescente per tutti i link della navigazione per assicurarsi che vengano passati ordinatamente tramite tab.
 
 Pagina del login.
 
