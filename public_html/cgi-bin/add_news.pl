@@ -7,6 +7,7 @@ use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
+use HTML::Entities;
 
 do "base.pl";
 my $root = get_root();
@@ -74,13 +75,13 @@ sub add {
 	 my $new = $dom->createElement("evento");
 	 my $dt = $dom->createElement("data");
 	 my $dtmp = $ydate."-".$mdate."-".$ddate;
-	 $dt->addText($dtmp);
+	 $dt->addText(encode_entities($dtmp));
 	 my $ttl = $dom->createElement("titolo");
-	 $ttl->addText($title);
+	 $ttl->addText(encode_entities($title));
 	 my $dsc = $dom->createElement("descrizione");
-	 $dsc->addText($desc);
+	 $dsc->addText(encode_entities($desc));
 	 my $lnk = $dom->createElement("link");
-	 $lnk->addText($link);
+	 $lnk->addText(encode_entities($link));
 
 	 $new->appendChild($dt);
 	 $new->appendChild($ttl);

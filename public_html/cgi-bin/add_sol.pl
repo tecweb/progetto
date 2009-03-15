@@ -14,12 +14,10 @@ do "base.pl";
 my $root = get_root();
 my $nome = param('name');
 
-#if (!$nome){
-my $s = CGI::Session->load(); #get_session();
+my $s = CGI::Session->load();
 if (!$nome) {
   $nome = $s->param('name');
 }
-#my $s = new CGI::Session();
 $s->param('name', $nome);
 $s->flush();
 
@@ -52,7 +50,7 @@ sub add {
 	 my $tem = $dom->getDocumentElement();
 
 	 my $dsc = $dom->createElement("descrizione");
-	 $dsc->addText($desc);
+	 $dsc->addText(encode_entities($desc));
 	 $tem->appendChild($dsc);
 
 	 $dom->printToFile("$root/tematiche/$nome/index.xml");
@@ -83,9 +81,6 @@ if (get_user_name() eq 'admin'){
   if (!(-e "$root/tematiche/$nome/index.xml") && $nome){
 	 add();
   }
-#  else {
-#	 err();
-#  }
   form();
 }
 else {
