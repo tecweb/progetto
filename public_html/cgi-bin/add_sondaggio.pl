@@ -57,14 +57,14 @@ print "$dom";
 print "'>risultati delle votazioni</caption>\n";
 for (my $i = 1; $i < 3; $i++)
 {
-print "<tr>\n";
+print "<tr class='tabella'>\n";
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
-	print "<td> $dom </td>\n";
+	print "<td class='tabella' colspan='2'> $dom </td>\n";
 	for (my $j = 1; $j < 4; $j++)
 	{
 		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
 		my $voti=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/nvoti/text()")->value();
-		print "<tr>\n<td>$risp</td>\n<td>$voti voti</td></tr>";
+		print "<tr class='tabella'>\n<td class='tabella'>$risp</td>\n<td class='tabella'>$voti voti</td></tr>";
 	}
 print "</tr>";
 }
