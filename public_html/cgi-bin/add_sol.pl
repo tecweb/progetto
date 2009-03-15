@@ -8,11 +8,13 @@ use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
 use File::Path;
+use HTML::Entities;
 
 do "base.pl";
 
 my $root = get_root();
 my $nome = param('name');
+my $errs = 0;
 
 my $s = CGI::Session->load();
 if (!$nome) {
@@ -33,12 +35,12 @@ EOF
 sub err {
   print "<h2>Attenzione</h2>";
   print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
-  die();
+  $errs = 1;
 }
 
 sub add {
   eval {
-         mkpath ("$root/tematiche/$nome");
+         mkpath ("$root/tmatiche/$nome");
 	 open (FILE, ">$root/tematiche/$nome/index.xml");
 	 print FILE "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	 print FILE "<tematica xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:schemaLocation=\"../../../xml/schema/tematica.xsd\">\n";
@@ -81,7 +83,9 @@ if (get_user_name() eq 'admin'){
   if (!(-e "$root/tematiche/$nome/index.xml") && $nome){
 	 add();
   }
-  form();
+  if ($errs == 0){
+	 form();
+  }
 }
 else {
   not_admin();

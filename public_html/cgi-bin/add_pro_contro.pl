@@ -8,10 +8,12 @@ use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
 use File::Path;
+use HTML::Entities;
 
 do "base.pl";
 
 my $root = get_root();
+my $errs = 0;
 
 my $sol = param('sol');
 my $title = param('title');
@@ -32,7 +34,7 @@ EOF
 sub err {
   print "<h2>Attenzione</h2>";
   print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
-  die();
+  $errs = 1;
 }
 
 sub create {
@@ -87,7 +89,9 @@ if (get_user_name() eq 'admin'){
   if (!(-e "$root/tematiche/$nome/$title.xml") && $title){
 	 create();
   }
-  form();
+  if ($errs == 0) {
+	 form();
+  }
 }
 else {
   not_admin();

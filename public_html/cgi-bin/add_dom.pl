@@ -8,10 +8,12 @@ use CGI qw( :standard );
 use CGI::Session;
 use XML::DOM;
 use File::Path;
+use HTML::Entities;
 
 do "base.pl";
 
 my $root = get_root();
+my $errs = 0;
 
 my $pro1 = param('pro1');
 my $pro2 = param('pro2');
@@ -42,7 +44,7 @@ EOF
 sub err {
   print "<h2>Attenzione</h2>";
   print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
-  die();
+  $errs = 1;
 }
 
 sub add {
@@ -175,7 +177,9 @@ if (get_user_name() eq 'admin'){
   if ($domn){
 	 add_domn();
   }
-  form();
+  if ($errs == 0) {
+	 form();
+  }
 }
 else {
   not_admin();
