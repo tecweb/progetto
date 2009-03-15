@@ -1,0 +1,35 @@
+-Pagina Tematica
+
+La pagina tematica mostra all'utente la descrizione della tematica da lui scelta e un elenco di possibili soluzioni al problema trattato da quella tematica.
+
+Per ogni possibile soluzione vengono forniti una piccola descrizione della proposta e una serie di pro e di contro in modo che l'utente possa già farsi un'idea e decidere se approfondire l'argomento oppure no. Gli approfondimenti sono di due tipi: sondaggio e commento. Nel primo caso l'utente potrà partecipare ad un sondaggio specifico per ogni proposta di soluzione, mentre nel secondo caso potrà leggere i commenti espressi da altri utenti sulla tematica in generale oppure potrà scrivere lui stesso un commento; in questo secondo caso dovrà necessariamente aver effettuato il login perchè si vuole evitare che chiunque nel web possa scrivere commenti anonimi, magari offensivi.
+
+A livello implementativo uno script perl riceve in input una stringa di query necessaria a determinare qual'è la tematica selezionata dall'utente, dopo di che va alla ricerca della directory nella quale sono salvati i file xml necessari a caricare i dati. Una volta trovata la directory lo script carica dal file index.xml la descrizione generale della tematica, dai vari file xml delle possibili soluzioni la descrizione di ogni soluzione e i pro/contro e scrive il codice html della pagina.
+
+La pagina supera i controlli di validazione per xhtml1.0 Strict e CSS.
+
+
+-Pagina Commenti
+
+La pagina dei commenti permette all'utente di vedere le opinioni espresse dagli utenti su un determinato problema corredate di nome dell'utente, data a cui risale il commento, voto medio dato dagli altri utenti e infine un piccolo form tramite il quale si può dare il proprio voto al commento. Questo meccanismo di votazione consente in qualche modo di conoscere anche l'opinione generale di coloro che non vogliono registrarsi al sito e non possono quindi pubblicare nulla, ma che anonimamente vogliono dare un loro parere attraverso i commenti degli altri.
+
+A livello implementativo lo script che genera l'html riceve dalla pagina tematica una stringa di query che gli consente di raggiungere il file index.xml per una determinata tematica, file da cui ricava tutti i commenti che devono essere pubblicati.
+
+Nel caso sia abilitato il CSS di fianco ad ogni radio button del form per la votazione vengono visualizzate una, due, tre o quattro stelle oltre a delle indicazioni numeriche (+1,+2,+3,+4). Nel caso non sia abilitato verranno visualizzate solo le indicazioni numeriche in modo da consentire all'utente di capire ugualmente quanto varrà il suo voto.
+
+La pagina supera i controlli di validazione per xhtml1.0 Strict e CSS.
+
+--Pubblicazione di commenti
+
+La pubblicazione di nuovi commenti viene gestita tramite due script perl. Lo script scrivi_commento.pl prepara una pagina web con un form. In un box l'utente può digitare del testo; quando verrà premuto Invia il contenuto del box verrà inviato con metodo POST allo script pubblica_commento.pl. Tale script agirà come segue:
+* Nel caso l'utente non abbia effettuato il login genererà una pagina con un messaggio di errore che inviterà l'utente ad effettuarlo, in caso contrario non potrà pubblicare nulla
+* Nel caso il login sia stato effettuato, ma nel box non sia stato scritto nulla, genererà una pagina che proporrà all'utente di tornare alla pagina con il form e nemmeno in questo caso verrà pubblicato nulla
+* Nel caso invece che l'utente abbia effettuato il login e abbia riempito il box elaborerà il testo ricevuto dal form, aprirà il file index.xml corrispondente alla tematica in questione e archivierà il nuovo commento inserendolo in coda; infine avviserà l'utente che il commento è stato pubblicato con successo.
+
+La pagina con il form e le varie pagine con i messaggi superano i controlli di validazione per xhtml1.0 Strict e CSS.
+
+--Votazione di un commento
+
+Quando l'utente seleziona uno dei radio button e preme Vota lo script aggiorna_voto.pl si occupa di modificare il file index.xml appropriato sovrascrivendo il voto e il numero di votanti.
+
+-Note generali: Sono stati utilizzati i moduli XML::DOM e XML::XPath per la manipolazione dei file xml, e il modulo CGI per la gestione dell'html.
