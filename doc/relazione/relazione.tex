@@ -1,0 +1,135 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[dvips]{graphicx}
+
+\author{Cool Cats!}
+\title{Relazione Progetto Tecnologie Web}
+\date{2009-03-14}
+
+\makeindex
+
+\begin{document}
+
+\maketitle
+
+\section{Introduzione}
+Questo documento descrive lo scopo generale del sito, come vengono organizzati i dati persistenti e poi presenta le diverse sezioni del sito suddivise in base a quale membro del gruppo le ha realizzate.
+
+\section{Scopo}
+Lo scopo del sito \`e quello di aiutare il gruppo giovanile \textit{Piazza Marconi Zero} a porre problemi e a trovare possibili soluzioni condivise, e di comunicare news ed eventi di interesse per il gruppo.
+
+\section{Dati persistenti}
+
+\subsection{Tematiche}
+Le tematiche vengono salvate sotto la directory \textit{tematiche/} contenente una sottodirectory per ogni tematica. Il nome della sottodirecotry coincide con il nome della tematica. La data di una tematica viene presa dalla data della sua  directory.
+Le sottodirectory contengono un file index.xml che raccoglie commenti e caratteristiche generali della tematica, e una serie di file xml che rappresentano ognuno una singola soluzione, composta da un approfondimento, una lista di pro e di contro, le domande e i risultati del sondaggio.
+\subsubsection{tematiche/nome-tematica/index.xml}
+\begin{itemize}
+ \item descrizione generale: testo
+ \item commenti: lista di ennuple (nome utente, data, voto, commento)
+\end{itemize}
+\subsubsection{tematiche/nome-tematica/possibile-soluzione.xml}
+Il nome di una soluzione, con sondaggio annesso, \`e il nome del file che lo contiene.
+\begin{itemize}
+ \item domanda: testo
+ \item pro: lista di vantaggi
+ \item contro: lista di svantaggi
+ \item opzioni: lista di coppie (descrizione, numero voti)
+\end{itemize}
+
+\subsubsection{utenti.xml}
+Base di dati degli utenti con un account.
+\begin{itemize}
+ \item username
+ \item email
+ \item hash md5 della password
+\end{itemize}
+
+\subsection{Eventi (news)}
+La directory \textit{eventi/} contiene il file index.xml che descrive gli eventi in generale e contiene gli eventuali file html statici che descrivono un singolo evento.
+ 
+\subsubsection{eventi/index.xml}
+\begin{itemize}
+ \item data evento
+ \item data inserimento
+ \item titolo
+ \item breve descrizione
+ \item link alla pagina contenente l'evento (pu\`o essere un link esterno oppure interno)
+\end{itemize}
+
+\section{Stefano Dissegna}
+
+\subsection{Sezioni condivise}
+Le sezioni di pagina condivise sono implementate nel file cgi-bin/base.pl che viene incluso da tutti gli altri file.
+
+\subsubsection{Header}
+L'header della pagina contiene un'immagine che, oltre al logo, contiene anche il
+nome del gruppo giovanile, ed ha quindi dei contenuti informativi e viene inserita usando il tag 
+img. Viene fornito un testo alternativo se l'immagine non puo' essere visualizzata.
+In alto a destra un box visualizza il nome dell'utente (se ha gi\`a effettuato il login) e permette
+di effettuare il logout oppure di accedere alla pagina che permette di effettuare il login e di creare un account.
+
+\subsubsection{Barra di navigazione}
+La barra di navigazione si trova a sinistra. \`E divisa in 4 sezioni:
+\begin{enumerate}
+ \item navigazione generale (home/chi siamo)
+ \item tematiche
+ \item suggerimenti oppure amministrazione
+ \item modifica del proprio profilo
+\end{enumerate}
+La terza sezione dipende dall'utente che visualizza la pagina: se \`e l'amministratore \`e presente il link per la sezione di amministrazione, altrimenti il link alla pagina che permette di inviare dei suggerimenti all'amministratore.
+La sezione "Tematiche" mostra le ultime 5 tematiche inserite (caricate quindi dinamicamente), oltre ad un link "Mostra tutte" che permette di accedere ad una pagina per visualizzare tutte le tematiche. Quest'ultimo link e' ben distanziato rispetto ai link alle tematiche per evitare di confondere lo stesso con una tematica.
+Il menu di navigazione viene implementato tramite una definition list.
+Subito prima del menu di navigazione e' presente un link che permette di saltare la navigazione e di passare al corpo del documento per facilitare la navigazione tramite screen reader. Il link viene nascosto tramite lo stile CSS per non disturbare la visualizzazione tramite browser.
+Per facilitare la navigazione sono state definite delle access key per i link usati pi\`u di frequente:
+\begin{itemize}
+ \item ``l'' per accedere al login/logout
+ \item ``t'' per visualizzare la pagina con tutte le tematiche
+ \item ``h'' per andare alla home page
+ \item ``s'' per accedere alla pagina per inviare un suggerimento (se presente il link)
+ \item ``a'' per accedere alla pagina di amministrazione (se presente il link)
+\end{itemize}
+E' stato inoltre definito un tabindex crescente per tutti i link della navigazione per assicurarsi che vengano passati ordinatamente tramite tab.
+
+\subsection{Pagina del login}
+
+La pagina del login contiene due diversi form, i cui elementi sono raggruppati tramite il tag fieldset. Il primo permette di effettuare il login, il secondo di creare un nuovo account.
+
+\subsubsection{Login}
+L'utente deve inserire username e password. Per effettuare il login si controlla che l'MD5 della password sia uguale a quello memorizzato nel file utenti.xml e associato al nome utente inserito. Viene visualizzato un messaggio di errore (sempre nella pagina del login) se il nome utente non esiste o se la password non coincide.
+\subsubsection{Creazione account}
+Durante la creazione di un nuovo account si controlla che il nome utente non sia gi\`a esistente, le due password combacino, e che l'email abbia un formato corretto. Se tutto risulta corretto, l'utente viene aggiunto al file utenti.xml insieme all'MD5 della password ed alla sua email, viene effettuato il login e si rimanda l'utente alla home page. Se \`e presente un errore, viene ripresentata la pagina di login con la descrizione dell'errore.
+
+\subsection{Elenco delle tematiche}
+
+Questa pagina permette di visualizzare tutte le tematiche, mostrandone 10 per pagina, ordinate per data, in modo da non obbligare l'utente a visualizzare anche tematiche vecchie di mesi e probabilmente di scarso interesse. Un titolo dice quali tematiche sono correntemente visualizzate, e sono presenti due link, uno in fondo a destra, l'altro in fondo a sinistra, che permettono di avanzare/arretrare nella lista. I link vengono visualizzati solo se necessario (ad esempio, se siamo all'inizio della lista il link per visualizzare le tematiche pi\`u nuove non sar\`a presente). Sono definite due access key per questi link: ``p'' (precedenti) per arretrare ed ``s'' (seguenti) per avanzare.
+La lista delle tematiche e' contenuta in un box e sono divise da delle linee orizzontali. Per ogni tematica si visualizza: la sua posizione nella lista (da 1 ad N), il nome della tematica e la sua descrizione. Sebbene sia una lista ordinata e si usi il tag ol per viusalizzarla, la numerazione viene fatta a mano, in modo che non riparta sempre da 1 per ogni pagina.
+
+\subsection{Modifica profilo}
+
+Questa pagina permette all'utente di modificare la propria password e/o la propria email. I campi lasciati vuoti non vengono modificati. Dopo la modifica, viene visualizzato un messaggio di errore/successo.
+
+\subsection{Stile}
+
+Ci sono due stili: uno per la navigazione tramite browser ed uno per la stampa.
+
+\subsubsection{Stile principale}
+L'intero sito \`e impostato sul colore arancione per armonizzarsi con il logo del gruppo piazza Marconi zero. La grafica \`e fatta in modo da essere poco invadente il che rende il sito usabile anche con browser testuali.
+
+\subsubsection{Stile per la stampa}
+Lo stile per la stampa nasconde il menu di navigazione e l'header, fatta eccezione per l'immagine del logo che funge da titolo. Il corpo viene posto al centro della pagina.
+
+\section{Alessandro Renosto}
+
+\subsection{Home Page}
+
+Il contenuto della home page viene caricato dinamicamente dal file eventi/index.xml, vengono stampate a video le prime cinque news e/o eventi ordinati in ordine cronologico dal pi\`u recente al pi\`u remoto. Le news rappresentano novit\`a interne al sito mentre gli eventi sono quelli organizzati sul territorio. Le news riportano la data in cui sono state o saranno effettuate mentre gli eventi quella in cui si svolgeranno. Entrambi contengono una breve descrizione autoesplicativa e sono link alle rispettive sezioni nel sito. Tali link, per essere accessibili agli utenti che non possono utilizzare il mouse, sono dotati di attributi di tabindex (con il primo tab si arriva al primo link, e una volta terminati i link si passa al menu di navigazione) mentre non sono stati inseriti gli accesskey perch\`e il testo dei link \`e variabile e l'utente potrebbe confondersi. La pagina ha superato il test di validazione del w3c.
+
+\subsection{Chi siamo}
+
+Il contenuto della sezione ``chi siamo?'' \`e una breve descrizione del gruppo di discussione, con le motivazione della nascita e gli obiettivi che si pone. La parte di contenuto \`e statica ed ha ha superato il test di validazione del w3c.
+
+\end{document}
