@@ -38,12 +38,17 @@ my $xp = XML::XPath->new(filename => $file);
 
 my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
 
+my $parser = new XML::DOM::Parser;
+my $document = $parser->parsefile ("$file");
+my $nl1 = $document->getElementsByTagName("domanda");
+my $l1 = $nl1->getLength();
+
 print_doc_start("Tematica","Tematica ","discussione","tematiche");
 
 print "<h3> $title </h3>\n";
 
 print "<table><caption summary='";
-for (my $i = 1; $i < 3; $i++)
+for (my $i = 1; $i <= $l1; $i++)
 {
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
 print "$dom";
@@ -55,7 +60,7 @@ print "$dom";
 	}
 }
 print "'>risultati delle votazioni</caption>\n";
-for (my $i = 1; $i < 3; $i++)
+for (my $i = 1; $i <= $l1; $i++)
 {
 print "<tr class='tabella'>\n";
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
@@ -71,6 +76,5 @@ print "</tr>";
 print "</table>";
 
 print "<span> [<a href=\"/cgi-bin/tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
-print $node->getFirstChild()->getNodeValue();
 
 print_doc_end();
