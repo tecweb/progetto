@@ -11,16 +11,15 @@ use CGI qw( :standard);
 use XML::XPath;
 use XML::XPath::XMLParser;
 
-my $tem = param('tem'); 		#file della soluzione
-my $sol = param('sol'); 		#file della soluzione
-my $file = get_root()."tematiche/".$tem."/".$sol.".xml";
+my $tem = param('tem'); 		#dir della tematica
+my $sol = param('sol');			#file della soluzione
+my $file = get_root()."tematiche/".$tem."/".$sol; #path completo
+
 my $xp = XML::XPath->new(filename => $file);
-#my $dom = $xp->findvalue('/soluzione/domanda')->value();
+
 my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
 
-my $pros = $xp->find('soluzione/domanda/testo/text()');
-
-print_doc_start("Tematica","Tematica ","discussione","tematiche");
+print_doc_start("Tematica","Tematica $tem","soluzione","tematiche", $sol);
 
 print "<h3> $title </h3>\n";
 
