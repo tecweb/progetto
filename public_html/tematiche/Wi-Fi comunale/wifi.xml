@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+	<proposta> Costruire alcuni punti di accesso Wi-Fi (cioè via radio) in luoghi strategici. La rete rimarrà di proprietà del Comune che fornirà il servizio ad un costo molto basso ai privati e alle aziende, e gratuitamente a scuole, edifici amministrativi, carabinieri, ecc. </proposta>
+  <pro> La connessione a banda larga sarà disponibile anche per gli utenti che loro malgrado non sono raggiunti da servizi privati </pro>
+  <pro> Il costo per tutte le famiglie e le aziende sarà più che dimezzato rispetto alle attuali tariffe subite da chi è già raggiunto dal servizio privato </pro>
+	<pro>Sarà possibile telefonare gratuitamente all'interno del territorio comunale arrtraverso la tecnologia VOIP, realizzando così un risparmio per l'amministrazione e per i cittadini che utilizzeranno questo servizio</pro>
+	<pro>Si favorirà la partecipazione pubblica alle attività di amministrazione ed al controllo sull'operato degli amministratori</pro>
+	<pro> Si potranno strutturare in maniera semplice e a costi limitati, servizi di videosorveglianza</pro>
+	<pro> L'installazione dell'intera rete e dei punti di accesso non comporta grosse opere pubbliche nè disagi alla viabilità, e si prevedono tempi molto brevi per l'installazione e la messa in servizio, e anche per la riparazione di eventuali guasti</pro>
+	<pro> Ridotto impatto ambientale sia elettromagnetico che paesaggistico (niente tralicci, dimensioni limitate delle antenne - paragonabili ad una parabola per la TV)</pro>
+	<pro> Possibilità di creare servizi per il turismo, percorsi guidati su palmari e videotelefoni, guide per scoprire in modo approfondito il territorio muovendosi al suo interno</pro>
+	<pro> Migliorare la qualità ed i tempi di erogazione di alcuni servizi pubblici</pro>
+<contro> Il territorio valdobbiadenese è complesso, così come complessa sarà la scelta di dove posizionare i punti di accesso wi-fi, cioè le piccole antenne che trasmetteranno e riceverrano il segnale</contro>
+<contro> Le reali possibilità di finanziare le spese correnti (cioè la gestione annuale del servizio) con il solo canone fisso non possono essere previste con calcoli certi, poiché dipendenti dal numero di abbonati al servizio.</contro>
+<contro> L'installazione della rete potrebbe costare intorno ai 150.000euro e avere un costo di manutenzione intorno ai 30.000euro annui (Fonte Comune di Soveria Mannelli (CZ))</contro>
+<contro> Le antenne potrebbero subire danni a causa di condizioni meteo o atti vandalici</contro>
+  <domanda>
+    <testo>Ti piace questa soluzione?</testo>
+    <opzione>
+      <descrizione> Sì </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> No </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Colore preferito?</testo>
+    <opzione>
+      <descrizione> Giallo </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Blu </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Rosso </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+</soluzione>

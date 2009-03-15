@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<tematica xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/tematica.xsd">
+  <descrizione>La connessione a banda larga alla rete Internet non è disponibile in tutto il territorio. Dov'è disponibile sarebbe meglio abbassare i costi di collegamento.
+</descrizione>
+</tematica>
