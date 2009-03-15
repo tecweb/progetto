@@ -25,6 +25,15 @@ my $sessions = new CGI::Session();
 my $sol = $sessions->param('sols');
 my $file = get_root()."tematiche/".$tem."/".$sol; #path completo
 
+my $parser = XML::DOM::Parser->new;
+my $doc = $parser->parsefile($file);
+
+my $n=0;
+my $new_voto=1;
+my $node = $doc->getElementsByTagName('nvoti')->item($n);  #n indica se il voto da modificare è del commento 0,1,2 ecc
+$node->getFirstChild()->setNodeValue($new_voto); # setto il valore del nodo testo, che e' il primo filgio del nodo "voto"
+#$doc->printToFile("$file");
+
 my $xp = XML::XPath->new(filename => $file);
 
 my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
@@ -40,15 +49,11 @@ for (my $i = 1; $i < 3; $i++)
 	for (my $j = 1; $j < 4; $j++)
 	{
 		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
-		print "<p>$risp</p>";
+		my $voti=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/nvoti/text()")->value();
+		print "<p>$risp $voti voti</p>";
 	}
 }
 
-print $par1;
-print $par2;
-print $par3;
-print $par4;
-print $par5;
-print $par6;
+print $node->getFirstChild()->getNodeValue();
 
 print_doc_end();
