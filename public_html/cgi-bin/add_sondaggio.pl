@@ -19,10 +19,10 @@ my $par4 = param("ris4");
 my $par5 = param("ris5");
 my $par6 = param("ris6");
 
+my $sessiont = new CGI::Session();
 my $tem = $sessiont->param('tems');
-my $SOL = $sessions->param('sols');
-#my $tem = "biomasse";
-#my $sol = "sol_centrale_elettrica.xml";
+my $sessions = new CGI::Session();
+my $sol = $sessions->param('sols');
 my $file = get_root()."tematiche/".$tem."/".$sol; #path completo
 
 my $xp = XML::XPath->new(filename => $file);
