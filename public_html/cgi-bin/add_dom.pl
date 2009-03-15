@@ -23,10 +23,9 @@ my $con3 = param('con3');
 my $s = CGI::Session->load();
 my $nome = $s->param('name');
 my $title = $s->param('ttl');
-$s->flush();
-$s = new CGI::Session();
-$s->param('name', $nome);
-$s->param('ttl', $title);
+#$s = new CGI::Session();
+#$s->param('name', $nome);
+#$s->param('ttl', $title);
 $s->flush();
 
 my $domn = param('dom');
@@ -154,21 +153,23 @@ sub form {
 	 <div>
        <p class="lbl"><label>Opzioni: </label></p>
        <ul>
-	    <li><input type="text" size="50" name="opz1"/></li>
-	    <li><input type="text" size="50" name="opz2"/></li>
-	    <li><input type="text" size="50" name="opz3"/></li>
-	    <li><input type="text" size="50" name="opz4"/></li>
-	    <li><input type="text" size="50" name="opz5"/></li>
+	      <li><input type="text" size="50" name="opz1"/></li>
+	      <li><input type="text" size="50" name="opz2"/></li>
+	      <li><input type="text" size="50" name="opz3"/></li>
+	      <li><input type="text" size="50" name="opz4"/></li>
+	      <li><input type="text" size="50" name="opz5"/></li>
        </ul>
     </div>
-       <div><input class="ok" type="submit" value="Aggiungi"/></div>
+    <div><input class="ok" type="submit" value="Aggiungi"/></div>
 	 </fieldset>
     </form>
+    <div class="btn"><a href="add_sol.pl">
+	    <input class="ok" type="button" value="Aggiungi un'altra soluzione"/></a>
+    </div>
 EOF
-    print "<div class=\"btn\"><a href=\"add_sol.pl\">";
-	 print "<input class=\"ok\" type=\"button\" value=\"Aggiungi un'altra soluzione\"/></a></div>";
     print "<div class=\"btn\"><a href=\"tematica.pl?ref=$nome\">";
-	 print "<input class=\"ok\" type=\"button\" value=\"Termina\"/></a></div>";
+	 print "   <input class=\"ok\" type=\"button\" value=\"Termina\"/></a>";
+	 print "</div>";
 }
 
 print_doc_start("Aggiungi domanda");

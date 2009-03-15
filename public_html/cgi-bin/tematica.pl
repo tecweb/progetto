@@ -56,7 +56,7 @@ sub print_proposte {
 		if($filename ne "index.xml")
 		{	print_proposta($file); 
 			print <<"EOF";
-			<span> [<a href="sondaggio.pl?tem=$tem&sol=$filename"> Vai all'approfondimento </a>] </span>
+			<span> [<a href="sondaggio.pl?tem=$tem&amp;sol=$filename"> Vai all'approfondimento </a>] </span>
 			<span> [<a href="commenti.pl?ref=$tem"> Vai ai commenti </a>] </span>
 EOF
 		}
