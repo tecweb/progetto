@@ -48,8 +48,22 @@ EOF
 	print "</dl>\n";
 }
 
+sub files_in_dir {
+  my $d = shift @_;
+  my @res = ();
+  opendir DIR, $d;
+  my $f;
+  while ($f = readdir DIR) {
+    if ($f ne '.' && $f ne '..') {
+      push @res, "$d/$f";
+    }
+  }
+  closedir DIR;
+  return @res;
+}
+
 sub print_proposte {
-	my @files = glob "$tem_dir/*";
+	my @files = files_in_dir($tem_dir);#glob "$tem_dir/*";
 	foreach my $file (@files) {
 		my $filename = fileparse($file);		
 		#controllo quale file sto per andare ad aprire		
