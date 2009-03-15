@@ -264,3 +264,7 @@ legend {
 	background-image: url(images/star.gif);
 	background-repeat: repeat-x;
 }
+
+.tabella {
+	background-color: rgb(246, 176, 40);
+}
