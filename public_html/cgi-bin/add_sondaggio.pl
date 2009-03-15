@@ -29,9 +29,10 @@ my $parser = XML::DOM::Parser->new;
 my $doc = $parser->parsefile($file);
 
 my $n=0;
-my $new_voto=1;
 my $node = $doc->getElementsByTagName('nvoti')->item($n);  #n indica se il voto da modificare è del commento 0,1,2 ecc
-$node->getFirstChild()->setNodeValue($new_voto); # setto il valore del nodo testo, che e' il primo filgio del nodo "voto"
+my $new_voto = $node->getFirstChild()->getNodeValue();
+$node->getFirstChild()->setNodeValue($new_voto+1); #setto il valore del nodo testo, che e' il primo filgio del nodo "voto"
+
 #$doc->printToFile("$file");
 
 my $xp = XML::XPath->new(filename => $file);
