@@ -17,10 +17,8 @@ my $sol = param('sol');
 my $title = param('title');
 my $pro = param('pro');
 
-my $s = CGI::Session->load(); #get_session();
+my $s = CGI::Session->load();
 my $nome = $s->param('name');
-#$s = new CGI::Session();
-#$s->param('name', $nome);
 $s->param('ttl', $title);
 $s->flush();
 
@@ -50,7 +48,7 @@ sub create {
 	 my $sl = $dom->getDocumentElement();
 
 	 my $prp = $dom->createElement("proposta");
-	 $prp->addText($sol);
+	 $prp->addText(encode_entities($sol));
 	 $sl->appendChild($prp);
 
 	 $dom->printToFile("$root/tematiche/$nome/$title.xml");

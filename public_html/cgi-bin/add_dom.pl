@@ -23,9 +23,6 @@ my $con3 = param('con3');
 my $s = CGI::Session->load();
 my $nome = $s->param('name');
 my $title = $s->param('ttl');
-#$s = new CGI::Session();
-#$s->param('name', $nome);
-#$s->param('ttl', $title);
 $s->flush();
 
 my $domn = param('dom');
@@ -56,33 +53,33 @@ sub add {
 
 	 if ($pro1){
 		my $pr1 = $dom->createElement("pro");
-		$pr1->addText($pro1);
+		$pr1->addText(encode_entities($pro1));
 		$sl->appendChild($pr1);
 	 }
 	 if ($pro2){
 		my $pr2 = $dom->createElement("pro");
-		$pr2->addText($pro2);
+		$pr2->addText(encode_entities($pro2));
 		$sl->appendChild($pr2);
 	 }
 	 if ($pro3){
 		my $pr3 = $dom->createElement("pro");
-		$pr3->addText($pro3);
+		$pr3->addText(encode_entities($pro3));
 		$sl->appendChild($pr3);
 	 }
 
 	 if ($con1){
 		my $cn1 = $dom->createElement("contro");
-		$cn1->addText($con1);
+		$cn1->addText(encode_entities($con1));
 		$sl->appendChild($cn1);
 	 }
 	 if ($con2){
 		my $cn2 = $dom->createElement("contro");
-		$cn2->addText($con2);
+		$cn2->addText(encode_entities($con2));
 		$sl->appendChild($cn2);
 	 }
 	 if ($con3){
 		my $cn3 = $dom->createElement("contro");
-		$cn3->addText($con3);
+		$cn3->addText(encode_entities($con3));
 		$sl->appendChild($cn3);
 	 }
 
@@ -96,7 +93,7 @@ sub add_opz {
   my $dom = shift @_;
   my $op = $dom->createElement("opzione");
   my $dsc = $dom->createElement("descrizione");
-  $dsc->addText($opz);
+  $dsc->addText(encode_entities($opz));
   my $nv = $dom->createElement("nvoti");
   $nv->addText("0");
   $op->appendChild($dsc);
@@ -112,7 +109,7 @@ sub add_domn {
 
 	 my $dmn = $dom->createElement("domanda");
 	 my $txt = $dom->createElement("testo");
-	 $txt->addText($domn);
+	 $txt->addText(encode_entities($domn));
 	 $dmn->appendChild($txt);
 
 	 if ($opz1){

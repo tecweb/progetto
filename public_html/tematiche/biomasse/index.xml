@@ -4,8 +4,8 @@
   <commento>
     <username>Tizio</username>
     <data>2009-02-08</data>
-	 <voto>2.21428571428571</voto>
-	 <nvoti>14</nvoti>
+	 <voto>2.26666666666666</voto>
+	 <nvoti>15</nvoti>
     <testo>Ci sono aziende che si occupano proprio dello smaltimento delle biomasse e forse sarebbe meglio affidarsi a loro</testo>
   </commento>
   <commento>
@@ -15,4 +15,4 @@
 	 <nvoti>9</nvoti>
     <testo>Mi auguro piu che altro che nessuno si dia al fai da te bruciando per conto suo i tralci</testo>
   </commento>
-<commento><username>pippo</username><data>2009-03-15</data><voto>4</voto><nvoti>1</nvoti><testo>prova</testo></commento><commento><username>admin</username><data>2009-03-15</data><voto>3</voto><nvoti>1</nvoti><testo>aaaaa</testo></commento></tematica>
+<commento><username>pippo</username><data>2009-03-15</data><voto>4</voto><nvoti>1</nvoti><testo>prova</testo></commento><commento><username>admin</username><data>2009-03-15</data><voto>3</voto><nvoti>1</nvoti><testo>aaaaa</testo></commento><commento><username>admin</username><data>2009-03-15</data><voto>0</voto><nvoti>0</nvoti><testo>commento di prova</testo></commento></tematica>
