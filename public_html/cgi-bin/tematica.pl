@@ -10,6 +10,7 @@ do 'base.pl';
 use CGI qw( :standard);
 use XML::XPath;
 use XML::XPath::XMLParser;
+use URI::Escape;
 
 my $tem = param('ref'); 		#tematica selezionata
 my $tem_dir = get_tem_dir().$tem;		#directory della tematica specifica
@@ -69,8 +70,10 @@ sub print_proposte {
 		#controllo quale file sto per andare ad aprire		
 		if($filename ne "index.xml")
 		{	print_proposta($file); 
+                        $tem = uri_escape($tem);
+                        $filename = uri_escape($filename);
 			print <<"EOF";
-			<span> [<a href="sondaggio.pl?tem=$tem&sol=$filename"> Vai all'approfondimento </a>] </span>
+			<span> [<a href="sondaggio.pl?tem=$tem&amp;sol=$filename"> Vai all'approfondimento </a>] </span>
 			<span> [<a href="commenti.pl?ref=$tem"> Vai ai commenti </a>] </span>
 EOF
 		}
