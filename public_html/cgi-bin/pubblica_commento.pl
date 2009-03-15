@@ -54,12 +54,16 @@ else {
 	my $new_voto = $doc->createElement('voto');
 	$new_voto->addText(0);
 
+	my $new_nvoti = $doc->createElement('nvoti');
+	$new_nvoti->addText(0);
+
 	my $new_testo = $doc->createElement('testo');
 	$new_testo->addText(encode_entities($comm));
 
 	$new_comm->appendChild($new_username); 
 	$new_comm->appendChild($new_data);
 	$new_comm->appendChild($new_voto);
+	$new_comm->appendChild($new_nvoti);
 	$new_comm->appendChild($new_testo);
 
 	$doc->getElementsByTagName('tematica')->item(0)->appendChild($new_comm);
