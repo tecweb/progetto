@@ -76,6 +76,6 @@ print "</tr>";
 }
 print "</table>";
 
-print "<span> [<a href=\"/cgi-bin/tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
+print "<span> [<a href=\"tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
 
 print_doc_end();

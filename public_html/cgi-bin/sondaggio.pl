@@ -58,6 +58,6 @@ for (my $i = 1; $i <= $l; $i++)
 }
 print "<input type = 'submit' value = 'vota'><input type='reset' value='resetta'></form>\n";
 
-print "<span> [<a href=\"/cgi-bin/tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
+print "<span> [<a href=\"tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
 
 print_doc_end();
