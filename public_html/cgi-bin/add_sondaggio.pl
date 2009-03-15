@@ -42,18 +42,35 @@ print_doc_start("Tematica","Tematica ","discussione","tematiche");
 
 print "<h3> $title </h3>\n";
 
+print "<table><caption summary='";
 for (my $i = 1; $i < 3; $i++)
 {
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
-	print "<p> $dom </p>";
+print "$dom";
 	for (my $j = 1; $j < 4; $j++)
 	{
 		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
 		my $voti=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/nvoti/text()")->value();
-		print "<p>$risp $voti voti</p>";
+		print "$risp, $voti voti.";
 	}
 }
+print "'>risultati delle votazioni</caption>\n";
+for (my $i = 1; $i < 3; $i++)
+{
+print "<tr>\n";
+	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
+	print "<td> $dom </td>\n";
+	for (my $j = 1; $j < 4; $j++)
+	{
+		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
+		my $voti=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/nvoti/text()")->value();
+		print "<tr>\n<td>$risp</td>\n<td>$voti voti</td></tr>";
+	}
+print "</tr>";
+}
+print "</table>";
 
+print "<span> [<a href=\"/cgi-bin/tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
 print $node->getFirstChild()->getNodeValue();
 
 print_doc_end();
