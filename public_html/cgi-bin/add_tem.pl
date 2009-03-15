@@ -40,6 +40,7 @@ EOF
 print_doc_start("Aggiungi tematica");
 if (get_user_name() eq 'admin'){
   form();
+  print "<div><a href=\"admin.pl\">Torna alla pagina di amministrazione</a></div>";
 }
 else {
   not_admin();

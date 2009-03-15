@@ -21,7 +21,6 @@ EOF
 sub err {
   print "<h2>Attenzione!</h2>";
   print "<p>Si &egrave; verificato un errore nell'apertura del file.</p>";
-  die();
 }
 
 sub pro(){
@@ -47,6 +46,7 @@ sub pro(){
 print_doc_start("Leggi proposte");
 if (get_user_name() eq 'admin'){
 	 pro();
+	 print "<div><a href=\"admin.pl\">Torna alla pagina di amministrazione</a></div>";
   }
 else {
   not_admin();
