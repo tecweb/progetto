@@ -133,6 +133,8 @@ EOF
            print "<dd><a href=\"suggerimenti.pl\" tabindex=\"$next_index\" accesskey=\"s\"> Scrivici </a></dd>";
          }
          print <<'EOF';
+           <dt class="menu_title"> Profilo </dt>
+           <dd class="menu_item"><a href="gestione_utente.pl">Modifica profilo</a></dd>
 		  </dl>
 	 </div>
          <div id="nav_bottom"></div>
