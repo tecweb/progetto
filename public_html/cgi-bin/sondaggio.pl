@@ -11,7 +11,9 @@ use CGI qw( :standard);
 use XML::XPath;
 use XML::XPath::XMLParser;
 
-my $file = param('ref'); 		#file della soluzione
+my $tem = param('tem'); 		#file della soluzione
+my $sol = param('sol'); 		#file della soluzione
+my $file = get_root()."tematiche/".$tem."/".$sol.".xml";
 my $xp = XML::XPath->new(filename => $file);
 #my $dom = $xp->findvalue('/soluzione/domanda')->value();
 my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
