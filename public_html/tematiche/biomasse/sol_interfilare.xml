@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+  <proposta> Si tritano i sarmenti lasciandoli nell'interfilare. </proposta>
+<pro>Questo permette di restituire annualmente al terreno un quantitativo pari a circa il 25% del fabbisogno di sostanza organica (Corradi, 2006);
+</pro>
+<pro>Rapidità ed economicità dell'intervento, soprattutto se fatto in concomitanza con il primo sfalcio dell'erba, si fanno così due operazioni con una passata.</pro>
+<contro>necessità di attrezzi adatti (trincia a martelli e non a coltelli) e trattrici abbastanza potenti.</contro>
+<contro>È opinione comune che non distruggere il legno di potatura e non asportarlo dal vigneto comporti un aumento dell'inoculo delle malattie della vite (soprattutto mal dell'esca);</contro>
+<contro>dalle nostre parti i sarmenti trinciati non potrebbero essere interrati e, rimanendo in superficie, l'apporto in sostanza organica sarebbe molto minore, inoltre la degradazione della lignina richiede un certo consumo di azoto;</contro>
+<contro>l'humificazione sarebbe più lenta e incompleta rispetto all'ipotesi 2.</contro>
+  <domanda>
+    <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+</soluzione>

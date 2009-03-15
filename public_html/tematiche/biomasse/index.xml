@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <tematica xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/tematica.xsd">
-  <descrizione>I tralci potati dalle viti devono essere smaltiti</descrizione>
+  <descrizione>I residui di potatura della vite (sarmenti) devono essere smaltiti, non si possono bruciare per non incorrere in sanzioni amministrative.
+</descrizione>
   <commento>
     <username>Tizio</username>
     <data>2009-02-08</data>

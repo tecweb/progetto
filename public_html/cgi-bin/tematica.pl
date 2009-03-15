@@ -36,17 +36,15 @@ sub print_proposta {
 	#lista dei contro
 	my $cons = $xp->find('soluzione/contro/text()');
 	print <<'EOF';	
-<dl>
-<dt> Pro </dt>				
+<ul> Pro </ul>				
 EOF
 	foreach my $pro ($pros->get_nodelist) {
-		print "<dd>",XML::XPath::XMLParser::as_string($pro),"</dd>\n";
+		print "<li>",XML::XPath::XMLParser::as_string($pro),"</li>\n";
 	}
-	print "<dt> Contro </dt>\n";
+	print "<ul> Contro </ul>\n";
 	foreach my $con ($cons->get_nodelist) {
-		print "<dd>",XML::XPath::XMLParser::as_string($con),"</dd>\n";
+		print "<li>",XML::XPath::XMLParser::as_string($con),"</li>\n";
 	}
-	print "</dl>\n";
 }
 
 sub files_in_dir {
@@ -74,7 +72,6 @@ sub print_proposte {
                         $filename = uri_escape($filename);
 			print <<"EOF";
 			<span> [<a href="sondaggio.pl?tem=$tem&amp;sol=$filename"> Vai all'approfondimento </a>] </span>
-			<span> [<a href="commenti.pl?ref=$tem"> Vai ai commenti </a>] </span>
 EOF
 		}
 	}
@@ -83,6 +80,7 @@ EOF
 print_doc_start("Tematica","Tematica $tem","discussione","tematiche",$tem);
 
 print "<h2 id=\"tem_title\"> $tem </h2>\n";
+print "<p> [<a href='commenti.pl?ref=$tem'> Vai ai commenti </a>] </p>";
 print	"<p> $desc </p>\n";
 
 print_proposte();

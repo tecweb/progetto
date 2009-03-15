@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
-  <proposta> Si raccolgono in appositi centri dove verranno trasformati in compost che si utlizzerà come concime per le viti stesse
-  </proposta>
-  <pro> Ciò che si toglie alle piante, ritorna alle piante e in agricoltura biologica (senza sostanze di sintesi chimica - impossibile da realizzare?) 
-  sarebbe la soluzione ideale. </pro>
-  <contro> Le sostanze inquinanti con cui le viti sono attualmente trattate ritornerebbero nel terreno inquinandolo per sempre </contro>
+  <proposta> Si raccolgono in appositi centri dove verranno trasformati in compost che si utilizzerà come concime per le viti stesse </proposta>
+<pro>Ciò che si toglie alle piante, ritorna alle piante e in agricoltura biologica (senza sostanze di sintesi chimica - impossibile da realizzare?) sarebbe la soluzione ideale</pro>
+<pro>la sostanza organica è una riserva a lenta cessione di macro e microelementi, favorisce il loro trasporto e lo scambio.</pro>
+<contro>Le sostanze inquinanti con cui le viti sono attualmente trattate ritornerebbero nel terreno inquinandolo per "sempre" (questo accade  anche ogni qual volta viene fatto un trattamento alle foglie, quello che cade sul terreno è notevole perché la maggior parte dei viticoltori fa ancora trattamenti ad alto volume).</contro>
+<contro>I vigneti sono totalmente inerbiti, la sostanza organica per essere efficiente deve essere interrata quindi "conviene di più comprare il NITROPHOSKA" o i concimi di sintesi che hanno effetto anche se cosparsi in superficie.</contro>
+
   <domanda>
     <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
     <opzione>
