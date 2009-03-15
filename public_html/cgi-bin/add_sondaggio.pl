@@ -40,19 +40,19 @@ my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
 
 my $parser = new XML::DOM::Parser;
 my $document = $parser->parsefile ("$file");
-my $nl1 = $document->getElementsByTagName("domanda");
-my $l1 = $nl1->getLength();
+my $nl = $document->getElementsByTagName("domanda");
+my $l = $nl->getLength();
 
 print_doc_start("Tematica","Tematica ","discussione","tematiche");
 
 print "<h3> $title </h3>\n";
 
 print "<table><caption summary='";
-for (my $i = 1; $i <= $l1; $i++)
+for (my $i = 1; $i <= $l; $i++)
 {
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
 print "$dom";
-	for (my $j = 1; $j < 4; $j++)
+	for (my $j = 1; $j <= 4; $j++)
 	{
 		my $risp=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/descrizione/text()")->value();
 		my $voti=  $xp->findvalue("/soluzione/domanda[$i]/opzione[$j]/nvoti/text()")->value();
@@ -60,7 +60,7 @@ print "$dom";
 	}
 }
 print "'>risultati delle votazioni</caption>\n";
-for (my $i = 1; $i <= $l1; $i++)
+for (my $i = 1; $i <= $l; $i++)
 {
 print "<tr class='tabella'>\n";
 	my $dom = $xp->findvalue("/soluzione/domanda[$i]/testo/text()")->value();
