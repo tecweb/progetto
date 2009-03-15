@@ -6,4 +6,6 @@ Chi siamo
 
 Il contenuto della sezione "chi siamo?" è una breve descrizione del gruppo di discussione, con le motivazione della nascita e gli obiettivi che si pone. La parte di contenuto è statica ed ha ha superato il test di validazione del w3c.
 
+sondaggio
 
+Il contenuto della sezione sondaggio viene caricato direttamente dal database tramite la ricezione di due parametri in modalità get, i parametri si riferiscono al nome della tematioca e del file xml in cui sono salvati i dati. é presente un form contenente un questionario composto da alcune domande, ognuna di queste ha 3 opzioni di tipo radio button, i questionari hanno poi un bottone che serve per inviare i dati ed uno per resettare le scelte fatte in caso di errore. è inoltre presente un link che torna alla pagina principale della tematica per venire incotro all'utente. Compilando il form e spedendo i dati si accede ad una pagina che permette di visualizzare i risultati ottenuti finora.

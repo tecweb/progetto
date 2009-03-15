@@ -13,11 +13,11 @@ use XML::DOM;
 use XML::XPath;
 
 my $par1 = param("ris1");
-my $par2 = param("ris2");
-my $par3 = param("ris3");
-my $par4 = param("ris4");
-my $par5 = param("ris5");
-my $par6 = param("ris6");
+#my $par2 = param("ris2");
+#my $par3 = param("ris3");
+#my $par4 = param("ris4");
+#my $par5 = param("ris5");
+#my $par6 = param("ris6");
 
 my $sessiont = new CGI::Session();
 my $tem = $sessiont->param('tems');
