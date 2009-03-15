@@ -16,7 +16,7 @@
 \maketitle
 
 \section{Introduzione}
-Questo documento descrive lo scopo generale del sito, come vengono organizzati i dati persistenti e poi presenta le diverse sezioni del sito suddivise in base a quale membro del gruppo le ha realizzate.
+Questo documento descrive lo scopo generale del sito, come vengono organizzati i dati persistenti e poi presenta le diverse sezioni del sito suddivise in base a quale membro del gruppo le ha realizzate. Il sito \`e accessibile sulla home page di Stefano Dissegna (sdissegn) sulla macchina tecnologie-web oppure, a breve, all'indirizzo http://www.piazzamarconizero.com
 
 \section{Scopo}
 Lo scopo del sito \`e quello di aiutare il gruppo giovanile \textit{Piazza Marconi Zero} a porre problemi e a trovare possibili soluzioni condivise, e di comunicare news ed eventi di interesse per il gruppo.
@@ -142,5 +142,48 @@ Il contenuto della sezione ``chi siamo?'' \`e una breve descrizione del gruppo d
 \subsubsection{Cancellazione di una tematica}
 \subsubsection{Aggiunta di un evento/news}
 \subsubsection{Cancellazione di un evento/news}
+
+\section{Filippo Dalla Gassa}
+
+\subsection{Pagina Tematica}
+
+La pagina tematica mostra all'utente la descrizione della tematica da lui scelta e un elenco di possibili soluzioni al problema trattato da quella tematica.
+
+Per ogni possibile soluzione vengono forniti una piccola descrizione della proposta e una serie di pro e di contro in modo che l'utente possa gi\`a farsi un'idea e decidere se approfondire l'argomento oppure no. Gli approfondimenti sono di due tipi: sondaggio e commento. Nel primo caso l'utente potr\`a partecipare ad un sondaggio specifico per ogni proposta di soluzione, mentre nel secondo caso potr\`a leggere i commenti espressi da altri utenti sulla tematica in generale oppure potr\`a scrivere lui stesso un commento; in questo secondo caso dovr\`a necessariamente aver effettuato il login perch\`e si vuole evitare che chiunque nel web possa scrivere commenti anonimi, magari offensivi.
+
+A livello implementativo uno script perl riceve in input una stringa di query necessaria a determinare qual \`e la tematica selezionata dall'utente, dopo di che va alla ricerca della directory nella quale sono salvati i file xml necessari a caricare i dati. Una volta trovata la directory lo script carica dal file index.xml la descrizione generale della tematica, dai vari file xml delle possibili soluzioni la descrizione di ogni soluzione e i pro/contro e scrive il codice html della pagina.
+
+La pagina supera i controlli di validazione per xhtml1.0 Strict e CSS.
+
+
+\subsection{Pagina Commenti}
+
+La pagina dei commenti permette all'utente di vedere le opinioni espresse dagli utenti su un determinato problema
+ corredate di nome dell'utente, data a cui risale il commento, voto medio dato dagli altri utenti e infine un piccolo 
+form tramite il quale si pu\`o dare il proprio voto al commento. Questo meccanismo di votazione consente in qualche modo di conoscere anche l'opinione generale di coloro che non vogliono registrarsi al sito e non possono quindi pubblicare nulla, ma che anonimamente vogliono dare un loro parere attraverso i commenti degli altri.
+
+A livello implementativo lo script che genera l'html riceve dalla pagina tematica una stringa di query che gli consente di raggiungere il file index.xml per una determinata tematica, file da cui ricava tutti i commenti che devono essere pubblicati.
+
+Nel caso sia abilitato il CSS di fianco ad ogni radio button del form per la votazione vengono visualizzate una, due, tre o quattro stelle oltre a delle indicazioni numeriche (+1,+2,+3,+4). Nel caso non sia abilitato verranno visualizzate solo le indicazioni numeriche in modo da consentire all'utente di capire ugualmente quanto varr\`a il suo voto.
+
+La pagina supera i controlli di validazione per xhtml1.0 Strict e CSS.
+
+\subsection{Pubblicazione di commenti}
+
+La pubblicazione di nuovi commenti viene gestita tramite due script perl. Lo script scrivi{\_}commento.pl prepara una pagina web con un form. In un box l'utente pu\`o digitare del testo; quando verr\`a premuto Invia il contenuto del box verr\`a inviato con metodo POST allo script pubblica{\_}commento.pl. Tale script agir\`a come segue:
+\begin{itemize}
+\item Nel caso l'utente non abbia effettuato il login generer\`a una pagina con un messaggio di errore che inviter\`a l'utente ad effettuarlo, in caso contrario non potr\`a pubblicare nulla
+\item Nel caso il login sia stato effettuato, ma nel box non sia stato scritto nulla, generer\`a una pagina che proporr\`a all'utente di tornare alla pagina con il form e nemmeno in questo caso verr\`a pubblicato nulla
+\item Nel caso invece che l'utente abbia effettuato il login e abbia riempito il box elaborer\`a il testo ricevuto dal form, aprir\`a il file index.xml corrispondente alla tematica in questione e archivier\`a il nuovo commento inserendolo in coda; infine avviser\`a l'utente che il commento \`e stato pubblicato con successo.
+\end{itemize}
+
+La pagina con il form e le varie pagine con i messaggi superano i controlli di validazione per xhtml1.0 Strict e CSS.
+
+\subsection{Votazione di un commento}
+
+Quando l'utente seleziona uno dei radio button e preme Vota lo script aggiorna{\_}voto.pl si occupa di modificare il file index.xml appropriato sovrascrivendo il voto e il numero di votanti.
+
+\subsection{Note generali}
+Sono stati utilizzati i moduli XML::DOM e XML::XPath per la manipolazione dei file xml, e il modulo CGI per la gestione dell'html.
 
 \end{document}

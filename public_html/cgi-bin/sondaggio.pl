@@ -12,13 +12,14 @@ use CGI::Session;
 use XML::DOM;
 use XML::XPath;
 use XML::XPath::XMLParser;
+use URI::Escape;
 
-my $tem = param('tem'); 		#dir della tematica
+my $tem = uri_unescape(param('tem')); 		#dir della tematica
 my $sessiont = new CGI::Session();
 $sessiont->param('tems', $tem);
 $sessiont->flush();
 
-my $sol = param('sol');			#file della soluzione
+my $sol = uri_unescape(param('sol'));			#file della soluzione
 my $sessions = new CGI::Session();
 $sessions->param('sols', $sol);
 $sessions->flush();
