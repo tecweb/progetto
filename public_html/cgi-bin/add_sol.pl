@@ -61,7 +61,7 @@ sub add {
 
 sub form(){
 	 print<<'EOF';
-    <form action="/cgi-bin/add_pro_contro.pl" method="post">
+    <form action="add_pro_contro.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi soluzione</legend>
 	 <div>

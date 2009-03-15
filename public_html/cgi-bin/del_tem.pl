@@ -33,7 +33,7 @@ sub form {
 	 err("<p>Errore nell'accesso alla directory tematiche/</p>");
   }
   print<<'EOF';
-    <form action="/cgi-bin/del_tem.pl" method="post">
+    <form action="del_tem.pl" method="post">
 	 <fieldset>
 	 <legend>Cancella tematiche</legend>
 	 <div>

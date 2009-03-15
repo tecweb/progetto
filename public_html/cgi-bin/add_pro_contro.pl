@@ -60,7 +60,7 @@ sub create {
 
 sub form {
 	 print<<'EOF';
-    <form action="/cgi-bin/add_dom.pl" method="post">
+    <form action="add_dom.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi pro e contro</legend>
     <div>

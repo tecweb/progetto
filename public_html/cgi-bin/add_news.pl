@@ -32,7 +32,7 @@ sub added{
 
 sub form(){
 	 print<<'EOF';
-    <form action="/cgi-bin/add_news.pl" method="post">
+    <form action="add_news.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi news</legend>
     <div>
