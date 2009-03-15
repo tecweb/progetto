@@ -21,7 +21,7 @@ print <<"EOF";
 	<h2> Esprimi la tua opinione </h2>
 	<p> Effettua il <a href="login.pl">login</a> se non l&apos;hai ancora fatto. </p>
 	<p> <a href="commenti.pl?ref=$tem">Torna alla pagina precedente</a> </p>
-	<form method="post" action="/cgi-bin/pubblica_commento.pl">
+	<form method="post" action="pubblica_commento.pl">
 		<div> <label for="comm"> Commento: </label> </div>
 		<div> <textarea id="comm" name="comm" cols="80" rows="10"></textarea> </div>
 		<div> <input class="ok" type="submit" value="Invia" /> </div>

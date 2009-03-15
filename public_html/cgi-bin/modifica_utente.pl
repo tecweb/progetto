@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use CGI::Session;
