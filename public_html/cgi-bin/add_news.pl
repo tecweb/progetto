@@ -38,8 +38,8 @@ sub form(){
     <div>
 	   <p class="lbl"><label>Data (gg/mm/aaaa): </label> </p>
 	   <p><input type="text" size="1" maxlength="2" name="ddate"/>/
-      <input type="text" size="1" maxlength="2" name="mdate" />/
-      <input type="text" size="3" maxlength="4" name="ydate" />
+      <input type="text" size="1" maxlength="2" name="mdate"/>/
+      <input type="text" size="3" maxlength="4" name="ydate"/>
       </p>
     </div>
 	 <div>
@@ -54,7 +54,7 @@ sub form(){
 	   <p class="lbl"><label for="link"> Link: </label></p>
 	   <p><input type="text" size="50" id="link" name="link"/></p>
 	 </div>
-	 <div> <input class="ok" type="submit" value="Aggiungi" /> </div>
+	 <div><input class="ok" type="submit" value="Aggiungi"/></div>
 	 </fieldset>
     </form>
 EOF
@@ -63,7 +63,6 @@ EOF
 sub err {
   print "<h2>Attenzione</h2>";
   print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
-  die();
 }
 
 sub add {
@@ -102,6 +101,7 @@ if (get_user_name() eq 'admin'){
   else {
 	 add();
   }
+  print "<div><a href=\"admin.pl\">Torna alla pagina di amministrazione</a></div>";
 }
 else {
   not_admin();

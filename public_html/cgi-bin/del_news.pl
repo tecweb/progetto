@@ -28,7 +28,6 @@ EOF
 sub err {
   print "<h2>Attenzione</h2>";
   print "<p>Si &egrave; verificato un errore nell'accesso al file.</p>";
-  die();
 }
 
 
@@ -52,7 +51,7 @@ EOF
 
 	 print<<'EOF';
     </div>
-	 <div> <input class="ok" type="submit" value="Cancella" /> </div>
+	 <div><input class="ok" type="submit" value="Cancella"/></div>
 	 </fieldset>
     </form>
 EOF
@@ -87,6 +86,7 @@ if (get_user_name() eq 'admin'){
   else{
 	 form();
   }
+  print "<div><a href=\"admin.pl\">Torna alla pagina di amministrazione</a></div>";
 }
 else {
   not_admin();

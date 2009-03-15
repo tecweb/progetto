@@ -16,17 +16,25 @@ sub not_admin {
 EOF
 }
 
+my $i = load_tem();
+$i += 6;
+
 sub admin_func{
   print <<'EOF';
     <h2>Pagina di amministrazione</h2>
 	 <ul id="admin_func">
-		  <li><a href="read_pro.pl">Leggi proposte</a></li>
-		  <li><a href="add_tem.pl">Aggiungi tematica</a></li>
-		  <li><a href="del_tem.pl">Cancella tematica</a></li>
-		  <li><a href="add_news.pl">Aggiungi news</a></li>
-		  <li><a href="del_news.pl">Cancella news</a></li>
-	 </ul>
 EOF
+  print "<li><a href=\"read_pro.pl\" tabindex=\"$i\">Leggi proposte</a></li>";
+  $i += 1;
+  print "<li><a href=\"add_tem.pl\" tabindex=\"$i\">Aggiungi tematica</a></li>";
+  $i += 1;
+  print "<li><a href=\"del_tem.pl\" tabindex=\"$i\">Cancella tematica</a></li>";
+  $i += 1;
+  print "<li><a href=\"add_news.pl\" tabindex=\"$i\">Aggiungi news</a></li>";
+  $i += 1;
+  print "<li><a href=\"del_news.pl\" tabindex=\"$i\">Cancella news</a></li>";
+  print "</ul>";
+
 }
 
 print_doc_start("Amministrazione");

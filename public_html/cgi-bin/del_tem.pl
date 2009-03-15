@@ -24,7 +24,6 @@ EOF
 sub err {
   print "<h2>Attenzione</h2>";
   print shift @_;
-  die();
 }
 
 sub form {
@@ -40,12 +39,11 @@ sub form {
 EOF
   for (my $i = 0; $i < scalar(@tem); $i++){
 	 my $value = basename(@tem[$i]);
-		print
-		  "<p><input type=\"checkbox\" name=\"name\" value=\"$value\"/>$value</p>"
+		print "<p><input type=\"checkbox\" name=\"name\" value=\"$value\"/>$value</p>";
 		}
   print<<'EOF';
      </div>
-	 <div> <input class="ok" type="submit" value="Cancella" /> </div>
+	 <div><input class="ok" type="submit" value="Cancella"/></div>
 	 </fieldset>
     </form>
 EOF
@@ -60,7 +58,10 @@ sub del_t{
 	 for (my $i = 0; $i < scalar(@tem); $i++){
 		if (basename(@tem[$i]) eq $nm){
 		  eval {
-			 rmtree ("$root/tematiche/$nm");
+			 my $c = rmtree ("$root/tematiche/$nm");
+			 if ($c > 0) {
+				print "<h2>L'operazione &egrave; stata eseguita con successo.</h2>";
+			 }
 		  } or err("<p>Errore nella cancellazione della tematica<p>");
 		}
 	 }
@@ -72,11 +73,11 @@ print_doc_start("Cancella tematiche");
 if (get_user_name() eq 'admin'){
   if (@name){
 	 del_t();
-	 print "<h2>L'operazione &egrave; stata eseguita con successo.</h2>";
   }
   else{
 	 form();
   }
+  print "<div><a href=\"admin.pl\">Torna alla pagina di amministrazione</a></div>";
 }
 else {
   not_admin();

@@ -17,11 +17,10 @@ my $sol = param('sol');
 my $title = param('title');
 my $pro = param('pro');
 
-my $s = CGI::Session->load();
+my $s = CGI::Session->load(); #get_session();
 my $nome = $s->param('name');
-$s->flush();
-$s = new CGI::Session();
-$s->param('name', $nome);
+#$s = new CGI::Session();
+#$s->param('name', $nome);
 $s->param('ttl', $title);
 $s->flush();
 
@@ -66,17 +65,17 @@ sub form {
     <div>
        <p class="lbl"><label>Pro: </label></p>
        <ul>
-	    <li><input type="text" size="50" name="pro1"/></li>
-	    <li><input type="text" size="50" name="pro2"/></li>
-	    <li><input type="text" size="50" name="pro3"/></li>
+	      <li><input type="text" size="50" name="pro1"/></li>
+	      <li><input type="text" size="50" name="pro2"/></li>
+	      <li><input type="text" size="50" name="pro3"/></li>
        </ul>
     </div>
     <div>
        <p class="lbl"><label>Contro: </label></p>
        <ul>
-	    <li><input type="text" size="50" name="con1"/></li>
-	    <li><input type="text" size="50" name="con2"/></li>
-	    <li><input type="text" size="50" name="con3"/></li>
+	      <li><input type="text" size="50" name="con1"/></li>
+	      <li><input type="text" size="50" name="con2"/></li>
+	      <li><input type="text" size="50" name="con3"/></li>
        </ul>
     </div>
     <div><input class="ok" type="submit" value="Continua"/></div>
