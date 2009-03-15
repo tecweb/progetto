@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+  <proposta> Istituire dei comitati di frazione aperti a tutti i residenti. I Comitati dovranno analizzare eventuali problemi riguardanti la propria frazione e, una volta individuata e proposta una soluzione attuabile, avranno il diritto di chiederne la presa in esame da parte dell'Amministrazione Comunale. </proposta>
+<pro> I cittadini si sentiranno maggiormente parte integrante e decisiva del proprio territorio </pro>
+<pro> Controllo capillare del territorio e dei problemi che presenta </pro>
+<contro> Potrebbe non essere sufficiente affidare alla sola iniziativa dei cittadini il ruolo di costituire e mantenere in vita tali comitati </contro>
+<contro> Potrebbe risultare oneroso per l'Amministrazione dare ascolto a tutte le proposte dei singoli comitati, al punto da  rendere vano il lavoro dei comitati </contro>
+  <domanda>
+    <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+</soluzione>
