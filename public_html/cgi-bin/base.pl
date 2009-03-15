@@ -80,7 +80,7 @@ EOF
   my $user = get_user_name();
   if (defined $user) {
     print "<div id=\"login\"> Benvenuto, $user.";
-    print '<a href="logout.pl"> Logout </a> </div>';
+    print '<a href="logout.pl" accesskey="l"> Logout </a> </div>';
   } else {
     print '<div id="login"> Esegui il <a href="login.pl" accesskey="l"> login </a> </div>';
   }

@@ -39,7 +39,7 @@ sub form {
 	 my $evn = $dom->getDocumentElement();
 	 my $titles = $dom->getElementsByTagName("titolo");
 	 print<<'EOF';
-    <form action="/cgi-bin/del_news.pl" method="post">
+    <form action="del_news.pl" method="post">
 	 <fieldset>
 	 <legend>Cancella news</legend>
     <div>

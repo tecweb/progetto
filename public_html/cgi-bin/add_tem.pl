@@ -20,7 +20,7 @@ EOF
 
 sub form(){
 	 print<<'EOF';
-    <form action="/cgi-bin/add_sol.pl" method="post">
+    <form action="add_sol.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi tematica</legend>
       <div>

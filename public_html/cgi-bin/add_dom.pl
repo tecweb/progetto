@@ -144,7 +144,7 @@ sub add_domn {
 
 sub form {
 	 print<<'EOF';
-    <form action="/cgi-bin/add_dom.pl" method="post">
+    <form action="add_dom.pl" method="post">
 	 <fieldset>
 	 <legend>Aggiungi domanda</legend>
 	 <div>
@@ -165,9 +165,9 @@ sub form {
 	 </fieldset>
     </form>
 EOF
-    print "<div class=\"btn\"><a href=\"/cgi-bin/add_sol.pl\">";
+    print "<div class=\"btn\"><a href=\"add_sol.pl\">";
 	 print "<input class=\"ok\" type=\"button\" value=\"Aggiungi un'altra soluzione\"/></a></div>";
-    print "<div class=\"btn\"><a href=\"/cgi-bin/tematica.pl?ref=$nome\">";
+    print "<div class=\"btn\"><a href=\"tematica.pl?ref=$nome\">";
 	 print "<input class=\"ok\" type=\"button\" value=\"Termina\"/></a></div>";
 }
 
