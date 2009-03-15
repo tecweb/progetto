@@ -24,14 +24,14 @@ sub form(){
 	 <fieldset>
 	 <legend>Aggiungi tematica</legend>
       <div>
-      <p class="lbl"><label for="name">Nome: </label></p>
-	   <p><input type="text" size="50" id="name" name="name"/></p>
+        <p class="lbl"><label for="name">Nome: </label></p>
+	     <p><input type="text" size="50" id="name" name="name"/></p>
       </div>
 	   <div>
-      <p class="lbl"><label for="desc">Descrizione: </label></p>
-	   <p><textarea cols="50" rows="5" id="desc" name="desc"></textarea></p>
+        <p class="lbl"><label for="desc">Descrizione: </label></p>
+	     <p><textarea cols="50" rows="5" id="desc" name="desc"></textarea></p>
       </div>
-	   <div><input class="ok" type="submit" value="Continua" /> </div>
+	   <div><input class="ok" type="submit" value="Continua" /></div>
 	 </fieldset>
     </form>
 EOF

@@ -14,12 +14,12 @@ do "base.pl";
 my $root = get_root();
 my $nome = param('name');
 
-if (!$nome){
-  my $ss = CGI::Session->load();
-  $nome = $ss->param('name');
-  $ss->flush();
+#if (!$nome){
+my $s = CGI::Session->load(); #get_session();
+if (!$nome) {
+  $nome = $s->param('name');
 }
-my $s = new CGI::Session();
+#my $s = new CGI::Session();
 $s->param('name', $nome);
 $s->flush();
 
@@ -66,7 +66,7 @@ sub form(){
 	 <legend>Aggiungi soluzione</legend>
 	 <div>
 	   <p class="lbl"><label for="title">Titolo: </label></p>
-	   <p><input type="text" size="50" id="title" name="title"></input></p>
+	   <p><input type="text" size="50" id="title" name="title"/></p>
 	 </div>
 	 <div>
 	   <p class="lbl"><label for="sol">Soluzione: </label></p>
