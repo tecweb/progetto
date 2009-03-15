@@ -6,6 +6,7 @@ use warnings;
 use lib 'mymodules/share/perl/5.8/';
 use CGI qw( :standard );
 use XML::XPath;
+use URI::Escape;
 
 do "base.pl";
 
@@ -38,8 +39,9 @@ print '<ol id="tem_list">';
 my $i = $from;
 foreach (@tem) {
   my $d = tem_descr($_);
+  my $link = uri_escape($_);
   ## numerazione a mano per non ripartire sempre da 1
-  print "<li> $i. <a href=\"tematica.pl?ref=$_\"> $_ </a> <p> $d </p> </li>";
+  print "<li> $i. <a href=\"tematica.pl?ref=$link\"> $_ </a> <p> $d </p> </li>";
   $i++;
 }
 

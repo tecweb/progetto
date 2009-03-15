@@ -6,6 +6,7 @@ use warnings;
 use lib 'mymodules/share/perl/5.8/';
 use CGI::Session;
 use File::Basename;
+use URI::Escape;
 
 ## globals
 my $session = '';
@@ -103,8 +104,9 @@ sub load_tem {
   foreach (@files) {
     last if $i >= $max_tem;
     $_ = basename($_);
+    my $link = uri_escape($_);
     my $idx = $i + 3; # tabindex
-    print "<dd class=\"menu_item\"> <a href=\"tematica.pl?ref=$_\" tabindex=\"$idx\"> $_ </a> </dd>";
+    print "<dd class=\"menu_item\"> <a href=\"tematica.pl?ref=$link\" tabindex=\"$idx\"> $_ </a> </dd>";
     $i++;
   }
   return $i;
@@ -132,9 +134,10 @@ EOF
            print '<dt class="menu_title"> Suggerimenti </dt>';
            print "<dd><a href=\"suggerimenti.pl\" tabindex=\"$next_index\" accesskey=\"s\"> Scrivici </a></dd>";
          }
+         $next_index++;
+         print '<dt class="menu_title"> Profilo </dt>';
+         print "<dd class=\"menu_item\"><a href=\"gestione_utente.pl\" tabindex=\"$next_index\">Modifica profilo</a></dd>";
          print <<'EOF';
-           <dt class="menu_title"> Profilo </dt>
-           <dd class="menu_item"><a href="gestione_utente.pl">Modifica profilo</a></dd>
 		  </dl>
 	 </div>
          <div id="nav_bottom"></div>

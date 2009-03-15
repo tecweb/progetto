@@ -14,7 +14,7 @@ do "base.pl";
 my $root = get_root();
 my $nome = param('name');
 
-my $s = CGI::Session->load(); 
+my $s = CGI::Session->load();
 if (!$nome) {
   $nome = $s->param('name');
 }
@@ -81,9 +81,6 @@ if (get_user_name() eq 'admin'){
   if (!(-e "$root/tematiche/$nome/index.xml") && $nome){
 	 add();
   }
-#  else {
-#	 err();
-#  }
   form();
 }
 else {
