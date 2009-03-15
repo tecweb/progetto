@@ -8,11 +8,21 @@ use lib 'mymodules/share/perl/5.8/';
 do 'base.pl';
 
 use CGI qw( :standard);
+use CGI::Session;
+use XML::DOM;
 use XML::XPath;
 use XML::XPath::XMLParser;
 
 my $tem = param('tem'); 		#dir della tematica
+$sessiont = new CGI::Session();
+#$sessiont->param('tems', $tem);
+#$sessiont->flush();
+
 my $sol = param('sol');			#file della soluzione
+#$sessions = new CGI::Session();
+#$sessions->param('sols', $sol);
+#$sessions->flush();
+
 my $file = get_root()."tematiche/".$tem."/".$sol; #path completo
 
 my $xp = XML::XPath->new(filename => $file);
