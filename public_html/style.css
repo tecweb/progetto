@@ -232,3 +232,35 @@ legend {
 	 margin: 0.1em;
 }
 
+/* Stile pagina commenti */
+.star_1 {
+	padding-left: 0.2em;
+	padding-right: 1em;
+	margin-right: 1em;	
+	background-image: url(images/star.gif);
+	background-repeat: no-repeat;
+}
+
+.star_2 {
+	padding-left: 1em;
+	padding-right: 0.8em;
+	margin-right: 1em;
+	background-image: url(images/star.gif);
+	background-repeat: repeat-x;
+}
+
+.star_3 {
+	padding-left: 1em;
+	padding-right: 1.6em;
+	margin-right: 1em;
+	background-image: url(images/star.gif);
+	background-repeat: repeat-x;
+} 
+
+.star_4 {
+	padding-left: 1em;
+	padding-right: 2.6em;
+	margin-right: 1em;
+	background-image: url(images/star.gif);
+	background-repeat: repeat-x;
+}
