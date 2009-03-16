@@ -33,7 +33,11 @@ my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
 my $parser = new XML::DOM::Parser;
 my $document = $parser->parsefile ("$file");
 my $nl = $document->getElementsByTagName("domanda");
+
 my $l = $nl->getLength();
+my $sessionl = new CGI::Session();
+$sessionl->param('luns', $l);
+$sessionl->flush();
 
 print_doc_start("Tematica","Tematica $tem","soluzione","tematiche", $sol);
 

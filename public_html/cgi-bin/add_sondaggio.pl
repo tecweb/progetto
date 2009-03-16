@@ -12,28 +12,34 @@ use CGI::Session;
 use XML::DOM;
 use XML::XPath;
 
-my $par1 = param("ris1");
-#my $par2 = param("ris2");
-#my $par3 = param("ris3");
-#my $par4 = param("ris4");
-#my $par5 = param("ris5");
-#my $par6 = param("ris6");
-
 my $sessiont = new CGI::Session();
 my $tem = $sessiont->param('tems');
 my $sessions = new CGI::Session();
 my $sol = $sessions->param('sols');
+my $sessionl = new CGI::Session();
+my $l = $sessions->param('luns');
 my $file = get_root()."tematiche/".$tem."/".$sol; #path completo
+
+my @par;
+for(my $i=0; $i<3*$l; $i++)
+{
+	$par[$i] = param("ris$i");
+}
 
 my $parser = XML::DOM::Parser->new;
 my $doc = $parser->parsefile($file);
+my $str = "";
 
-my $n=0;
-my $node = $doc->getElementsByTagName('nvoti')->item($n);  #n indica se il voto da modificare è del commento 0,1,2 ecc
-my $new_voto = $node->getFirstChild()->getNodeValue();
-$node->getFirstChild()->setNodeValue($new_voto+1); #setto il valore del nodo testo, che e' il primo filgio del nodo "voto"
-
-#$doc->printToFile("$file");
+for(my $i=0; $i<3*$l; $i++)
+{
+	my $node = $doc->getElementsByTagName('nvoti')->item($i);  #n indica se il voto da modificare è del commento 0,1,2 ecc
+	my $new_voto = $node->getFirstChild()->getNodeValue();
+	if($par[$i] != $str)
+	{
+		$node->getFirstChild()->setNodeValue($new_voto+1); #setto il valore del nodo testo, che e' il primo filgio del nodo "voto"
+	}
+}
+$doc->printToFile("$file");
 
 my $xp = XML::XPath->new(filename => $file);
 
