@@ -40,7 +40,7 @@ sub err {
 
 sub add {
   eval {
-         mkpath ("$root/tmatiche/$nome");
+         mkpath ("$root/tematiche/$nome");
 	 open (FILE, ">$root/tematiche/$nome/index.xml");
 	 print FILE "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 	 print FILE "<tematica xmlns:xs=\"http://www.w3.org/2001/XMLSchema-instance\" xs:schemaLocation=\"../../../xml/schema/tematica.xsd\">\n";
