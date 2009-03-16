@@ -53,8 +53,7 @@ La directory \textit{eventi/} contiene il file index.xml che descrive gli eventi
  
 \subsubsection{eventi/index.xml}
 \begin{itemize}
- \item data evento
- \item data inserimento
+ \item data 
  \item titolo
  \item breve descrizione
  \item link alla pagina contenente l'evento (pu\`o essere un link esterno oppure interno)
@@ -132,17 +131,6 @@ Il contenuto della home page viene caricato dinamicamente dal file eventi/index.
 
 Il contenuto della sezione ``chi siamo?'' \`e una breve descrizione del gruppo di discussione, con le motivazione della nascita e gli obiettivi che si pone. La parte di contenuto \`e statica ed ha ha superato il test di validazione del w3c.
 
-\section{Mirco Geremia}
-
-\subsection{Amministrazione}
-
-\subsubsection{Pagina di amministrazione}
-\subsubsection{Lettura suggerimenti}
-\subsubsection{Aggiunta di una tematica}
-\subsubsection{Cancellazione di una tematica}
-\subsubsection{Aggiunta di un evento/news}
-\subsubsection{Cancellazione di un evento/news}
-
 \section{Filippo Dalla Gassa}
 
 \subsection{Pagina Tematica}
@@ -185,5 +173,46 @@ Quando l'utente seleziona uno dei radio button e preme Vota lo script aggiorna{\
 
 \subsection{Note generali}
 Sono stati utilizzati i moduli XML::DOM e XML::XPath per la manipolazione dei file xml, e il modulo CGI per la gestione dell'html.
+
+\section{Mirco Geremia}
+
+\subsection{Amministrazione}
+
+\subsubsection{Pagina di amministrazione}
+La pagina presenta una lista delle funzioni di cui l'amministratore si pu\'o servire per la gestione del sito. In ogni elemento della lista \`e stato definito un tabindex per potervi accedere direttamente da tastiera. 
+
+\subsubsection{Lettura suggerimenti}
+La pagina apre il file suggerimenti.xml e legge il nome utente e il testo di ogni suggerimento per poterli poi scrivere nella pagina nell'ordine in cui sono persenti nel file. In fondo \`e presente un link che punta alla pagina di amministrazione. Se la lettura del file non va a buon fine la pagina restituisce un errore.
+
+\subsubsection{Aggiunta di una tematica}
+L'aggiunta di una tematica \`e strutturata in una serie di pagine in cui \`e possibile inserire i vari elementi che la costituiscono. Ogni input \`e codificato tramite la funzione encode{\_}entities definita nella libreria HTML::Entitites. Ogni pagina ritorna un errore se non riesce ad accedere ai file o se qualche campo necessario non \`e stato compilato.
+\begin{itemize}
+\item \textbf{Aggiungi tematica:} la prima pagina consente di inserire il nome e la descrizione della tematica tramite un form che punta alla pagina 'Aggiungi soluzione'.
+\item \textbf{Aggiungi soluzione:} questa pagina crea la directory della tematica con il nome precedentemente inserito (se non esiste gi\`a), e inizializza il relativo file index.xml inserendo anche la descrizione della tematica. Inoltre visualizza un form che punta alla pagina 'Aggiungi pro e contro' che permette di inserire il titolo e la descrizione di una proposta di soluzione .
+\item \textbf{Aggiungi pro e contro:} la pagina crea il file relativo alla proposta di soluzione precedentemente inserita, e lo riempie con i valori dati. Presenta inoltre un form che punta alla pagina 'Aggiungi domanda', con due liste che consentono di inserire rispettivamente da zero a tre pro e contro relativi alla soluzione corrente. 
+\item \textbf{Aggiungi domanda:} la pagina aggiunge i pro e contro precedentemente inseriti e presenta un form che punta a se stessa permette di inserire una domanda e una lista di opzioni (da zero a cinque). In fondo sono inoltre presenti due bottoni che permettono di inserire una nuova proposta di soluzione (linkando la pagina 'Aggiungi soluzione') o di terminare la procedura; in quest'ultimo caso sar\`a illustrata la teamtica appena inserita.
+\end{itemize}
+
+\subsubsection{Cancellazione di una tematica}
+La pagina presenta un form che punta a se stessa, in cui sono raggruppati con un fieldset i  nomi delle tematiche presenti nella directory tematiche/. Ogni tematica \`e associata ad una checkbox, in modo che l'utente possa scegliere uno o pi\`u elementi da eliminare prima di premere il bottone Cancella. Al suo caricamento la pagina controlla se l'utente ha selezionato qualche checkbox, e in caso affermativo (per ogni scelta) si occupa di eliminare l'intera directory relativa alla tematica scelta.
+Se ci sono problemi nell'accesso alla directory viene restituito un errore, altrimenti la pagina stampa una conferma dell'operazione.
+
+\subsubsection{Aggiunta di un evento/news}
+La pagina visualizza un form che punta a se stessa, in cui sono presenti diverse caselle di immissione testo:
+\begin{itemize}
+\item \textbf{Data:} divisa in tre campi (gg/mm/aaaa) come spiegato nella label, ognuno con una lunghezza massima; i campi verranno poi riordinati per la scrittura come previsto dal tipo xs:date dell'XMLSchema.
+\item \textbf{Titolo:} il titolo dell'evento/news.
+\item \textbf{Descrizione:} una breve descrizione che spiega a cosa si riferisce l'evento/news.
+\item \textbf{Link:} un link alla pagina di descrizione dell'evento, e della news (ad esempio se la news riguarda l'inserimento di una tematica, il link punter\`a alla pagina che la visualizza).
+\end{itemize}
+In fondo \`e presente un link che punta alla pagina di amministrazione.
+Quando viene caricato la pagina controlla se tutti i campi sono stati inseriti, in caso negativo ritorna il form vuoto pronto per una nuova inserzione. Nel caso tutti i campi siano stati riempiti, apre il file eventi/index.xml, crea un nuovo nodo evento con i figli secondo l'XMLSchema e lo riempie con i dati inseriti precedentemente (codificati tramite la funzione encode{\_}entities); infine sovrascrive il file per inserire i dati aggiunti e ritorna una scritta che conferma l'operazione e restituisce un errore se l'accesso al file ha riscontrato dei problemi.
+
+\subsubsection{Cancellazione di un evento/news}
+La pagina presenta un form che punta a se stessa, in cui sono raggruppati con un fieldset i  nomi degli eventi/news presenti nel file eventi/index.xml. Ogni evento \`e associato ad una checkbox, in modo che l'utente possa scegliere uno o pi\`u elementi da eliminare prima di premere il bottone Cancella. Al suo caricamento la pagina controlla se l'utente ha selezionato qualche checkbox, e in caso affermativo (per ogni scelta) si occupa di eliminare il nodo relativa all'evento selezionato e di riscrivere il file aggiornato.
+Se ci sono problemi nell'accesso alla directory viene restituito un errore, altrimenti la pagina stampa una conferma dell'operazione.
+
+\subsubsection{Note generali}
+Tutte le pagine ritornano un errore se l'utente che le richiede non \`e l'amministratore. L'username dell'amministratore \`e 'admin' e la password 'a'.
 
 \end{document}
