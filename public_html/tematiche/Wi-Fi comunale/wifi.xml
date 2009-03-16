@@ -29,19 +29,4 @@
       <nvoti> 0 </nvoti>
     </opzione>
   </domanda>
-	<domanda>
-    <testo>Colore preferito?</testo>
-    <opzione>
-      <descrizione> Giallo </descrizione>
-      <nvoti>7</nvoti>
-    </opzione>
-    <opzione>
-      <descrizione> Blu </descrizione>
-      <nvoti> 3 </nvoti>
-    </opzione>
-    <opzione>
-      <descrizione> Rosso </descrizione>
-      <nvoti> 0 </nvoti>
-    </opzione>
-  </domanda>
 </soluzione>

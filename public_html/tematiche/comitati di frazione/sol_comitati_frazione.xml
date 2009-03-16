@@ -9,30 +9,30 @@
     <testo>Ti sentiresti maggiormente rappresentato con l'introduzione di questo strumento?</testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione>Non lo so</descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 	<domanda>
     <testo> Saresti disposto a partecipare al comitato della tua frazione?</testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione>Non lo so</descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 </soluzione>

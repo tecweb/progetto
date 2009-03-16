@@ -33,8 +33,8 @@ sub print_news
 	}
 
 	@proposta = sort {$b cmp $a} @proposta;
-
-	for(my $i=0; $i<5; $i++)
+	my $proposta=@proposta;
+	for(my $i=0; $i<$proposta; $i++)
 	{
 		print "<p><a href=";
 		print "'$x{@proposta[$i]}'";
