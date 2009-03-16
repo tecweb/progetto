@@ -11,7 +11,7 @@
 <contro>La scienza non è certa che la centrale a biomassa sia pulita e non produca nanoparticelle che inquineranno per sempre le zone vicine alla centrale dove verranno combuste.</contro>
 <contro>È indispensabile creare una complessa rete organizzativa che coinvolga gli agricoltori, i rappresentanti di categoria, il consorzio di tutela, le ditte di trasporto e la centrale.</contro>
   <domanda>
-    <testo>Ti piace questa soluzione?</testo>
+    <testo>Ritieni realizzabile questa soluzione?</testo>
     <opzione>
       <descrizione> Sì </descrizione>
       <nvoti>7</nvoti>
@@ -26,17 +26,47 @@
     </opzione>
   </domanda>
 	<domanda>
-    <testo>Colore preferito?</testo>
+    <testo>Ritieni che sia una soluzione economicamente sostenibile?</testo>
     <opzione>
-      <descrizione> Giallo </descrizione>
+      <descrizione> Sì </descrizione>
       <nvoti>7</nvoti>
     </opzione>
     <opzione>
-      <descrizione> Blu </descrizione>
+      <descrizione> No </descrizione>
       <nvoti> 3 </nvoti>
     </opzione>
     <opzione>
-      <descrizione> Rosso </descrizione>
+      <descrizione> Non so </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Ritieni che ci possa essere del vantaggio economico dall'adozione di questa soluzione?</testo>
+    <opzione>
+      <descrizione> Sì </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> No </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non so </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Sei interessato ad approfondire questa soluzione? (anche attraerso degli incontri)</testo>
+    <opzione>
+      <descrizione> Sì </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> No </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non so </descrizione>
       <nvoti> 0 </nvoti>
     </opzione>
   </domanda>

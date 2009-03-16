@@ -19,7 +19,22 @@
       <nvoti>6</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <descrizione>Non lo so</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Ritieni che il potato macinato nel vigneto favorisca la permanenza di malattie nocive alla vite?</testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Non lo so</descrizione>
       <nvoti>4</nvoti>
     </opzione>
   </domanda>
