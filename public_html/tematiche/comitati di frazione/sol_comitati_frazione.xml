@@ -6,7 +6,22 @@
 <contro> Potrebbe non essere sufficiente affidare alla sola iniziativa dei cittadini il ruolo di costituire e mantenere in vita tali comitati </contro>
 <contro> Potrebbe risultare oneroso per l'Amministrazione dare ascolto a tutte le proposte dei singoli comitati, al punto da  rendere vano il lavoro dei comitati </contro>
   <domanda>
-    <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
+    <testo>Ti sentiresti maggiormente rappresentato con l'introduzione di questo strumento?</testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo> Saresti disposto a partecipare al comitato della tua frazione?</testo>
     <opzione>
       <descrizione>Sì</descrizione>
       <nvoti>2</nvoti>

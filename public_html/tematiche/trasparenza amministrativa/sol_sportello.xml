@@ -11,18 +11,48 @@
 <contro>La pubblicazione cartacea mensile ha un costo di stampa e distribuzione, ma è necessaria perlomeno finché l'uso della rete Internet non si sarà diffuso maggiormente.</contro>
 
   <domanda>
-    <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
+    <testo> Ritieni che questo provvedimento favorisca la trasparenza nel rapporto cittadino-amministrazione? </testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+	<testo> Ritieni che questo sia uno strumento efficace per contrastare il clientelismo? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+	<testo> Ritieni che l'attuale amministrazione avrebbe operato meglio se i cittadini avessero avuto a disposizione questo strumento? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 </soluzione>

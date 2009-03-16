@@ -11,7 +11,22 @@
 <contro>il costo delle lampade LED è attualmente molto più alto (10 volte tanto), tuttavia i costi sono in rapido calo e la tecnologia è in continuo sviluppo</contro>
 
   <domanda>
-    <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
+    <testo>Pensi che sia importante risparmiare energia? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Pensi che la tecnologia LED sia ecomicamente conveniente nel medio e lungo periodo? </testo>
     <opzione>
       <descrizione>Sì</descrizione>
       <nvoti>2</nvoti>
