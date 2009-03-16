@@ -61,7 +61,7 @@ for (my $i = 1; $i <= $l; $i++)
 	}
 	print "</fieldset>\n";
 }
-print "<fieldset><input type = 'submit' value = 'vota'><input type='reset' value='resetta' /></fieldset></form>\n";
+print "<fieldset><input type = 'submit' value = 'vota' /><input type='reset' value='resetta' /></fieldset></form>\n";
 
 print "<span> [<a href=\"tematica.pl?ref=$tem\"> Torna alla tematica </a>] </span>";
 
