@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+  <proposta> Sostituire le lampade dei lampioni con lampade LED man mano che le vecchie lampade si bruciano. </proposta>
+<pro> Le lampade a LED consumano meno energia elettrica (mediamente il 50% delle attuali lampade a vapori di sodio a bassa pressione) </pro>
+<pro>Le lampade a LED durano in media 50.000 ore, 5 volte la vita media delle attuali lampade a vapori di sodio a bassa pressione, quindi non serve sostituirle ogni 2 anni, ma ogni 10</pro>
+<pro>Il basso consumo di queste nuove lampade rende più possibile l'alimentazione con energia elettrica prodotta da impianti fotovoltaici di cui il Comune si potrà dotare nei prossimi anni</pro>
+<pro>Il colore della luce è bianco (5500k) permettendo una migliore percezione dei colori</pro>
+<pro>Non necessitano di manutenzione poiché non generando calore il vetro rimane freddo e si sporca molto meno</pro>
+<pro>Si accendono istantaneamente a pieno regime con qualsiasi temperatura esterna</pro>
+<pro>Hanno luce fissa che non sfarfalla</pro>
+<contro>il costo delle lampade LED è attualmente molto più alto (10 volte tanto), tuttavia i costi sono in rapido calo e la tecnologia è in continuo sviluppo</contro>
+
+  <domanda>
+    <testo>Pensi che sia importante risparmiare energia? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Pensi che la tecnologia LED sia ecomicamente conveniente nel medio e lungo periodo? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>2</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>6</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
+      <nvoti>4</nvoti>
+    </opzione>
+  </domanda>
+</soluzione>

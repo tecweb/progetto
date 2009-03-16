@@ -45,5 +45,8 @@ sub print_news
 }
 
 print_doc_start('Home', 'Homepage');
+print << "EOF";
+<h3> Sito d'informazione e partecipazione libera alla vita pubblica del territorio valdobbiadenese </h3>
+EOF
 print_news();
 print_doc_end();

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
+  <proposta> Rendere pubbliche tutte le attività degli uffici amministrativi e della Giunta, pubblicandole sul sito Internet del Comune, riassumendole in una pubblicazione cartacea mensile, istituendo uno sportello informativo presso il municipio. In particolare le riunioni della Giunta saranno precedute dalla pubblicazione dell'Ordine del Giorno, trasmesse in videoconferenza accessibile a tutti, registrate e rese sempre disponibili sul sito ufficiale del Comune.
+  </proposta>
+<pro> Chiunque potrà controllare l'operato dell'amministrazione e segnalare eventuali irregolarità ed errori </pro>
+<pro>Gli amministratori, sentendosi controllati, faranno del loro meglio per agire equamente, correttamente, efficientemente</pro>
+<pro>La possibilità di informarsi approfonditamente stimolerà l'interesse di alcuni cittadini verso l'attività amministrativa, diffonderà la conoscenza e formerà nuovi potenziali amministratori preparati che garantiranno il ricambio negli anni a venire.</pro>
+<pro>Qualora gli amministratori si rifiutassero di aderire a questa proposta si potrebbe legittimamente pensare che stiano operando in mala fede </pro>
+
+<contro>Per gestire il sito e lo sportello sarà necessario impiegare almeno una persona a tempo pieno</contro>
+<contro>La pubblicazione cartacea mensile ha un costo di stampa e distribuzione, ma è necessaria perlomeno finché l'uso della rete Internet non si sarà diffuso maggiormente.</contro>
+
+  <domanda>
+    <testo> Ritieni che questo provvedimento favorisca la trasparenza nel rapporto cittadino-amministrazione? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+	<testo> Ritieni che questo sia uno strumento efficace per contrastare il clientelismo? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+	<testo> Ritieni che l'attuale amministrazione avrebbe operato meglio se i cittadini avessero avuto a disposizione questo strumento? </testo>
+    <opzione>
+      <descrizione>Sì</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione>No</descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
+    </opzione>
+  </domanda>
+</soluzione>

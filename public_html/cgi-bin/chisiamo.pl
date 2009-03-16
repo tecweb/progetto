@@ -13,6 +13,8 @@ print <<'EOF';
 	<p>Piazza Marconi Zero non serve a discutere ideologicamente su princ&igrave;pi morali, etici, politici o religiosi che dividano inutilmente le persone allontanandole dall'unico scopo comune: quello di rendere migliore il nostro territorio e le persone che ci vivono.</p>
 	<h3>Chi lo scrive?</h3>
 	<p>Lo scrive chiunque voglia proporre nuovi problemi, nuove soluzioni, nuove analisi dei problemi e delle soluzioni. Lo scrive chiunque costruttivamente voglia segnalare imprecisioni, inesattezze, ed abbia correzioni documentate da proporre. Lo scrive una redazione di giovani valdobbiadenesi che amano il territorio in cui vivono e che, indipendentemente, liberi da qualsiasi potere politico, economico, clientelare, religioso, ideologico, hanno fatto delle loro differenze di studi, competenze, interessi e idee, gli strumenti per costruire Piazza Marconi Zero.</p>
+	<h3>Come funziona?</h3>
+	<p>I contenuti del sito sono visibili a tutti. Chiunque pu&ograve; proporre un nuovo argomento alla redazione, ma per scrivere commenti e partecipare alle discussioni &egrave; necessario registrarsi fornendo un indirizzo e-mail. L'aggiornamento e l'approfondimento dei contenuti &egrave; continuo grazie alla collaborazione tra gli utenti e la redazione. La possibilit&agrave; di critica, le correzioni ed il monitoraggio da parte del maggior numero di persone possibile garantiranno un controllo costante ed etrogeneo delle informazioni riportate. Si consente cos&igrave; ad una molteplicit&agrave; di competenze di vigilare sulla qualit&agrave; del materiale caricato.</p>
 EOF
 
 print_doc_end();

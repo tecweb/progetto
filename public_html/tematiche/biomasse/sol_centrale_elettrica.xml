@@ -1,14 +1,17 @@
 <?xml version="1.0"?>
 <soluzione xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/soluzione.xsd">
-  <proposta> Si vendono alla centrale a biomasse di Ospitale di Cadore (BL) che le trasforma in energia elettrica </proposta>
-  <pro> Il Comune o direttamente gli agricoltori avrebbero delle entrate economiche. </pro>
-  <pro> Le sostanze inquinanti con cui si effettuano i trattamenti delle viti non verrebbero diffuse nell'aria a causa di eventuali roghi 
-  accesi per eliminare i tralci. </pro>
-  <contro> E' necessario trasportare i tralci e sminuzzarli </contro>
-  <contro> La scienza non è certa che la centrale a biomassa sia pulita e non produca nanoparticelle che inquineranno per sempre le zone 
-  vicine alla centrale di Ospitale di Cadore </contro>
+  <proposta> Raccogliere i sarmenti in campo con trincia-raccogli-caricatrici, vendere il cippato prodotto ad una centrale per la produzione di energia elettrica alimentata a biomassa.</proposta>
+<pro>I sarmenti verrebbero allontanati dal vigneto evitando ogni possibile contaminazione da parte di malattie funginee.</pro>
+<pro>Per il territorio e per le aziende sarebbe un valore aggiunto, nell'ottica del marketing territoriale, poter affermare che si utilizzano le biomasse per produrre energia elettrica .</pro>
+<pro>Le sostanze inquinanti con cui si effettuano i trattamenti delle viti (Dimetomorf, Iprovalicarb, Bentiavalicarb, Fenamidone, Metalaxil, Benalaxil, Fosetil di alluminio, Mancozeb, Metifam, Folpet, Rame (idrossido/ossicloruro/solfato), Zolfo, Quinoxyfen, Metrafenone, Spiroxamina, Meptyldinocap, Proquinazid, Bupirimate, Flufenoxuron,  Buprofezin, Indoxacarb, Clorpirifos etile/metile, Malathion, Etofenprox, Thiamethoxam, Ciprodinil, Fludioxonil, Fenexamide, Mepanipyrim, Pyrimetanil, Boscalid, Cyazofamid, Pyraclostrobin, Azoxistrobin, Zoxamide, Clofentezine, Dicofol, Dicofol + Exitiazox, Exitiazox, Etoxazole, Fenazaquin, Exitiazox + Fenazaquin, Fenpiroximate, Propargite, Pyridaben, Spirodiclofen, Tebufenpirad. Fonte: bollettini CO.DI.TV) non verrebbero ulteriormente diffuse nel territorio comunale visto che non ci sarebbero più combustioni all'aria aperta senza filtri, (per esempio la combustione del solo Mancozeb libera acido cianidrico, monossido di carbonio, diossido di zolfo e ossido di azoto).</pro>
+<pro>I fumi prodotti dalle sostanze inquinanti con cui si effettuano i trattamenti delle viti verrebbero assorbiti da particolari filtri (particolarmente onerosi quindi giustificati economicamente da impianti di una certa dimensione) evitandone così la dispersione in atmosfera.</pro>   
+<pro>Eventuale creazione di posti di lavoro per la raccolta ed il trasporto della biomassa.</pro>
+<pro>Creazione di una filiera virtuosa che recuperi ciò che convenzionalmente viene considerato scarto e lo "trasformi" in risorsa rientrando nelle logiche di convenienza economica. </pro>
+<contro>E' necessario trasportare i tralci e sminuzzarli</contro>
+<contro>La scienza non è certa che la centrale a biomassa sia pulita e non produca nanoparticelle che inquineranno per sempre le zone vicine alla centrale dove verranno combuste.</contro>
+<contro>È indispensabile creare una complessa rete organizzativa che coinvolga gli agricoltori, i rappresentanti di categoria, il consorzio di tutela, le ditte di trasporto e la centrale.</contro>
   <domanda>
-    <testo>Ti piace questa soluzione?</testo>
+    <testo>Ritieni realizzabile questa soluzione?</testo>
     <opzione>
       <descrizione> Sì </descrizione>
       <nvoti>7</nvoti>
@@ -23,17 +26,47 @@
     </opzione>
   </domanda>
 	<domanda>
-    <testo>Colore preferito?</testo>
+    <testo>Ritieni che sia una soluzione economicamente sostenibile?</testo>
     <opzione>
-      <descrizione> Giallo </descrizione>
+      <descrizione> Sì </descrizione>
       <nvoti>7</nvoti>
     </opzione>
     <opzione>
-      <descrizione> Blu </descrizione>
+      <descrizione> No </descrizione>
       <nvoti> 3 </nvoti>
     </opzione>
     <opzione>
-      <descrizione> Rosso </descrizione>
+      <descrizione> Non so </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Ritieni che ci possa essere del vantaggio economico dall'adozione di questa soluzione?</testo>
+    <opzione>
+      <descrizione> Sì </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> No </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non so </descrizione>
+      <nvoti> 0 </nvoti>
+    </opzione>
+  </domanda>
+	<domanda>
+    <testo>Sei interessato ad approfondire questa soluzione? (anche attraerso degli incontri)</testo>
+    <opzione>
+      <descrizione> Sì </descrizione>
+      <nvoti>7</nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> No </descrizione>
+      <nvoti> 3 </nvoti>
+    </opzione>
+    <opzione>
+      <descrizione> Non so </descrizione>
       <nvoti> 0 </nvoti>
     </opzione>
   </domanda>
