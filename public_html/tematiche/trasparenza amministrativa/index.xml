@@ -2,18 +2,4 @@
 <tematica xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="../../../xml/schema/tematica.xsd">
   <descrizione>Impedire agli amministratori il rapporto clientelare con i cittadini, con le imprese private, con la politica dei partiti. Garantire ai cittadini la massima trasparenza sull'operato degli amministratori. Promuovere l'interesse dei cittadini verso l'amministrazione del loro Comune.
 </descrizione>
-  <commento>
-    <username>Tizio</username>
-    <data>2009-02-08</data>
-	 <voto>2.26666666666666</voto>
-	 <nvoti>15</nvoti>
-    <testo>Ci sono aziende che si occupano proprio dello smaltimento delle biomasse e forse sarebbe meglio affidarsi a loro</testo>
-  </commento>
-  <commento>
-    <username>Caio</username>
-    <data>2009-02-08</data>
-    <voto>3.06666666666667</voto>
-	 <nvoti>9</nvoti>
-    <testo>Mi auguro piu che altro che nessuno si dia al fai da te bruciando per conto suo i tralci</testo>
-  </commento>
-<commento><username>pippo</username><data>2009-03-15</data><voto>4</voto><nvoti>1</nvoti><testo>prova</testo></commento><commento><username>admin</username><data>2009-03-15</data><voto>3</voto><nvoti>1</nvoti><testo>aaaaa</testo></commento><commento><username>admin</username><data>2009-03-15</data><voto>0</voto><nvoti>0</nvoti><testo>aaa</testo></commento></tematica>
+</tematica>

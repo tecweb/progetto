@@ -15,14 +15,14 @@
 <contro> L'installazione della rete potrebbe costare intorno ai 150.000euro e avere un costo di manutenzione intorno ai 30.000euro annui (Fonte Comune di Soveria Mannelli (CZ))</contro>
 <contro> Le antenne potrebbero subire danni a causa di condizioni meteo o atti vandalici</contro>
   <domanda>
-    <testo>Ti piace questa soluzione?</testo>
+    <testo> Pensi che usufruirai di questo servizio? </testo>
     <opzione>
       <descrizione> Sì </descrizione>
-      <nvoti>7</nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione> No </descrizione>
-      <nvoti> 3 </nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione> Non lo so </descrizione>
