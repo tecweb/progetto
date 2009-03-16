@@ -16,7 +16,7 @@
 \maketitle
 
 \section{Introduzione}
-Questo documento descrive lo scopo generale del sito, come vengono organizzati i dati persistenti e poi presenta le diverse sezioni del sito suddivise in base a quale membro del gruppo le ha realizzate. Il sito \`e accessibile sulla home page di Stefano Dissegna (sdissegn) sulla macchina tecnologie-web oppure, a breve, all'indirizzo http://www.piazzamarconizero.com
+Questo documento descrive lo scopo generale del sito, come vengono organizzati i dati persistenti e poi presenta le diverse sezioni del sito suddivise in base a quale membro del gruppo le ha realizzate. Il sito \`e accessibile sulla home page di Stefano Dissegna (http://tecnologie-web/~sdissegn/cgi-bin/home.pl) sulla macchina tecnologie-web oppure, a breve, all'indirizzo http://www.piazzamarconizero.com
 
 \section{Scopo}
 Lo scopo del sito \`e quello di aiutare il gruppo giovanile \textit{Piazza Marconi Zero} a porre problemi e a trovare possibili soluzioni condivise, e di comunicare news ed eventi di interesse per il gruppo.
@@ -125,11 +125,17 @@ Lo stile per la stampa nasconde il menu di navigazione e l'header, fatta eccezio
 
 \subsection{Home Page}
 
-Il contenuto della home page viene caricato dinamicamente dal file eventi/index.xml, vengono stampate a video le prime cinque news e/o eventi ordinati in ordine cronologico dal pi\`u recente al pi\`u remoto. Le news rappresentano novit\`a interne al sito mentre gli eventi sono quelli organizzati sul territorio. Le news riportano la data in cui sono state o saranno effettuate mentre gli eventi quella in cui si svolgeranno. Entrambi contengono una breve descrizione autoesplicativa e sono link alle rispettive sezioni nel sito. Tali link, per essere accessibili agli utenti che non possono utilizzare il mouse, sono dotati di attributi di tabindex (con il primo tab si arriva al primo link, e una volta terminati i link si passa al menu di navigazione) mentre non sono stati inseriti gli accesskey perch\`e il testo dei link \`e variabile e l'utente potrebbe confondersi. La pagina ha superato il test di validazione del w3c.
+Il contenuto della home page viene caricato dinamicamente dal file eventi/index.xml, vengono stampate a video le prime
+ cinque news e/o eventi (se ce ne sono) ordinati in ordine cronologico dal pi\`u recente al pi\`u remoto. Le news rappresentano novit\`a interne al sito mentre gli eventi sono quelli organizzati sul territorio. Le news riportano la data in cui saranno effettuate mentre gli eventi quella in cui si svolgeranno. 
+Entrambi contengono una breve descrizione autoesplicativa e sono link alle rispettive sezioni nel sito. Tali link, per essere accessibili agli utenti che non possono utilizzare il mouse, sono dotati di attributi di tabindex (con il primo tab si arriva al primo link, e cos\`i via) mentre non sono stati inseriti gli accesskey perch\`e il testo dei link \`e variabile e l'utente potrebbe confondersi. La pagina ha superato il test di validazione del w3c.
 
 \subsection{Chi siamo}
 
 Il contenuto della sezione ``chi siamo?'' \`e una breve descrizione del gruppo di discussione, con le motivazione della nascita e gli obiettivi che si pone. La parte di contenuto \`e statica ed ha ha superato il test di validazione del w3c.
+
+\subsection{Sondaggio}
+ 
+Il contenuto della sezione sondaggio viene caricato direttamente dal database tramite la ricezione di due parametri in modalit\`a get, i parametri si riferiscono al nome della tematica e del file xml in cui sono salvati i dati. \`E presente un form contenente un questionario composto da alcune domande, ognuna di queste ha 3 opzioni di tipo radio button, i questionari hanno poi un bottone che serve per inviare i dati ed uno per resettare le scelte fatte in caso di errore. \`E inoltre presente un link che torna alla pagina principale della tematica per venire incontro all'utente. Compilando il form e spedendo i dati si accede ad una pagina che permette di visualizzare i risultati ottenuti finora.
 
 \section{Filippo Dalla Gassa}
 

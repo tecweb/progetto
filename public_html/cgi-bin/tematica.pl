@@ -35,16 +35,19 @@ sub print_proposta {
 	my $pros = $xp->find('soluzione/pro/text()');
 	#lista dei contro
 	my $cons = $xp->find('soluzione/contro/text()');
-	print <<'EOF';	
-<ul> Pro </ul>				
+	print <<'EOF';
+<h4> Pro </h4>
+<ul>
 EOF
 	foreach my $pro ($pros->get_nodelist) {
 		print "<li>",XML::XPath::XMLParser::as_string($pro),"</li>\n";
 	}
-	print "<ul> Contro </ul>\n";
+        print '</ul>';
+	print "<h4> Contro </h4>\n<ul>\n";
 	foreach my $con ($cons->get_nodelist) {
 		print "<li>",XML::XPath::XMLParser::as_string($con),"</li>\n";
 	}
+        print '</ul>';
 }
 
 sub files_in_dir {

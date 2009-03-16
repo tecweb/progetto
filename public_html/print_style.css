@@ -160,3 +160,34 @@ legend {
 	 margin: 0.1em;
 }
 
+/* Stile pagina commenti */
+.star_1 {
+      padding-right: 15px;
+      margin-right: 1em;
+      background-image: url(images/star.gif);
+      background-repeat: no-repeat;
+}
+.star_2 {
+      padding-right: 28px;
+      margin-right: 1em;
+      background-image: url(images/star.gif);
+      background-repeat: repeat-x;
+}
+.star_3 {
+      padding-right: 43px;
+      margin-right: 1em;
+      background-image: url(images/star.gif);
+      background-repeat: repeat-x;
+}
+.star_4 {
+      padding-right: 56px;
+      margin-right: 1em;
+      background-image: url(images/star.gif);
+      background-repeat: repeat-x;
+}
+
+.tabella {
+      border: 1px black solid;
+      background-color: rgb(255, 151, 55);
+      padding: 0.4em 1em;
+}
