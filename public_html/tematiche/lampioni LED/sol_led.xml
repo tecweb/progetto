@@ -14,30 +14,30 @@
     <testo>Pensi che sia importante risparmiare energia? </testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione>Non lo so</descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 	<domanda>
     <testo>Pensi che la tecnologia LED sia ecomicamente conveniente nel medio e lungo periodo? </testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione>Non lo so</descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 </soluzione>

@@ -14,11 +14,11 @@
     <testo>Ritieni realizzabile questa soluzione?</testo>
     <opzione>
       <descrizione> Sì </descrizione>
-      <nvoti>7</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione> No </descrizione>
-      <nvoti> 3 </nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione> Non lo so </descrizione>
@@ -29,11 +29,11 @@
     <testo>Ritieni che sia una soluzione economicamente sostenibile?</testo>
     <opzione>
       <descrizione> Sì </descrizione>
-      <nvoti>7</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione> No </descrizione>
-      <nvoti> 3 </nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione> Non so </descrizione>
@@ -44,11 +44,11 @@
     <testo>Ritieni che ci possa essere del vantaggio economico dall'adozione di questa soluzione?</testo>
     <opzione>
       <descrizione> Sì </descrizione>
-      <nvoti>7</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione> No </descrizione>
-      <nvoti> 3 </nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione> Non so </descrizione>
@@ -56,14 +56,14 @@
     </opzione>
   </domanda>
 	<domanda>
-    <testo>Sei interessato ad approfondire questa soluzione? (anche attraerso degli incontri)</testo>
+    <testo>Sei interessato ad approfondire questa soluzione? (anche attraverso degli incontri)</testo>
     <opzione>
       <descrizione> Sì </descrizione>
-      <nvoti>7</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione> No </descrizione>
-      <nvoti> 3 </nvoti>
+      <nvoti> 0 </nvoti>
     </opzione>
     <opzione>
       <descrizione> Non so </descrizione>

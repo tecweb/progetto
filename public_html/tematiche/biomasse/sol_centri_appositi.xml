@@ -10,15 +10,15 @@
     <testo>Secondo te è possibile rimuovere le sostanze nocive durante il trattamento di trasformazione in compost?</testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>Forse</descrizione>
-      <nvoti>4</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 </soluzione>
