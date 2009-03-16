@@ -12,45 +12,45 @@
     <testo>Ritieni che questa sia la soluzione meno costosa e più efficace?</testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 	<domanda>
     <testo> Pensi che questo tipo di soluzione possa essere dannosa per la salute? </testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione> Non lo so </descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 	<domanda>
     <testo> Pensi che ci siano sistemi migliori per smaltire i tralci? </testo>
     <opzione>
       <descrizione>Sì</descrizione>
-      <nvoti>2</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
       <descrizione>No</descrizione>
-      <nvoti>6</nvoti>
+      <nvoti>0</nvoti>
     </opzione>
     <opzione>
-      <descrizione>Forse sì, ma non mi fiderei comunque a utilizzare il compost in agricoltura biologica</descrizione>
-      <nvoti>4</nvoti>
+      <descrizione>Non lo so</descrizione>
+      <nvoti>0</nvoti>
     </opzione>
   </domanda>
 </soluzione>
