@@ -23,18 +23,19 @@ my $file = get_root()."tematiche/".$tem."/".$sol; #path completo
 my @par;
 for(my $i=0; $i<3*$l; $i++)
 {
-	$par[$i] = param("ris$i");
+  my $n = $i+1;
+  $par[$i] = param("ris$n");
 }
 
 my $parser = XML::DOM::Parser->new;
 my $doc = $parser->parsefile($file);
 my $str = "";
 
-for(my $i=0; $i<3*$l; $i++)
+for(my $i=0; $i<3*$l-1; $i++)
 {
 	my $node = $doc->getElementsByTagName('nvoti')->item($i);  #n indica se il voto da modificare è del commento 0,1,2 ecc
 	my $new_voto = $node->getFirstChild()->getNodeValue();
-	if($par[$i] != $str)
+	if(defined $par[$i])
 	{
 		$node->getFirstChild()->setNodeValue($new_voto+1); #setto il valore del nodo testo, che e' il primo filgio del nodo "voto"
 	}
@@ -45,10 +46,10 @@ my $xp = XML::XPath->new(filename => $file);
 
 my $title = $xp->findvalue('/soluzione/proposta/text()')->value();
 
-my $parser = new XML::DOM::Parser;
+$parser = new XML::DOM::Parser;
 my $document = $parser->parsefile ("$file");
 my $nl = $document->getElementsByTagName("domanda");
-my $l = $nl->getLength();
+$l = $nl->getLength();
 
 print_doc_start("Tematica","Tematica ","discussione","tematiche");
 
